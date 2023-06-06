@@ -1,1 +1,24 @@
-{"users":[{"nome":"João Pedro Garcia Girotto","user":"JP1005YT","email":"godlolpro32@gmail.com","senha":"$2b$10$vmOaWT4F5u/7BUpzmDyRDeY1RdjrFk/tAl6Efng54UZtwF/9OaEnq","data":"2006-01-04","sexo":"Masculino","endereco":"19064145","id":"d58187c3-128c-49b2-8068-6b1ea29d7a41"}]}
+{
+    "users": [
+        {
+            "nome": "João Pedro Garcia Girotto",
+            "user": "JP1005YT",
+            "email": "godlolpro32@gmail.com",
+            "senha": "$2b$10$vmOaWT4F5u/7BUpzmDyRDeY1RdjrFk/tAl6Efng54UZtwF/9OaEnq",
+            "data": "2006-01-04",
+            "sexo": "Masculino",
+            "endereco": "19064145",
+            "id": "d58187c3-128c-49b2-8068-6b1ea29d7a41"
+        },
+        {
+            "nome": "Daniel Daniel",
+            "user": "ZIKI",
+            "email": "ZIKI@ZIKI",
+            "senha": "$2b$10$hO0hzUZT4rdByNvUhU9tge2L.j2iKYevSb9CSzHe9wMVqYIN7BnB.",
+            "data": "2005-10-31",
+            "sexo": "Masculino",
+            "endereco": "19064564",
+            "id": "caeaf511-6f81-48e5-84f9-56db4b56c804"
+        }
+    ]
+}
