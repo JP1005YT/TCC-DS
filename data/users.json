@@ -19,6 +19,16 @@
             "sexo": "Masculino",
             "endereco": "19064564",
             "id": "caeaf511-6f81-48e5-84f9-56db4b56c804"
+        },
+        {
+            "nome": "teste",
+            "user": "teste",
+            "email": "teste",
+            "senha": "$2b$10$87UVxRBjOwzHlksKCuLmIedklsh1Geq9DeexOuxORKrw6vPy5oeHy",
+            "data": "2006-01-04",
+            "sexo": "Masculino",
+            "endereco": "19064145",
+            "id": "05c81775-73ad-4eae-85ee-f9939e888b84"
         }
     ]
 }

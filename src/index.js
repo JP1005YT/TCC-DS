@@ -11,12 +11,20 @@ const session = require("express-session")
 // Inicia o Servidor express
 const app = express();
 
-// Fala que vai ter sessoes
-app.use(session({
-    secret: "teste",
-    saveUninitialized: false,
-    resave:false
-}))
+const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
+
+function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+}
+
 
 // Presets do app
 app.set('view engine', 'ejs');
@@ -35,8 +43,11 @@ const PORT = 3333;
 // Função Cadastrars
 app.post('/cadastrar',async function (req, res){
     let id = res.json(await Cadastrar(req.body))
-    req.session.valor = id
+    tokensAndData[id] = {
+        valor: id,
+    }
 });
+
 // Função Logar
 app.post('/login', async function(req, res) {
     let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
@@ -55,25 +66,32 @@ app.post('/login', async function(req, res) {
                 break
             }
         }
-}
+    }
 
-if (encontrado) {
-    
-    req.session.valor = user.id
-    
-    res.send({"res" : true})
-} else {
-    res.send({"res" : false})
-}
+    if (encontrado) {
+        const id = makeid(10) 
+        tokensAndData[id] = {
+            valor: user.id
+        }
+        // req.session.valor = user.id
+        
+        res.send({"res" : true, "token": id})
+    } else {
+        res.send({"res" : false})
+    }
 })
+
 // Função Checar alguem logado
 app.post('/check',async function(req,res){
-    if(!req.session.valor){
+    const token = req.headers.token;
+    console.log(tokensAndData);
+    const data = tokensAndData[token]
+    if(!data?.valor){
         res.send(false)
     }else{
         let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
         bdusuarios.users.forEach(element => {
-            if(element.id == req.session.valor){
+            if(element.id == data.valor){
                 res.send(element)
             }
         });
