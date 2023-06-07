@@ -11,8 +11,6 @@ const session = require("express-session")
 // Inicia o Servidor express
 const app = express();
 
-const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
-
 function makeid(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -50,6 +48,7 @@ app.post('/cadastrar',async function (req, res){
 
 // Função Logar
 app.post('/login', async function(req, res) {
+    const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
     let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
     let dadoslogin = req.body
     let encontrado = false
@@ -70,12 +69,14 @@ app.post('/login', async function(req, res) {
 
     if (encontrado) {
         const id = makeid(10) 
-        tokensAndData[id] = {
+        tokensAndData.tokens[id] = {
             valor: user.id
         }
         // req.session.valor = user.id
         
         res.send({"res" : true, "token": id})
+        
+        GuardarLogados(tokensAndData)
     } else {
         res.send({"res" : false})
     }
@@ -83,9 +84,10 @@ app.post('/login', async function(req, res) {
 
 // Função Checar alguem logado
 app.post('/check',async function(req,res){
+    const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
     const token = req.headers.token;
-    console.log(tokensAndData);
-    const data = tokensAndData[token]
+    console.log(tokensAndData.tokens);
+    const data = tokensAndData.tokens[token]
     if(!data?.valor){
         res.send(false)
     }else{
@@ -133,6 +135,10 @@ async function Cadastrar(NewUser) {
     fs.writeFileSync('./data/users.json',JSON.stringify(bdusuarios))
 
     return NewUser.id
+}
+
+async function GuardarLogados(token){
+    fs.writeFileSync('./data/tokens.json',JSON.stringify(token))
 }
 
 // Quando for QUERY(variavel na url "?aa=teste") req.query
