@@ -1,0 +1,17 @@
+{
+    "posts":{
+        "iddopost":{
+            "type":"text",
+            "title":"Titulo do Post",
+            "hashtags" : ["id1","id2"],
+            "content" : ["Olá eu sou um post-text"]
+        },
+        "iddoposte":{
+            "type":"midia",
+            "title":"Titulo do Post",
+            "hashtags" : ["id1","id2"],
+            "content" : ["Olá eu sou um post-midia"],
+            "midia":["Hatsunemiku.jpg"]
+        }
+    }
+}

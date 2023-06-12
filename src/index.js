@@ -5,7 +5,6 @@ const fs = require("fs")
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const uid = require("uuid")
-const session = require("express-session")
 
 
 // Inicia o Servidor express
@@ -48,7 +47,7 @@ app.post('/cadastrar',async function (req, res){
 
 // Função Logar
 app.post('/login', async function(req, res) {
-    const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
+    let tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
     let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
     let dadoslogin = req.body
     let encontrado = false
@@ -68,7 +67,14 @@ app.post('/login', async function(req, res) {
     }
 
     if (encontrado) {
-        const id = makeid(10) 
+        let items = Object.keys(tokensAndData.tokens)
+        items.forEach(token => {
+            if(tokensAndData.tokens[token].valor === user.id){
+                delete tokensAndData.tokens[token]
+            }
+        })
+
+        let id = makeid(10) 
         tokensAndData.tokens[id] = {
             valor: user.id
         }
@@ -86,27 +92,27 @@ app.post('/login', async function(req, res) {
 app.post('/check',async function(req,res){
     const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
     const token = req.headers.token;
-    console.log(tokensAndData.tokens);
     const data = tokensAndData.tokens[token]
     if(!data?.valor){
         res.send(false)
+        console.log('Ninguem Logado')
     }else{
         let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
         bdusuarios.users.forEach(element => {
             if(element.id == data.valor){
                 res.send(element)
+                console.log(`Logado : {${element.id}}`)
             }
         });
     }
 })
 // Deconecta o usuario
 app.post('/sair',async function(req, res) {
-    try {
-        req.session.destroy()
-        res.send(true)
-    } catch (error) {
-        res.send(error)
-    }
+    const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
+    const token = req.headers.token;
+    delete tokensAndData.tokens[token]
+    GuardarLogados(tokensAndData)
+    res.send(true)
 })
 // Abri o server
 app.listen(PORT, () => {
