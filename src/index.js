@@ -106,12 +106,34 @@ app.post('/check',async function(req,res){
         });
     }
 })
+
 // Deconecta o usuario
 app.post('/sair',async function(req, res) {
     const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
     const token = req.headers.token;
     delete tokensAndData.tokens[token]
     GuardarLogados(tokensAndData)
+    res.send(true)
+})
+// Retorna numero de TAGs
+app.post('/tags',async function(req,res){
+    const tags = JSON.parse(fs.readFileSync('./data/tags.json'))
+    let i = 0
+    tags.tags.forEach(tag => {
+        i++
+    })
+    res.send({"num" : i})
+})
+app.post('/newtag',async function(req,res){
+    let bdtags = JSON.parse(fs.readFileSync('./data/tags.json'))
+    let newtag = {
+        "display":req.body.tag,
+        "uses": 0
+    }
+
+    bdtags.tags.push(newtag)
+    fs.writeFileSync('./data/tags.json',JSON.stringify(bdtags))
+
     res.send(true)
 })
 // Abri o server
