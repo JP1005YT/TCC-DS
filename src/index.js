@@ -118,11 +118,8 @@ app.post('/sair',async function(req, res) {
 // Retorna numero de TAGs
 app.post('/tags',async function(req,res){
     const tags = JSON.parse(fs.readFileSync('./data/tags.json'))
-    let i = 0
-    tags.tags.forEach(tag => {
-        i++
-    })
-    res.send({"num" : i})
+    
+    res.send({"tags" : tags.tags})
 })
 app.post('/newtag',async function(req,res){
     let bdtags = JSON.parse(fs.readFileSync('./data/tags.json'))

@@ -1,1 +1,28 @@
-{"tags":[{"display":"#paçoca","uses":0},{"display":"teste","uses":0},{"display":"JP","uses":0}]}
+{
+    "tags": [
+        {
+            "display": "Daniel",
+            "uses": 30
+        },
+        {
+            "display": "JP",
+            "uses": 24
+        },
+        {
+            "display": "Manu",
+            "uses": 200
+        },
+        {
+            "display": "Biel",
+            "uses": 22
+        },
+        {
+            "display": "Luan",
+            "uses": 54
+        },
+        {
+            "display": "Jovem",
+            "uses": 13
+        }
+    ]
+}
