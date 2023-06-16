@@ -19,6 +19,16 @@
             "sexo": "Outros",
             "endereco": "19064555",
             "id": "849b265f-f78e-4055-9e8b-1aea7ce5e60c"
+        },
+        {
+            "nome": "Manoela Pinheiro da Silva",
+            "user": "Ma29",
+            "email": "manoela2903@outlook.com",
+            "senha": "$2b$10$AjdKHatBf54Pa3Iu51JjbOeT/04A58rz8Zq1NQ.HEeZ4FZHomMamS",
+            "data": "2006-03-29",
+            "sexo": "Feminino",
+            "endereco": "19200-000",
+            "id": "a484a242-0c31-4f7a-9121-fff41d574905"
         }
     ]
 }

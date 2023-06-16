@@ -10,7 +10,7 @@
         },
         {
             "display": "Manu",
-            "uses": 200
+            "uses": 32
         },
         {
             "display": "Biel",
@@ -23,6 +23,10 @@
         {
             "display": "Jovem",
             "uses": 13
+        },
+        {
+            "display": "Odeiom",
+            "uses": 900
         }
     ]
 }

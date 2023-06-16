@@ -16,8 +16,8 @@ function makeid(length) {
     const charactersLength = characters.length;
     let counter = 0;
     while (counter < length) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-      counter += 1;
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        counter += 1;
     }
     return result;
 }
@@ -27,10 +27,10 @@ function makeid(length) {
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
-  });
+});
 app.use(express.static('public'));
 app.use(cors());
 
@@ -38,7 +38,7 @@ app.use(cors());
 const PORT = 3333;
 
 // Função Cadastrars
-app.post('/cadastrar',async function (req, res){
+app.post('/cadastrar', async function (req, res) {
     let id = res.json(await Cadastrar(req.body))
     tokensAndData[id] = {
         valor: id,
@@ -46,7 +46,7 @@ app.post('/cadastrar',async function (req, res){
 });
 
 // Função Logar
-app.post('/login', async function(req, res) {
+app.post('/login', async function (req, res) {
     let tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
     let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
     let dadoslogin = req.body
@@ -69,37 +69,37 @@ app.post('/login', async function(req, res) {
     if (encontrado) {
         let items = Object.keys(tokensAndData.tokens)
         items.forEach(token => {
-            if(tokensAndData.tokens[token].valor === user.id){
+            if (tokensAndData.tokens[token].valor === user.id) {
                 delete tokensAndData.tokens[token]
             }
         })
 
-        let id = makeid(10) 
+        let id = makeid(10)
         tokensAndData.tokens[id] = {
             valor: user.id
         }
         // req.session.valor = user.id
-        
-        res.send({"res" : true, "token": id})
-        
+
+        res.send({ "res": true, "token": id })
+
         GuardarLogados(tokensAndData)
     } else {
-        res.send({"res" : false})
+        res.send({ "res": false })
     }
 })
 
 // Função Checar alguem logado
-app.post('/check',async function(req,res){
+app.post('/check', async function (req, res) {
     const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
     const token = req.headers.token;
-    const data = tokensAndData.tokens[token]
-    if(!data?.valor){
+    const data = tokensAndData.tokens[token];
+    if (typeof data === 'undefined') {
         res.send(false)
         console.log('Ninguem Logado')
-    }else{
+    } else {
         let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
         bdusuarios.users.forEach(element => {
-            if(element.id == data.valor){
+            if (element.id == data.valor) {
                 res.send(element)
                 console.log(`Logado : {${element.id}}`)
             }
@@ -108,7 +108,7 @@ app.post('/check',async function(req,res){
 })
 
 // Deconecta o usuario
-app.post('/sair',async function(req, res) {
+app.post('/sair', async function (req, res) {
     const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
     const token = req.headers.token;
     delete tokensAndData.tokens[token]
@@ -116,20 +116,20 @@ app.post('/sair',async function(req, res) {
     res.send(true)
 })
 // Retorna numero de TAGs
-app.post('/tags',async function(req,res){
+app.post('/tags', async function (req, res) {
     const tags = JSON.parse(fs.readFileSync('./data/tags.json'))
-    
-    res.send({"tags" : tags.tags})
+
+    res.send({ "tags": tags.tags })
 })
-app.post('/newtag',async function(req,res){
+app.post('/newtag', async function (req, res) {
     let bdtags = JSON.parse(fs.readFileSync('./data/tags.json'))
     let newtag = {
-        "display":req.body.tag,
+        "display": req.body.tag,
         "uses": 0
     }
 
     bdtags.tags.push(newtag)
-    fs.writeFileSync('./data/tags.json',JSON.stringify(bdtags))
+    fs.writeFileSync('./data/tags.json', JSON.stringify(bdtags))
 
     res.send(true)
 })
@@ -157,13 +157,13 @@ async function Cadastrar(NewUser) {
 
     bdusuarios.users.push(NewUser)
 
-    fs.writeFileSync('./data/users.json',JSON.stringify(bdusuarios))
+    fs.writeFileSync('./data/users.json', JSON.stringify(bdusuarios))
 
     return NewUser.id
 }
 
-async function GuardarLogados(token){
-    fs.writeFileSync('./data/tokens.json',JSON.stringify(token))
+async function GuardarLogados(token) {
+    fs.writeFileSync('./data/tokens.json', JSON.stringify(token))
 }
 
 // Quando for QUERY(variavel na url "?aa=teste") req.query
