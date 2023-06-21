@@ -4,24 +4,13 @@ const cors = require("cors")
 const fs = require("fs")
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
-const uid = require("uuid")
+const uid = require("uuid");
+const {Login} = require("../classes/Login.js");
+// const {Cadastro} = require("./classes/Cadastro.js");
 
 
 // Inicia o Servidor express
 const app = express();
-
-function makeid(length) {
-    let result = '';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const charactersLength = characters.length;
-    let counter = 0;
-    while (counter < length) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        counter += 1;
-    }
-    return result;
-}
-
 
 // Presets do app
 app.set('view engine', 'ejs');
@@ -45,47 +34,10 @@ app.post('/cadastrar', async function (req, res) {
     }
 });
 
+const loginClass = new Login();
 // Função Logar
-app.post('/login', async function (req, res) {
-    let tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
-    let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
-    let dadoslogin = req.body
-    let encontrado = false
-    let user
-
-    for (let i = 0; i < bdusuarios.users.length; i++) {
-        user = bdusuarios.users[i]
-
-        if (user.email === dadoslogin.email) {
-            const senhasBatem = await CompararSenhas(dadoslogin.senha, user.senha)
-
-            if (senhasBatem) {
-                encontrado = true
-                break
-            }
-        }
-    }
-
-    if (encontrado) {
-        let items = Object.keys(tokensAndData.tokens)
-        items.forEach(token => {
-            if (tokensAndData.tokens[token].valor === user.id) {
-                delete tokensAndData.tokens[token]
-            }
-        })
-
-        let id = makeid(10)
-        tokensAndData.tokens[id] = {
-            valor: user.id
-        }
-        // req.session.valor = user.id
-
-        res.send({ "res": true, "token": id })
-
-        GuardarLogados(tokensAndData)
-    } else {
-        res.send({ "res": false })
-    }
+app.post('/login', async (req, res) => {
+    return loginClass.logar(req, res)
 })
 
 // Função Checar alguem logado
@@ -115,6 +67,9 @@ app.post('/sair', async function (req, res) {
     GuardarLogados(tokensAndData)
     res.send(true)
 })
+
+
+
 // Retorna numero de TAGs
 app.post('/tags', async function (req, res) {
     const tags = JSON.parse(fs.readFileSync('./data/tags.json'))
@@ -145,10 +100,7 @@ async function gerarHash(senha) {
     return hash;
 }
 
-async function CompararSenhas(senha, senhaCript) {
-    let valor = await bcrypt.compare(senha, senhaCript)
-    return valor
-}
+
 
 async function Cadastrar(NewUser) {
     let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
