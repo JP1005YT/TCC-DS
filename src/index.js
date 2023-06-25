@@ -4,7 +4,6 @@ const cors = require("cors")
 const fs = require("fs")
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
-const uid = require("uuid");
 const {Login} = require("../classes/Login.js");
 // const {Cadastro} = require("./classes/Cadastro.js");
 
@@ -68,14 +67,13 @@ app.post('/sair', async function (req, res) {
     res.send(true)
 })
 
-
-
 // Retorna numero de TAGs
 app.post('/tags', async function (req, res) {
     const tags = JSON.parse(fs.readFileSync('./data/tags.json'))
 
     res.send({ "tags": tags.tags })
 })
+
 app.post('/newtag', async function (req, res) {
     let bdtags = JSON.parse(fs.readFileSync('./data/tags.json'))
     let newtag = {
@@ -92,31 +90,6 @@ app.post('/newtag', async function (req, res) {
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
-
-// Funções Gerais
-async function gerarHash(senha) {
-    const saltRounds = 10;
-    const hash = await bcrypt.hash(senha, saltRounds);
-    return hash;
-}
-
-
-
-async function Cadastrar(NewUser) {
-    let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
-    NewUser.id = uid.v4()
-    NewUser.senha = await gerarHash(NewUser.senha);
-
-    bdusuarios.users.push(NewUser)
-
-    fs.writeFileSync('./data/users.json', JSON.stringify(bdusuarios))
-
-    return NewUser.id
-}
-
-async function GuardarLogados(token) {
-    fs.writeFileSync('./data/tokens.json', JSON.stringify(token))
-}
 
 // Quando for QUERY(variavel na url "?aa=teste") req.query
 // Quando for variavel de local id/:id e para ler req.params.id
