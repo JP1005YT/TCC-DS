@@ -5,7 +5,7 @@ const fs = require("fs")
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
 const {Login} = require("../classes/Login.js");
-// const {Cadastro} = require("./classes/Cadastro.js");
+const {Cadastrar} = require("../classes/Cadastrar.js");
 
 
 // Inicia o Servidor express
@@ -27,14 +27,12 @@ const PORT = 3333;
 
 // Função Cadastrars
 app.post('/cadastrar', async function (req, res) {
-    let id = res.json(await Cadastrar(req.body))
-    tokensAndData[id] = {
-        valor: id,
-    }
+    const signClass = new Cadastrar();
+    let id = res.json(await signClass.Cadastrar(req.body))
 });
 
-const loginClass = new Login();
 // Função Logar
+const loginClass = new Login();
 app.post('/login', async (req, res) => {
     return loginClass.logar(req, res)
 })
@@ -63,7 +61,7 @@ app.post('/sair', async function (req, res) {
     const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
     const token = req.headers.token;
     delete tokensAndData.tokens[token]
-    GuardarLogados(tokensAndData)
+    loginClass.GuardarLogados(tokensAndData)
     res.send(true)
 })
 

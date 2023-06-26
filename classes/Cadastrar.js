@@ -1,4 +1,6 @@
+const bcrypt = require("bcrypt");
 const uid = require("uuid");
+const fs = require("fs");
 
 class Cadastrar{
     async gerarHash(senha) {
