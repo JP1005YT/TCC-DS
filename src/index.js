@@ -1,33 +1,19 @@
 // PACOTES
-const express = require("express")
-const cors = require("cors")
-const fs = require("fs")
-const bodyParser = require("body-parser");
-const bcrypt = require("bcrypt");
+const {Pacotes} = require("../configs/Packages.js");
+let P = new Pacotes()
+
 const {Login} = require("../classes/Login.js");
+const {Check} = require("../classes/Check.js");
 const {Cadastrar} = require("../classes/Cadastrar.js");
 
+const {Server} = require("../configs/Server.js");
+let S = new Server()
+S.start()
+const app = S.app
 
-// Inicia o Servidor express
-const app = express();
-
-// Presets do app
-app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    next();
-});
-app.use(express.static('public'));
-app.use(cors());
-
-// Porta do servidor
-const PORT = 3333;
-
-// Função Cadastrars
+// Função Cadastrar
+const signClass = new Cadastrar();
 app.post('/cadastrar', async function (req, res) {
-    const signClass = new Cadastrar();
     let id = res.json(await signClass.Cadastrar(req.body))
 });
 
@@ -38,22 +24,9 @@ app.post('/login', async (req, res) => {
 })
 
 // Função Checar alguem logado
+const checkClass = new Check();
 app.post('/check', async function (req, res) {
-    const tokensAndData = JSON.parse(fs.readFileSync('./data/tokens.json'))
-    const token = req.headers.token;
-    const data = tokensAndData.tokens[token];
-    if (typeof data === 'undefined') {
-        res.send(false)
-        console.log('Ninguem Logado')
-    } else {
-        let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
-        bdusuarios.users.forEach(element => {
-            if (element.id == data.valor) {
-                res.send(element)
-                console.log(`Logado : {${element.id}}`)
-            }
-        });
-    }
+    res.send(checkClass)
 })
 
 // Deconecta o usuario
@@ -84,10 +57,6 @@ app.post('/newtag', async function (req, res) {
 
     res.send(true)
 })
-// Abri o server
-app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
-});
 
 // Quando for QUERY(variavel na url "?aa=teste") req.query
 // Quando for variavel de local id/:id e para ler req.params.id
