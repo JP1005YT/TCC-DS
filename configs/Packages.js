@@ -5,6 +5,7 @@ class Pacotes{
     fs = require("fs");
     cors = require("cors")
     bodyparser = require("body-parser")
+    multer = require("multer")
 }
 module.exports = {
     Pacotes
