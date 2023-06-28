@@ -63,7 +63,8 @@ app.post('/newtag', async function (req, res) {
 
 app.post('/upimage', UploadImage.single('image'), async (req, res) => {
     if (req.file) {
-      console.log(req.body.id);
+    //   console.log(req.body.id);
+      console.log(req.file.filename);
       return res.json({
         erro: false,
         mensagem: "Upload realizado com sucesso",

@@ -8,5 +8,6 @@ class Pacotes{
     multer = require("multer")
 }
 module.exports = {
-    Pacotes
+    Pacotes,
+    multer: Pacotes.multer
 }
