@@ -1,12 +1,16 @@
-const {Pacotes, multer} = require("../configs/Packages.js");
+const {Pacotes} = require("../configs/Packages.js");
 let P = new Pacotes()
+
 module.exports = (P.multer({
     storage: P.multer.diskStorage({
         destination: (req,file,cb) => {
-            cb(null, "./data/profile_images")
+            let post = req.params.postId
+            P.fs.mkdir(`./public/posts_images/${post}`,(err) => {
+            })
+            cb(null, `./public/posts_images/${post}`)
         },
         filename: (req,file,cb) => {
-            cb(null, `asdasdwq.png`)
+            cb(null, `${P.uid.v4()}.png`)
         }
     }),
     fileFilter: (req,file,cb) => {

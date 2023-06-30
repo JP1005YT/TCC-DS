@@ -5,10 +5,12 @@ let P = new Pacotes()
 const {Login} = require("../classes/Login.js");
 const {Check} = require("../classes/Check.js");
 const {Cadastrar} = require("../classes/Cadastrar.js");
-const UpLoadUIMG = require("../classes/UploadImage")
-
+const {Profile_Photo_Manager} = require("../classes/Profile_ImG.js")
 const {Server} = require("../configs/Server.js");
-const UploadImage = require("../classes/UploadImage");
+const {Novo_Post} = require("../classes/Criar_Novo_Post.js")
+const UploadImagePosts = require("../classes/UploadImagePost.js")
+const UploadImage = require("../classes/UploadImagePerfil.js");
+
 let S = new Server()
 S.start()
 const app = S.app
@@ -61,10 +63,24 @@ app.post('/newtag', async function (req, res) {
     res.send(true)
 })
 
+const NovoPOST = new Novo_Post();
+app.post('/newpost/:postId', UploadImagePosts.array('images',5),async (req,res) => {
+    NovoPOST.Processar(JSON.parse(req.body.post),req.body.user_id,req.params.postId)
+    res.send("OK")
+})
+
+app.post('/buscarpost', async (req,res) => {
+    res.send(P.Buscar("./data/posts.json"))
+})
+app.post('/checkpost',async (req,res) => {
+    let resp = checkClass.ChecarPastaPost(req.body.post)
+    res.send(resp)
+})
+//Upa a imagem de Perfil
+const PMClass = new Profile_Photo_Manager();
 app.post('/upimage', UploadImage.single('image'), async (req, res) => {
     if (req.file) {
-    //   console.log(req.body.id);
-      console.log(req.file.filename);
+      PMClass.Guardar(req.file.filename,req.body.id)
       return res.json({
         erro: false,
         mensagem: "Upload realizado com sucesso",

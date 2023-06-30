@@ -20,6 +20,17 @@ class Check{
         }
         return User
     }
+    ChecarPastaPost(post){
+        let src = `./public/posts_images/${post}`
+        let pastaExiste = P.fs.existsSync(src)
+        if(pastaExiste){
+            let conteudo = P.fs.readdirSync(src)
+            return conteudo
+        }
+        else{
+            return false
+        }
+    }
 }
 
 module.exports = {

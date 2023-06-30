@@ -1,17 +1,1 @@
-{
-    "posts":{
-        "iddopost":{
-            "type":"text",
-            "title":"Titulo do Post",
-            "hashtags" : ["id1","id2"],
-            "content" : ["Olá eu sou um post-text"]
-        },
-        "iddoposte":{
-            "type":"midia",
-            "title":"Titulo do Post",
-            "hashtags" : ["id1","id2"],
-            "content" : ["Olá eu sou um post-midia"],
-            "midia":["Hatsunemiku.jpg"]
-        }
-    }
-}
+{"posts":[{"title":"teste","content":"teste","hashtags":["Daniel","JP","Manu"],"User_ID":"João Pedro Garcia Girotto","Post_ID":"6JycG3cac9"}]}
