@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; */
+:root{
+    --branco:#fff;
+    --preto:#000;
+    --contraste:#b8b8b8;
+    --base1:rgb(40, 170, 98);
+    --base2:rgb(5, 155, 165);
+}
+#btn{
+    z-index: 99;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    color: black;
+    margin: 0.7%;
+}
+#btnright{
+    transition: 200ms;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 25px;
+    width: 20%;
+    height: 80%;
+    border-radius: 25px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: 0.4%;
+    margin-right: 1%;
+    border: none;
+}
+#btnright span{
+    margin: 5%;
+}
+#btnright i{
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    width: 20%;
+    height: 100%;
+    border-radius: 25px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    color: black;
+}
+#btnright:hover{
+    cursor: pointer;
+    font-size: 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset;
+}
+#btnright:hover i{
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset;
+}
+#btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px black inset;
+}
+/* Definições Basicas */
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    overflow-x: hidden;
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(var(--base1),var(--base2));
+}
+header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+header > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 90%;
+    background: linear-gradient(var(--base1),var(--base2));
+    border-radius: 25px;
+}
+header > div span{
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    height: 80%;
+    background: white;
+    font-size: 30px;
+}
+header > div span:hover{
+    cursor: pointer;
+}
+header > div span input{
+    padding: 2%;
+    border: none;
+    width: 75%;
+    height: 90%;
+    border-radius: 25px;
+    font-size: 25px;
+}
+header > div span input:focus{
+    outline: none;
+    box-shadow: 0 0 20px var(--base2);
+}
+header > div  > span #btna{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: 15%;
+    height:90%;
+}
+header > div  > span #btna:hover{
+    box-shadow: 0 0 20px var(--base2);
+}
+main{
+    display: flex;
+    align-items: flex-start;
+    margin-left: 7.5%;
+    width: 85%;
+    min-height:calc(100vh - 80px);
+    height:100%;
+    background: #fff;
+    z-index: 0;
+}
+main > nav{
+    position: relative;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    min-height:calc(100vh - 80px);
+    box-shadow: 0 -20px 20px rgba(0, 0, 0, 0.3);
+    font-size: 0.9rem;
+}
+main > nav > label{
+    margin: 10%;
+}
+main > nav > label::after{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    content: "";
+    width: 100%;
+    height: 2px;
+    box-shadow: 0px 2.5px 5px rgba(0, 0, 0, 0.3);
+    background: black;
+}
+main > nav > ul{
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+main > nav > ul li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    border-radius: 10px;
+}
+main > nav > ul li:hover{
+    cursor: pointer;
+    background: var(--contraste);
+}
+main #dashboard{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+    width: 70%;
+    min-height:calc(100vh - 80px);
+    background-image: url("../../resources/assets/FundoSocial.png");
+    background-size: 25%;
+}
+main #dashboard .post{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+main #dashboard .post ul{
+    display: flex;
+    list-style: none;
+}
+.post.text{
+    min-height: 5%;
+}
+.post.midia{
+    min-height: 10%;
+}
+.post.midia img{
+    width: 35%;
+}
+
+/* PAGINA DO POST */
+.post-page{
+    display: none;
+}
+.post-page.ativo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #0000008b;
+    backdrop-filter: blur(5px);
+}
+/* .post-page.ativo *{
+    border: 1px solid black;
+} */
+.post-page.ativo > i{
+    transition: 200ms;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: 0.7%;
+    margin-right: 1%;
+    border: none;
+}
+.post-page.ativo > i:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset;
+}
+.post-page.ativo .screen{
+    position: relative;
+    display: flex;
+    width: 70%;
+    height: 80%;
+    border-radius: 25px;
+    background: #fff;
+}
+.post-page.ativo .screen > section, .post-page.ativo .screen > div{
+    display: flex;
+    padding: 2%;
+    width: 50%;
+    height: 100%;
+}
+.post-page.ativo .screen > section{
+    flex-direction: column;
+}
+.post-page.ativo .screen > label{
+    font-size: 25px;
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: rgb(40, 170, 98);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+} 
+.post-page.ativo .screen > label:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
+}
+.post-page.ativo .screen > section input{
+    width: 100%;
+    padding: 1%;
+    font-size: 35px;
+}
+.post-page.ativo .screen > section textarea{
+    width: 100%;
+    resize: none;
+    height: 90%;
+    font-size: 25px;
+}
+.post-page.ativo .screen > div > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    width: 50%;
+}
+.post-page.ativo .screen > div > section span{
+    text-align: center;
+    width: 80%;
+    padding: 1%;
+    margin: 5%;
+    background: rgb(40, 170, 98);
+    border-radius: 10px;
+}
+.post-page.ativo .screen > div section label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+.post-page.ativo .screen > div section label input{
+    padding: 2%;
+    font-size: 15px;
+}
+.post-page.ativo .screen > div > section nav{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    padding: 2%;
+    overflow-y: scroll;
+}
+.post-page.ativo .screen > div > section nav span{
+    border-radius: 15px;
+    font-size: 20px;
+    margin-top: 10%;
+}
+.post-page.ativo .screen > div > section nav span:hover{
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2) inset;
+}
+.post-page.ativo .screen > div > section nav span.ativo{
+    background: linear-gradient(80deg,rgb(40, 170, 98),rgb(5, 155, 165));
+}
+/* Pagina TAGS */
+
+.tag-page{
+    display: none;
+}
+.tag-page.ativo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #0000008b;
+    backdrop-filter: blur(5px);
+}
+.tag-page.ativo > i{
+    transition: 200ms;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: 0.7%;
+    margin-right: 1%;
+    border: none;
+}
+.tag-page.ativo > i:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset;
+}
+.tag-page.ativo div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    border-radius: 25px;
+    width: 70%;
+    height: 80%;
+    color:black;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset;
+}
+.tag-page.ativo div input{
+    width: 95%;
+    font-size: 35px;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.tag-page.ativo div > i{
+    transition: 200ms;
+    z-index: 99;
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    width: 10%;
+    height: 70px;
+    border-radius: 35px;
+    background: var(--base1);
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: 0.7%;
+    border: none;
+}
+.tag-page.ativo div > i:hover{
+    font-size: 55px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset;
+}
+.tag-page.ativo div span{
+    margin-top: 12%;
+    font-size: 35px;
+}

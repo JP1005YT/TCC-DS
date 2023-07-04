@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>FPH | Social</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="post-page" id="post-page">
+        <i class='bx bx-left-arrow-alt' onclick="ToNovoPost()"></i>
+        <div class="screen">
+            <section>
+                <input type="text" id="newtitle" placeholder="Titulo do Post">
+                <textarea rows="4" cols="20" id="newcontent"></textarea>
+            </section>
+            <div>
+                <section>
+                    <span onclick="ToNovaTag()"> Nova Hashtag</span>
+                    <label>
+                        Filtrar:
+                        <input type="text" id="filterTags">
+                    </label>
+                    <nav id="HereWriteHashtags"></nav>
+                </section>
+                <section>
+                    <span>Selecionar Imagens:</span>
+                    <input type="file" multiple id="imagestonewpost">
+                </section>
+            </div>
+            <label onclick="NovoPost()">Enviar</label>
+        </div>
+    </div>
+    <div class="tag-page" id="tag-page">
+        <i class='bx bx-left-arrow-alt' onclick="ToNovaTag()"></i>
+        <div>
+            <input type="text" id="newtag" placeholder="Nova HashTag">
+            <span id="tagsinUsed">Hashtags:</span>
+            <i class='bx bxs-send' style="right: 0;" onclick="NovaTag()"></i>
+        </div>
+    </div>
+    <header>
+        <i class='bx bx-arrow-back' onclick="volta()" id="btn"></i>
+        <div>
+            <span>
+                <input type="text" name="Search">
+                <i class='bx bx-search' id="btna"></i>
+            </span>
+        </div>
+        <button id="btnright" onclick="ToNovoPost()">
+            <span>Novo Post</span>
+            <i class='bx bx-message-alt-add'></i>
+        </button>
+    </header>
+    <main>
+        <nav>
+            <label>Tendências</label>
+            <ul id="morehashs"></ul>
+        </nav>
+        <section id="dashboard">
+            <h1>Página Inicial</h1>
+        </section>
+        <nav>
+            <label>Caixa <br> de entrada</label>
+            <ul>
+                <li>Maricreusa</li>
+                <li>Jenosvalda</li>
+                <li>Angolina</li>
+                <li>Heirhor</li>
+                <li>Ornn</li>
+                <li>Malphite</li>
+                <li>Nero</li>
+            </ul>
+        </nav>
+    </main>
+    <script src='main.js'></script>
+</body>
+</html>

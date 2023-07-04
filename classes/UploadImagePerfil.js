@@ -11,13 +11,12 @@ module.exports = (P.multer({
             cb(null, `${P.uid.v4()}.png`)
         }
     }),
-    fileFilter: (req,file,cb) => {
-        const extensaoImg = ['image/png','image/jpg','image/gif'].find
-        (formatoAceito => formatoAceito == file.mimetype)
-        if(extensaoImg){
-            return cb(null,true)
+    fileFilter: (req, file, cb) => {
+        const allowedExtensions = ['.png', '.jpg', '.jpeg', '.gif'];
+        const fileExtension = P.path.extname(file.originalname).toLowerCase();
+        if (allowedExtensions.includes(fileExtension)) {
+            return cb(null, true);
         }
-        return cb(null,false)
-        
-    }   
+        return cb(null, false);
+    }
 }))

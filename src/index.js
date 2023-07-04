@@ -14,7 +14,26 @@ const UploadImage = require("../classes/UploadImagePerfil.js");
 let S = new Server()
 S.start()
 const app = S.app
+
+
+app.get("/pages/:page", (req, res) => {
+    const page = req.params.page;
+    const filePath = P.path.join(__dirname,"..", "Pages", page, "index.html");
+      
+    res.sendFile(filePath);
+});
+
+app.get('/pages/:page/*.js', (req, res) => {
+    const jsFilePath = P.path.join(__dirname, '..', 'Pages', req.params.page, `${req.params[0]}.js`);
+        
+    res.sendFile(jsFilePath);
+});
+
+app.get('/pages/:page/*.css', (req, res) => {
+    const cssFilePath = P.path.join(__dirname, '..', 'Pages', req.params.page, `${req.params[0]}.css`);
     
+    res.sendFile(cssFilePath);
+});
 // Função Cadastrar
 const signClass = new Cadastrar();
 app.post('/cadastrar', async function (req, res) {
@@ -72,6 +91,7 @@ app.post('/newpost/:postId', UploadImagePosts.array('images',5),async (req,res) 
 app.post('/buscarpost', async (req,res) => {
     res.send(P.Buscar("./data/posts.json"))
 })
+
 app.post('/checkpost',async (req,res) => {
     let resp = checkClass.ChecarPastaPost(req.body.post)
     res.send(resp)

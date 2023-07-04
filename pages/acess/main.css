@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; */
+:root{
+    --cor1:#fff;
+    --cor2:rgb(40, 170, 98);
+}
+
+/* Definições Basicas */
+input:not([type="radio"]){
+    border-radius: 25px;
+    border: 1px solid black;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    position:relative;
+    overflow-x: hidden;
+    width: 100vw;
+    background: linear-gradient(var(--cor2),rgb(5, 155, 165));
+}
+.login_screen{
+    width: 100vw ;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.login_screen > i{
+    top: 0;
+    left: 0;
+    margin: 1%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    /* box-shadow: 0 0 15px rgba(255, 0, 0, 1); */
+}
+.login_screen > i:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px black inset;
+}
+.any.login{
+    height: 100vh;
+}
+.login_screen > span{
+    user-select: none;
+    margin: 1%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    height: 6%;
+    background: #fff;
+    border-radius: 20px;
+}
+.login_screen> span div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 97%;
+    height: 90%;
+    background: linear-gradient(150deg,var(--cor2),rgb(5, 155, 165));
+    border-radius: 20px;
+}
+.login_screen > span div h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 70%;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.login_screen > span div h2.ativo{
+    background:#247549;
+    color: white;
+}
+.login_screen section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 85%;
+}
+.sign_box{
+    display: none;
+}
+.login_box{
+    display: none;
+}
+.sign_box.ativo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+    height: 100%;
+    background: white;
+    font-size: 20px;
+    border-radius: 25px;
+    padding: 2%;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+.sign_box.ativo > h1{
+    text-align: center;
+    width: 100%;
+}
+.sign_box.ativo > div{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.login_box.ativo{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    background: white;
+    font-size: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+.sign_box nav{
+    width: 90%;
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+}
+.sign_box nav label{
+    width: 33%;
+    margin: 1%;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    background: rgb(40, 170, 98);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.471);
+}
+.sign_box nav label:hover{
+    cursor: pointer;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.471) inset;
+}
+.login_screen section div input{
+    width: 80%;
+    font-size: 20px;
+    padding: 10px;
+    box-shadow: 0 0 25px rgba(40, 170, 99, 0.5);
+}
+.login_screen section div button{
+    cursor: pointer;
+    width: 60%;
+    font-size: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background: var(--cor2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+.login_screen section div button:hover{
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5) inset;
+}
+.sign_box div{
+    display: flex;
+}
+.sign_box form{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>FPH | Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="login_screen">
+        <i class='bx bx-arrow-back' onclick="volta()"></i>
+        <span onclick="troca_cor_log()" id="display">
+            <div>
+                <h2 class="ativo">Login</h2>
+                <h2>Cadastrar</h2>
+            </div>
+        </span>
+        <section>
+            <div class="login_box ativo" id="login">
+                <h1>Login</h1>
+                <input id="email_l" placeholder="E-mail" type="email">
+                <input id="senha_l" placeholder="Senha" type="password">
+                <button onclick="Processar_Login()">Entrar</button>
+            </div>
+            <div class="sign_box" id="sign">
+                
+                <div>
+                    <h1>Cadastro</h1>
+                    <input id="nome_s" placeholder="Nome Completo" type="text">
+                    <input id="user_s" placeholder="Nome de Usuario" type="text">
+                    <input id="email_s" placeholder="E-mail" type="email">
+                    <input id="senha_s" placeholder="Senha" type="password" onchange="Checa_Senha(0)">
+                    <input id="senhac_s" placeholder="Confirmar senha" type="password" onchange="Checa_Senha(1)"> 
+                    <input id="date_s" type="date">
+                    <nav>
+                        <h3>Sexo:</h3>
+                        <label>
+                            <input type="radio" value="Masculino" name="opc">Masculino
+                        </label>
+                        <label>
+                            <input type="radio" value="Feminino" name="opc">Feminino
+                        </label>
+                        <label>
+                            <input type="radio" value="Outros" name="opc">Outros
+                        </label>
+                    </nav>
+                </div>
+                <div>
+                    <!-- Inicio do formulario -->
+                    <form method="get" action=".">
+                        <h2>Endereço</h2><br>
+                        <input placeholder="CEP" name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" /><br>
+                        <input name="rua" type="text" id="rua" size="60" placeholder="Rua" readonly/><br>
+                        <input name="bairro" type="text" id="bairro" size="40" placeholder="Bairro" readonly/><br>
+                        <input name="cidade" type="text" id="cidade" size="40" placeholder="Cidade" readonly/><br>
+                        <input name="uf" type="text" id="uf" size="2" placeholder="Estado" readonly/><br>
+                    </form>
+                    <button onclick="Processar_Cadastro()">Cadastrar-se</button>
+                </div>
+                <!-- <input type="file" accept=".png, .jpg, .jpeg"> -->
+            </div>
+        </section>
+    </div>
+    <script src='main.js'></script>
+</body>
+</html>

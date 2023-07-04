@@ -1,4 +1,28 @@
-https://jwt.io/
-https://www.google.com/search?q=jwt+token&oq=jwt+token&aqs=chrome..69i57j0i512l9.1511j0j7&sourceid=chrome&ie=UTF-8
+# Trabalho de Conclusão de Curso
+Home,
+    Doenças,
+    Fitness,
+    Alimentação,
+        Calculadora de cal,
+    Perfil,
+    Social,
+```mermaid
+    graph LR
+    A[Home] ----> B(Doenças)
+    A --> C(Fitness)
+    A --> D(Alimentação)
+    D --> E(Calculadora de Calorias)
+    C --> E
+    A --> F(Perfil)
+    A --> G(Social)
+```
+## Anotações JP
+    > **IMPORTANTE** Adicionar Peso,Altura no banco
+    > Foto_de_Perfil
+    > Checagem de Usuario (Existente)
+    > Enter para formularios
+    
+> $ git config --global user.email "godlolpro32@gmail.com"
+> $ git config --global user.name "JP1005YT"
 
-git config --global user.email "godlolpro32@gmail.com"
+>https://jwt.io/

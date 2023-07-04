@@ -6,7 +6,7 @@ class Pacotes{
     cors = require("cors")
     bodyparser = require("body-parser")
     multer = require("multer")
-
+    path = require("path")
     // Presets
 
     Guardar(Local,Conteudo) {

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>FPH | Profile</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="profile_screen">
+        <i class='bx bx-arrow-back' onclick="volta()"></i>
+        <div id="troca_imagem_screen" class="troca_imagem_screen">
+            <div>
+                <i class='bx bx-arrow-back' onclick="MudarImagem()"></i>
+                <span></span>
+                <input type="file" id="file" name="arquivo" accept=".png,.jpg">
+            </div>
+        </div>
+        <section>
+            <div class="upper">
+                <figure class="profile_image" onclick="MudarImagem()">
+                    <img src="" height="100%" id="img_profile">
+                </figure>
+                <h1 id="screen_username">Any</h1>
+                <button onclick="Sair()">Sair</button>
+            </div>
+            <div class="bottom">
+                <div class="personal">
+                    <i class='bx bxs-cog'></i>
+                    <label>
+                        User:
+                        <span id="p_user"></span>
+                    </label>
+                    <label>
+                        E-Mail:
+                        <span id="p_email"></span>
+                    </label>
+                    <label>
+                        Data Nascimento:
+                        <span id="p_datanasc"></span>
+                    </label>
+                    <label>
+                        Sexo:
+                        <span id="p_sexo"></span>
+                    </label>
+                </div>
+                <div class="imc">
+                    <div class="imc-img-div">
+                        <img src="../../Ideia.avif" width="100%">
+                    </div>
+                    <div class="imc-infos">
+                        <label>IMC:<h2>Any%</h2></label>
+                        <input placeholder="Altura" type="number">
+                        <input placeholder="Peso" type="number">
+                        <button>Conclua seu Perfil</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src='main.js'></script>
+</body>
+</html>
