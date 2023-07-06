@@ -67,7 +67,7 @@ body{
     border-left:5px solid #ccc ;
     border-right: 5px solid #ccc;
 }
-.profile_screen > section .profile_image{
+.profile_screen > section .profile_image,.profile_screen > section .profile_imag{
     z-index: 1;
     display: flex;
     align-items: center;
@@ -95,7 +95,10 @@ body{
     background-size: 50%;
     text-shadow: 0 0 15px black;
 }
-.profile_screen > section h1{
+.profile_screen > section .user_name_div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: white;
     width: 70%;
     background: #5f5f5f;
@@ -107,6 +110,21 @@ body{
     left: 30%;
     bottom:25px;
 }
+#flag{
+    height: 100px;
+}
+/* .profile_screen > section h1{
+    color: white;
+    width: 70%;
+    background: #5f5f5f;
+    padding: 1%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    font-size: 35px;
+    left: 30%;
+    bottom:25px;
+} */
 .profile_screen .troca_imagem_screen{
     display: none;
 }

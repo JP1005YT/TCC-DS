@@ -48,15 +48,10 @@
                     </nav>
                 </div>
                 <div>
-                    <!-- Inicio do formulario -->
-                    <form method="get" action=".">
-                        <h2>Endereço</h2><br>
-                        <input placeholder="CEP" name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" /><br>
-                        <input name="rua" type="text" id="rua" size="60" placeholder="Rua" readonly/><br>
-                        <input name="bairro" type="text" id="bairro" size="40" placeholder="Bairro" readonly/><br>
-                        <input name="cidade" type="text" id="cidade" size="40" placeholder="Cidade" readonly/><br>
-                        <input name="uf" type="text" id="uf" size="2" placeholder="Estado" readonly/><br>
-                    </form>
+                    <h2>Pais</h2>
+                    <input list="opcoes" id="paisinput">
+                    <datalist id="opcoes"></datalist>
+
                     <button onclick="Processar_Cadastro()">Cadastrar-se</button>
                 </div>
                 <!-- <input type="file" accept=".png, .jpg, .jpeg"> -->

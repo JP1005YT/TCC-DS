@@ -31,6 +31,16 @@ class Check{
             return false
         }
     }
+    RetornaPessoas(req){
+        let bdusuarios = JSON.parse(P.fs.readFileSync('./data/users.json'))
+        let user
+        bdusuarios.users.forEach(element => {
+        if (element.id == req.headers.id) {
+            user = element
+        }})
+
+        return user
+    }
 }
 
 module.exports = {

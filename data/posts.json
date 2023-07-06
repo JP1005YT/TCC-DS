@@ -1,1 +1,16 @@
-{"posts":[{"title":"teste","content":"teste","hashtags":["Daniel","JP","Manu"],"User_ID":"João Pedro Garcia Girotto","Post_ID":"6JycG3cac9"}]}
+{
+    "posts": [
+        {
+            "title": "Caramba",
+            "content": "aaaaa",
+            "hashtags": [
+                "Daniel",
+                "JP",
+                "Manu"
+            ],
+            "User_ID": "d58187c3-128c-49b2-8068-6b1ea29d7a41",
+            "Post_ID": "TgOOPMbYID",
+            "User_Name": "João Pedro Garcia Girotto"
+        }
+    ]
+}

@@ -216,6 +216,7 @@ main #dashboard{
     background-size: 25%;
 }
 main #dashboard .post{
+    position: relative;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -238,7 +239,16 @@ main #dashboard .post ul{
 .post.midia img{
     width: 35%;
 }
-
+.post span{
+    /* margin: 2%; */
+    cursor: pointer;
+    right: 2%;
+    position: absolute;
+    color: #ccc;
+}
+.post span:hover{
+    color: #1500ff;
+}
 /* PAGINA DO POST */
 .post-page{
     display: none;

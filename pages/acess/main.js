@@ -1,69 +1,3 @@
-//Funções da API de CEP
-function limpa_formulário_cep(){
-    //Limpa valores do formulário de cep.
-    document.getElementById('rua').value=("");
-    document.getElementById('bairro').value=("");
-    document.getElementById('cidade').value=("");
-    document.getElementById('uf').value=("");
-}
-
-function meu_callback(conteudo) {
-if (!("erro" in conteudo)) {
-    //Atualiza os campos com os valores.
-    document.getElementById('rua').value=(conteudo.logradouro);
-    document.getElementById('bairro').value=(conteudo.bairro);
-    document.getElementById('cidade').value=(conteudo.localidade);
-    document.getElementById('uf').value=(conteudo.uf);
-} //end if.
-else {
-    //CEP não Encontrado.
-    limpa_formulário_cep();
-    alert("CEP não encontrado.");
-}
-}
-
-function pesquisacep(valor) {
-
-//Nova variável "cep" somente com dígitos.
-var cep = valor.replace(/\D/g, '');
-
-//Verifica se campo cep possui valor informado.
-if (cep != "") {
-
-    //Expressão regular para validar o CEP.
-    var validacep = /^[0-9]{8}$/;
-
-    //Valida o formato do CEP.
-    if(validacep.test(cep)) {
-
-        //Preenche os campos com "..." enquanto consulta webservice.
-        document.getElementById('rua').value="...";
-        document.getElementById('bairro').value="...";
-        document.getElementById('cidade').value="...";
-        document.getElementById('uf').value="...";
-
-        //Cria um elemento javascript.
-        var script = document.createElement('script');
-
-        //Sincroniza com o callback.
-        script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
-
-        //Insere script no documento e carrega o conteúdo.
-        document.body.appendChild(script);
-
-    } //end if.
-    else {
-        //cep é inválido.
-        limpa_formulário_cep();
-        alert("Formato de CEP inválido.");
-    }
-} //end if.
-else {
-    //cep sem valor, limpa formulário.
-    limpa_formulário_cep();
-}
-};
-
 function Checa_Senha(key){
     let senha_s = document.getElementById('senha_s')
     let senhac_s = document.getElementById('senhac_s')
@@ -93,7 +27,7 @@ function Processar_Cadastro(){
     let senhac_s = document.getElementById('senhac_s').value
     let date_s = document.getElementById('date_s').value
     let sexo_s = document.querySelectorAll('input[type="radio"][name="opc"]')
-    let endereco_s = document.getElementById('cep').value
+    let endereco_s = document.getElementById('paisinput').value
     let sexo_val = ""
     sexo_s.forEach(radio => {
         if (radio.checked) {
@@ -108,7 +42,7 @@ function Processar_Cadastro(){
             "senha" : senha_s,
             "data" : date_s,
             "sexo" : sexo_val,
-            "endereco" : endereco_s
+            "pais" : endereco_s
         }
         Query_Cadastrar(JSON);
 
@@ -176,4 +110,19 @@ function troca_cor_log(){
 }
 function volta(){
     window.location.href = `../../`;
+}
+colo()
+async function colo(){
+    const dados = await fetch('https://restcountries.com/v3.1/all', {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+    resposta = await dados.json();
+  resposta.forEach(element => {
+        let option = document.createElement("option")
+        option.setAttribute("value",element.name.common)
+        document.querySelector("#opcoes").appendChild(option)
+    });
 }

@@ -52,6 +52,9 @@ app.post('/check', async function (req, res) {
     res.send(checkClass.Checar(req))
 })
 
+app.post('/puxausuario' , async function (req,res){
+    res.send(checkClass.RetornaPessoas(req))
+})
 // Deconecta o usuario
 app.post('/sair', async function (req, res) {
     const tokensAndData = JSON.parse(P.fs.readFileSync('./data/tokens.json'))
@@ -84,7 +87,7 @@ app.post('/newtag', async function (req, res) {
 
 const NovoPOST = new Novo_Post();
 app.post('/newpost/:postId', UploadImagePosts.array('images',5),async (req,res) => {
-    NovoPOST.Processar(JSON.parse(req.body.post),req.body.user_id,req.params.postId)
+    NovoPOST.Processar(JSON.parse(req.body.post),req.body.user_id,req.params.postId,req.body.user_name)
     res.send("OK")
 })
 

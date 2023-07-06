@@ -23,12 +23,15 @@
                 <figure class="profile_image" onclick="MudarImagem()">
                     <img src="" height="100%" id="img_profile">
                 </figure>
-                <h1 id="screen_username">Any</h1>
-                <button onclick="Sair()">Sair</button>
+                <div class="user_name_div">
+                    <h1 id="screen_username">Any</h1>
+                    <img id="flag">
+                </div>
+                <button onclick="Sair()" id="exitBtn">Sair</button>
             </div>
             <div class="bottom">
                 <div class="personal">
-                    <i class='bx bxs-cog'></i>
+                    <i class='bx bxs-cog' id="configBtn"></i>
                     <label>
                         User:
                         <span id="p_user"></span>
@@ -50,8 +53,8 @@
                     <div class="imc-img-div">
                         <img src="../../Ideia.avif" width="100%">
                     </div>
+                    <label>IMC:<h2>Any%</h2></label>
                     <div class="imc-infos">
-                        <label>IMC:<h2>Any%</h2></label>
                         <input placeholder="Altura" type="number">
                         <input placeholder="Peso" type="number">
                         <button>Conclua seu Perfil</button>

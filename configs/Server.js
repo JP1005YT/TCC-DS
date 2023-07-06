@@ -1,6 +1,5 @@
 const {Pacotes} = require("../configs/Packages.js");
 let P = new Pacotes()
-
 class Server{
     app = P.express();
 
@@ -21,7 +20,13 @@ class Server{
 
         // Abri o server
         this.app.listen(PORT, () => {
-            console.log(`Servidor rodando na porta ${PORT}`);
+            let Str = `
+========================================
+            Servidor Online
+========================================
+       Link: http://localhost:${PORT}/      
+` 
+            console.log(Str);
         });
     }
 }

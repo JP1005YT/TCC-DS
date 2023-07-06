@@ -61,14 +61,17 @@ async function LoadPosts(){
       });
       const temImagem = await dados.json();
       if(temImagem){
-        let div_post = document.createElement("post")
+        let div_post = document.createElement("div")
         div_post.setAttribute("class","post")
         let span_quempostou = document.createElement("span")
+        span_quempostou.addEventListener("click",function(){
+          window.location.href = "http://localhost:3333/pages/profile/?id=" + post.User_ID
+        })
         let title_post = document.createElement("h2")
         let ul_post = document.createElement("ul")
         let p = document.createElement ("p")
         title_post.innerHTML = post.title
-        span_quempostou.innerHTML = post.User_ID
+        span_quempostou.innerHTML = post.User_Name
         p.innerHTML = post.content
         post.hashtags.forEach(hashtag =>{
           let li = document.createElement("li")
@@ -244,7 +247,8 @@ function NovoPost() {
   }
 
   formData.append("post", JSON.stringify(Post));
-  formData.append("user_id",u_infos.nome)
+  formData.append("user_id",u_infos.id)
+  formData.append("user_name",u_infos.nome)
 
   const xhr = new XMLHttpRequest();
   let id = makeid(10)
@@ -252,7 +256,6 @@ function NovoPost() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       console.log("Arquivo enviado com sucesso!");
-      ConstruirProfile();
     } else {
       console.error("Ocorreu um erro ao enviar o arquivo.");
     }
