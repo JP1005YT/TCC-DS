@@ -8,13 +8,26 @@ const {Cadastrar} = require("../classes/Cadastrar.js");
 const {Profile_Photo_Manager} = require("../classes/Profile_ImG.js")
 const {Server} = require("../configs/Server.js");
 const {Novo_Post} = require("../classes/Criar_Novo_Post.js")
+const {Chats} = require("../classes/Chats.js")
 const UploadImagePosts = require("../classes/UploadImagePost.js")
 const UploadImage = require("../classes/UploadImagePerfil.js");
-
+ 
 let S = new Server()
 S.start()
 const app = S.app
+const io = S.io
 
+// paginas e soquete
+
+io.on('connection', (socket) => {
+    console.log('Novo usuário conectado');
+
+    // Manipulador de eventos para receber mensagens do chat
+    socket.on('chat-message', (message) => {
+        console.log('Mensagem recebida:', message);
+        io.emit('chat-message', message); // Envia a mensagem para todos os clientes conectados
+    });
+});
 
 app.get("/pages/:page", (req, res) => {
     const page = req.params.page;
@@ -34,19 +47,25 @@ app.get('/pages/:page/*.css', (req, res) => {
     
     res.sendFile(cssFilePath);
 });
-// Função Cadastrar
+
+
+// Funções primarias Cadastro , Login ,Puxar infos
+
 const signClass = new Cadastrar();
 app.post('/cadastrar', async function (req, res) {
     let id = res.json(await signClass.Cadastrar(req.body))
 });
 
-// Função Logar
+app.post('/cadastrar/imc',async function (req,res){
+    signClass.CadastrarIMC(req.body)
+    res.send(true)
+})
+
 const loginClass = new Login();
 app.post('/login', async (req, res) => {
     return loginClass.logar(req, res)
 })
 
-// Função Checar alguem logado
 const checkClass = new Check();
 app.post('/check', async function (req, res) {
     res.send(checkClass.Checar(req))
@@ -55,7 +74,7 @@ app.post('/check', async function (req, res) {
 app.post('/puxausuario' , async function (req,res){
     res.send(checkClass.RetornaPessoas(req))
 })
-// Deconecta o usuario
+
 app.post('/sair', async function (req, res) {
     const tokensAndData = JSON.parse(P.fs.readFileSync('./data/tokens.json'))
     const token = req.headers.token;
@@ -64,14 +83,15 @@ app.post('/sair', async function (req, res) {
     res.send(true)
 })
 
-// Retorna numero de TAGs
+
+// Parte Social
+
 app.post('/tags', async function (req, res) {
     const tags = JSON.parse(P.fs.readFileSync('./data/tags.json'))
 
     res.send({ "tags": tags.tags })
 })
 
-// Cria Novas TAGs
 app.post('/newtag', async function (req, res) {
     let bdtags = JSON.parse(P.fs.readFileSync('./data/tags.json'))
     let newtag = {
@@ -99,7 +119,7 @@ app.post('/checkpost',async (req,res) => {
     let resp = checkClass.ChecarPastaPost(req.body.post)
     res.send(resp)
 })
-//Upa a imagem de Perfil
+
 const PMClass = new Profile_Photo_Manager();
 app.post('/upimage', UploadImage.single('image'), async (req, res) => {
     if (req.file) {
@@ -109,7 +129,12 @@ app.post('/upimage', UploadImage.single('image'), async (req, res) => {
         mensagem: "Upload realizado com sucesso",
       });
     }
-  });
+});
+
+const ChatManager = new Chats()
+app.post('/newchat',async (req,res) => {
+    ChatManager.CriarChat(req.body)
+})
   
 // Quando for QUERY(variavel na url "?aa=teste") req.query
 // Quando for variavel de local id/:id e para ler req.params.id

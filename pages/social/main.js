@@ -2,7 +2,6 @@ let variavelDebug = false
 let hashtagstonewpost = []
 let comparetag
 let u_infos
-
 function volta(){
     window.location.href = `../../`;
 }
@@ -65,6 +64,8 @@ async function LoadPosts(){
         div_post.setAttribute("class","post")
         let span_quempostou = document.createElement("span")
         span_quempostou.addEventListener("click",function(){
+          const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+          localStorage.setItem('scrollPosition', scrollPosition);
           window.location.href = "http://localhost:3333/pages/profile/?id=" + post.User_ID
         })
         let title_post = document.createElement("h2")

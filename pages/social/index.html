@@ -8,7 +8,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
+<body onload="rolar()">
     <div class="post-page" id="post-page">
         <i class='bx bx-left-arrow-alt' onclick="ToNovoPost()"></i>
         <div class="screen">
@@ -63,18 +63,19 @@
             <h1>Página Inicial</h1>
         </section>
         <nav>
-            <label>Caixa <br> de entrada</label>
-            <ul>
-                <li>Maricreusa</li>
-                <li>Jenosvalda</li>
-                <li>Angolina</li>
-                <li>Heirhor</li>
-                <li>Ornn</li>
-                <li>Malphite</li>
-                <li>Nero</li>
-            </ul>
+            <label>Chats <br> em Aberto</label>
+            <ul id="chatsopn"></ul>
         </nav>
     </main>
+    <script>
+        function rolar(){
+            const scrollPosition = localStorage.getItem('scrollPosition');
+            if (scrollPosition > 0) {
+                window.scrollTo(0,parseInt(scrollPosition))
+                localStorage.removeItem('scrollPosition'); // Limpe a posição de rolagem armazenada
+            }
+        }
+    </script>
     <script src='main.js'></script>
 </body>
 </html>

@@ -18,6 +18,12 @@
                 <input type="file" id="file" name="arquivo" accept=".png,.jpg">
             </div>
         </div>
+        <div id="configuracoes_screen" class="configuracoes_screen">
+            <div>
+                <i class='bx bx-arrow-back' onclick="setting_screen()"></i>
+                <h1>Configurações</h1>
+            </div>
+        </div>
         <section>
             <div class="upper">
                 <figure class="profile_image" onclick="MudarImagem()">
@@ -28,6 +34,7 @@
                     <img id="flag">
                 </div>
                 <button onclick="Sair()" id="exitBtn">Sair</button>
+                <i class='bx bxs-send' id="sendDirect" ></i>
             </div>
             <div class="bottom">
                 <div class="personal">
@@ -53,11 +60,17 @@
                     <div class="imc-img-div">
                         <img src="../../Ideia.avif" width="100%">
                     </div>
-                    <label>IMC:<h2>Any%</h2></label>
+                    <label>IMC:<h2 id="imchere">Any%</h2></label>
                     <div class="imc-infos">
-                        <input placeholder="Altura" type="number">
-                        <input placeholder="Peso" type="number">
-                        <button>Conclua seu Perfil</button>
+                        <div>
+                            <label>Altura</label>
+                            <input placeholder="Altura" type="number" id="hinput">
+                        </div>
+                        <div>
+                            <label>Peso</label>
+                            <input placeholder="Peso" type="number" id="winput">
+                        </div>
+                        <button onclick="ConcluirPerfil()" id="btnImc">Conclua seu Perfil</button>
                     </div>
                 </div>
             </div>

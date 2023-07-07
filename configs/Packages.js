@@ -7,6 +7,7 @@ class Pacotes{
     bodyparser = require("body-parser")
     multer = require("multer")
     path = require("path")
+    io = require("socket.io")
     // Presets
 
     Guardar(Local,Conteudo) {

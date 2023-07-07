@@ -2,7 +2,8 @@ const {Pacotes} = require("../configs/Packages.js");
 let P = new Pacotes()
 class Server{
     app = P.express();
-
+    server = require('http').createServer(this.app);
+    io = require('socket.io')(this.server);
     start(){
         // Presets do app
         this.app.set('view engine', 'ejs');
@@ -19,7 +20,7 @@ class Server{
         const PORT = 3333;
 
         // Abri o server
-        this.app.listen(PORT, () => {
+        this.server.listen(PORT, () => {
             let Str = `
 ========================================
             Servidor Online

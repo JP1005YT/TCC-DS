@@ -128,6 +128,50 @@ body{
 .profile_screen .troca_imagem_screen{
     display: none;
 }
+.profile_screen .configuracoes_screen{
+    display: none;
+}
+.configuracoes_screen.ativo{
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 0 15px black inset;
+}
+.configuracoes_screen.ativo div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 85%;
+    background: #fff;
+    box-shadow: 0 0 5px black;
+    border-radius: 25px;
+}
+.configuracoes_screen.ativo div i {
+    top: 0;
+    left: 0;
+    margin: 2%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.configuracoes_screen.ativo div i:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px black inset;
+}
 .profile_screen .troca_imagem_screen.ativo{
     z-index: 10;
     display: flex;
@@ -203,7 +247,7 @@ body{
     height: 100%;
     border: 1px  solid black;
 }
-.profile_screen section .bottom .imc div{
+.profile_screen section .bottom .imc > div{
     width: 100%;
     height: 50%;
 }
@@ -213,12 +257,19 @@ body{
     justify-content: center;
     flex-direction: column;
 }
-.profile_screen section .bottom .imc .imc-infos label{
+.profile_screen section .bottom .imc .imc-infos > label{
     font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 3%;
+}
+.profile_screen section .bottom .imc .imc-infos div{
+    width: 100%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .profile_screen section .bottom .imc .imc-infos input{
     width: 70%;
@@ -264,4 +315,27 @@ body{
     font-size: 25px;
     border-radius: 25px;
     background: var(--cor2);
+}
+#sendDirect{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 15%;
+    padding: 2%;
+    margin: 1%;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    font-size: 35px;
+    border-radius: 25px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.419);
+    background: linear-gradient(60deg ,var(--cor2),rgb(5, 155, 165));
+}
+#sendDirect:hover{
+    cursor: pointer;
+    text-shadow: 0 0 5px #fff;
+    background: linear-gradient(120deg ,var(--cor2),rgb(5, 155, 165));
 }

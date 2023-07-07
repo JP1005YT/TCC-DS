@@ -20,6 +20,17 @@ class Cadastrar{
     
         return NewUser.id
     }
+
+    async CadastrarIMC(NewImc){
+        let bdusuarios = JSON.parse(fs.readFileSync('./data/users.json'))
+        bdusuarios.users.forEach(usuario => {
+            if(usuario.id === NewImc.id){
+                usuario.peso = NewImc.peso
+                usuario.altura = NewImc.altura
+            }
+        })
+        fs.writeFileSync('./data/users.json', JSON.stringify(bdusuarios))
+    }
 }
 
 module.exports = {

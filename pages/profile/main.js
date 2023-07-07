@@ -1,11 +1,34 @@
 const queryString = window.location.search
 const params = new URLSearchParams(queryString)
 let u_infos
+let u_infos2
 
 function volta(){
-    window.location.href = `../../`;
+    if(params.has("id")){
+    window.location.href = `http://localhost:3333/pages/social/`;
+    }else{
+        window.location.href = `../../`;
+    }
+}
+document.querySelector("#configBtn").addEventListener("click",setting_screen)
+
+function setting_screen(){
+    document.querySelector('#configuracoes_screen').classList.toggle('ativo') 
 }
 
+document.querySelector("#sendDirect").addEventListener("click",async function(){
+    const dados = await fetch('http://localhost:3333/newchat', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            'id1' : u_infos.id,
+            'id2' : u_infos2.id
+        })
+    });
+    resposta = await dados.json();
+})
 async function Query_Alguem_Logado(json){
     const dados = await fetch('http://localhost:3333/check',{
         method: "POST",
@@ -79,7 +102,7 @@ async function ConstruirProfile(another){
             }
         });
         resposta = await dados.json();
-        let u_infos2 = resposta
+        u_infos2 = resposta
         user_profile.innerHTML = u_infos2['nome']
         if(u_infos2.profile_photo){
             document.getElementById('img_profile').setAttribute('src', `http://localhost:3333/profile_images/${u_infos2.profile_photo}`);
@@ -91,6 +114,10 @@ async function ConstruirProfile(another){
         let dn = u_infos2.data.split("-")
         document.querySelector("#p_datanasc").innerHTML = `${dn[2]}/${dn[1]}/${dn[0]}`
         document.querySelector("#p_sexo").innerHTML = u_infos2.sexo
+        if(u_infos2.peso){
+            let IMC = u_infos2.peso / (u_infos2.altura * u_infos2.altura)
+            document.querySelector("#imchere").innerHTML = IMC.toFixed(1)
+        }
     }else{
 
         user_profile.innerHTML = u_infos['nome']
@@ -104,6 +131,20 @@ async function ConstruirProfile(another){
         let dn = u_infos.data.split("-")
         document.querySelector("#p_datanasc").innerHTML = `${dn[2]}/${dn[1]}/${dn[0]}`
         document.querySelector("#p_sexo").innerHTML = u_infos.sexo
+        document.querySelector("#sendDirect").style.display = 'none'
+        if(u_infos.peso){
+            document.querySelector("#winput").value = u_infos.peso
+            document.querySelector("#winput").readOnly = true
+        }
+        if(u_infos.altura){
+            document.querySelector("#hinput").value = u_infos.altura
+            document.querySelector("#hinput").readOnly = true
+        }
+        if(u_infos.peso && u_infos.altura){
+            let IMC = u_infos.peso / (u_infos.altura * u_infos.altura)
+            document.querySelector("#imchere").innerHTML = IMC.toFixed(1)
+            document.querySelector("#btnImc").innerHTML = "Editar"
+        }
     }
 }
 async function enviarArquivo() {
@@ -117,9 +158,55 @@ async function enviarArquivo() {
       });
     
 }
+async function ConcluirPerfil(){
+    if(!u_infos.altura){
+        const altura = document.querySelector("#hinput").value
+        const peso = document.querySelector("#winput").value
+        let json = {
+            "id" : u_infos.id,
+            "altura" : altura,
+            "peso" : peso
+        }
 
-colo()
-async function colo(){
+        const dados = await fetch('http://localhost:3333/cadastrar/imc',{
+            method: "POST",
+            body: JSON.stringify(json),
+            headers: {
+                "Content-Type": "application/json"
+              },
+    });
+    resposta = await dados.json();
+    if(resposta){
+        Query_Alguem_Logado()
+    }
+    }else{
+        document.querySelector("#hinput").readOnly = false
+        document.querySelector("#hinput").focus()
+        document.querySelector("#winput").readOnly = false
+        document.querySelector("#btnImc").innerHTML = "Concluir"
+    }
+    if(document.querySelector("#hinput").value != u_infos.altura || document.querySelector("#winput").value != u_infos.peso){
+        let json = {
+            "id" : u_infos.id,
+            "altura" : document.querySelector("#hinput").value,
+            "peso" : document.querySelector("#winput").value
+        }
+        const dados = await fetch('http://localhost:3333/cadastrar/imc',{
+            method: "POST",
+            body: JSON.stringify(json),
+            headers: {
+                "Content-Type": "application/json"
+              },
+        });
+        resposta = await dados.json();
+        if(resposta){
+            Query_Alguem_Logado()
+        }
+    }
+}
+
+flag()
+async function flag(){
     const dados = await fetch('https://restcountries.com/v3.1/all', {
         method: "GET",
         headers: {
@@ -128,8 +215,9 @@ async function colo(){
     });
     resposta = await dados.json();
     let bandeira
+    let u_indos2 = u_infos2
     resposta.forEach(element => {
-        if(element.name.common == u_infos.pais){
+        if(element.name.common == u_infos2.pais){
             bandeira = element.flags.svg
         }
     });
