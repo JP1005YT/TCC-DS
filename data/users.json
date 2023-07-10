@@ -11,7 +11,10 @@
             "id": "d58187c3-128c-49b2-8068-6b1ea29d7a41",
             "profile_photo": "cd1a25bc-a568-408a-a6f0-1a4db3224c26.png",
             "peso": "72",
-            "altura": "1.82"
+            "altura": "1.82",
+            "chats": [
+                "b89de274-f1af-476e-9934-ea7a3cb61494"
+            ]
         },
         {
             "nome": "ZIKI",
@@ -41,7 +44,10 @@
             "data": "2001-01-01",
             "sexo": "Masculino",
             "pais": "Brazil",
-            "id": "9f8fbb43-566b-47de-9cba-c00cc1fbcd19"
+            "id": "9f8fbb43-566b-47de-9cba-c00cc1fbcd19",
+            "chats": [
+                "b89de274-f1af-476e-9934-ea7a3cb61494"
+            ]
         },
         {
             "nome": "Matheus Mendes",

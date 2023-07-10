@@ -30,6 +30,25 @@ class Chats{
             }
         });
         P.Guardar("./data/users.json",Usuarios)
+        return Chat.id
+    }
+    BuscaChatsInfos(Req){
+        let ChatsBD = P.Buscar("./data/chats.json")
+        let user
+        ChatsBD.chats.forEach(chat => {
+            if(chat.id === Req.body.idchat){
+                chat.users.forEach(usuario => {
+                    if(usuario != Req.body.iduser){
+                        let bdusuarios = JSON.parse(P.fs.readFileSync('./data/users.json'))
+                        bdusuarios.users.forEach(element => {
+                        if (element.id == usuario) {
+                            user = element.nome
+                        }})
+                    }
+                })
+            }
+        })
+        return user
     }
 }
 

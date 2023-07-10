@@ -15,7 +15,6 @@ document.querySelector("#configBtn").addEventListener("click",setting_screen)
 function setting_screen(){
     document.querySelector('#configuracoes_screen').classList.toggle('ativo') 
 }
-
 document.querySelector("#sendDirect").addEventListener("click",async function(){
     const dados = await fetch('http://localhost:3333/newchat', {
         method: "POST",
@@ -28,6 +27,7 @@ document.querySelector("#sendDirect").addEventListener("click",async function(){
         })
     });
     resposta = await dados.json();
+    window.location.href = `http://localhost:3333/pages/chat/?id=${resposta.id}`
 })
 async function Query_Alguem_Logado(json){
     const dados = await fetch('http://localhost:3333/check',{

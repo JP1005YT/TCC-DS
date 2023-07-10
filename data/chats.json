@@ -1,3 +1,12 @@
 {
-    "chats": []
+    "chats": [
+        {
+            "id": "b89de274-f1af-476e-9934-ea7a3cb61494",
+            "users": [
+                "d58187c3-128c-49b2-8068-6b1ea29d7a41",
+                "9f8fbb43-566b-47de-9cba-c00cc1fbcd19"
+            ],
+            "historico": []
+        }
+    ]
 }

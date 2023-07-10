@@ -22,11 +22,12 @@ const io = S.io
 io.on('connection', (socket) => {
     console.log('Novo usuário conectado');
 
-    // Manipulador de eventos para receber mensagens do chat
-    socket.on('chat-message', (message) => {
-        console.log('Mensagem recebida:', message);
-        io.emit('chat-message', message); // Envia a mensagem para todos os clientes conectados
+    socket.on('chat', (chatId, message) => {
+        console.log(`Mensagem recebida no chat "${chatId}":`, message);
+        io.emit(chatId,message)
     });
+
+
 });
 
 app.get("/pages/:page", (req, res) => {
@@ -133,7 +134,13 @@ app.post('/upimage', UploadImage.single('image'), async (req, res) => {
 
 const ChatManager = new Chats()
 app.post('/newchat',async (req,res) => {
-    ChatManager.CriarChat(req.body)
+    // res.send(ChatManager.CriarChat(req.body))
+    res.send({"id":"b89de274-f1af-476e-9934-ea7a3cb61494"})
+})
+
+app.post('/ChatsInfos',async (req,res) => {
+    let nome = ChatManager.BuscaChatsInfos(req)
+    res.send({"nome":nome})
 })
   
 // Quando for QUERY(variavel na url "?aa=teste") req.query

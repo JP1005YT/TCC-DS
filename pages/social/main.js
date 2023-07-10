@@ -2,6 +2,7 @@ let variavelDebug = false
 let hashtagstonewpost = []
 let comparetag
 let u_infos
+
 function volta(){
     window.location.href = `../../`;
 }
@@ -16,6 +17,10 @@ async function Query_Alguem_Logado(json){
     });
     resposta = await dados.json();
     u_infos = resposta
+    LoadDirects()
+    if(!u_infos){
+      window.location.href = "http://localhost:3333/pages/acess/"
+    }
 }
 
 function ToNovoPost(){
@@ -24,6 +29,25 @@ function ToNovoPost(){
 
 function ToNovaTag(){
     document.querySelector("#tag-page").classList.toggle("ativo")
+}
+
+async function LoadDirects(){
+  u_infos.chats.forEach(async element => {
+    const dados = await fetch('http://localhost:3333/ChatsInfos',{
+        method: "POST",
+        body: JSON.stringify({"idchat":element,"iduser":u_infos.id}),
+        headers: {
+          "Content-Type": "application/json"
+        }
+    });
+    resposta = await dados.json();
+    let li = document.createElement("li")
+    li.innerHTML = resposta.nome
+    li.addEventListener("click",() => {
+      window.location.href = `http://localhost:3333/pages/chat/?id=${element}`
+    })
+    document.querySelector("#chatsopn").appendChild(li)
+  })
 }
 
 let Hashtags
@@ -47,10 +71,8 @@ async function LoadPosts(){
         method: "POST"
     });
     const resposta = await dados.json();
-    console.log(resposta.posts)
     resposta.posts.forEach(async post => {
       // Checar se tem imagems
-      console.log(post)
       const dados = await fetch('http://localhost:3333/checkpost', {
         method: "POST",
         headers: {
@@ -275,7 +297,6 @@ function makeid(length) {
   }
   return result;
 }
-
 LoadTags()
 LoadPosts()
 Query_Alguem_Logado()
