@@ -48,17 +48,6 @@
             "chats": [
                 "b89de274-f1af-476e-9934-ea7a3cb61494"
             ]
-        },
-        {
-            "nome": "Matheus Mendes",
-            "user": "M3NT0Sz",
-            "email": "matheusmendes2005@outlook.com",
-            "senha": "$2b$10$DqOStP0VR8fA9vjkstsFZeMavR3E4ATMmEZUOYUvpUJxbotOAecMm",
-            "data": "2005-08-26",
-            "sexo": "Masculino",
-            "pais": "Brazil",
-            "id": "bccc10e6-6507-4154-85f9-c25da14236b8",
-            "profile_photo": "c602f1cd-1f1b-4f83-bfbd-7f3ec61c5657.png"
         }
     ]
 }

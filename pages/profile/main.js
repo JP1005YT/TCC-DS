@@ -5,7 +5,7 @@ let u_infos2
 
 function volta(){
     if(params.has("id")){
-    window.location.href = `http://localhost:3333/pages/social/`;
+    window.location.href = `../../pages/social/`;
     }else{
         window.location.href = `../../`;
     }
@@ -16,7 +16,7 @@ function setting_screen(){
     document.querySelector('#configuracoes_screen').classList.toggle('ativo') 
 }
 document.querySelector("#sendDirect").addEventListener("click",async function(){
-    const dados = await fetch('http://localhost:3333/newchat', {
+    const dados = await fetch('../../newchat', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -27,10 +27,10 @@ document.querySelector("#sendDirect").addEventListener("click",async function(){
         })
     });
     resposta = await dados.json();
-    window.location.href = `http://localhost:3333/pages/chat/?id=${resposta.id}`
+    window.location.href = `../../pages/chat/?id=${resposta.id}`
 })
 async function Query_Alguem_Logado(json){
-    const dados = await fetch('http://localhost:3333/check',{
+    const dados = await fetch('../../check',{
         method: "POST",
         body: JSON.stringify(json),
         headers: {
@@ -64,7 +64,7 @@ async function Query_Image(event) {
     formData.append('id', u_infos.id);
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost:3333/upimage');
+    xhr.open('POST', '../..:3333/upimage');
     xhr.onload = function () {
         if (xhr.status === 200) {
             console.log('Arquivo enviado com sucesso!');
@@ -80,7 +80,7 @@ function MudarImagem(){
     document.querySelector('#troca_imagem_screen').classList.toggle('ativo') 
 }
 async function Sair(){
-    const dados = await fetch('http://localhost:3333/sair',{
+    const dados = await fetch('../../sair',{
         method: "POST",
         headers: {
             "token": localStorage.getItem("token")
@@ -94,7 +94,7 @@ async function Sair(){
 async function ConstruirProfile(another){
     let user_profile= document.querySelector("#screen_username")
     if(another){
-        const dados = await fetch('http://localhost:3333/puxausuario',{
+        const dados = await fetch('../../puxausuario',{
             method: "POST",
             headers: {
                 "id": another,
@@ -105,7 +105,7 @@ async function ConstruirProfile(another){
         u_infos2 = resposta
         user_profile.innerHTML = u_infos2['nome']
         if(u_infos2.profile_photo){
-            document.getElementById('img_profile').setAttribute('src', `http://localhost:3333/profile_images/${u_infos2.profile_photo}`);
+            document.getElementById('img_profile').setAttribute('src', `../../profile_images/${u_infos2.profile_photo}`);
         }else{
             document.getElementById('img_profile').setAttribute('src',`../../resources/profile_photos/default.png`)
         }
@@ -122,7 +122,7 @@ async function ConstruirProfile(another){
 
         user_profile.innerHTML = u_infos['nome']
         if(u_infos.profile_photo){
-            document.getElementById('img_profile').setAttribute('src', `http://localhost:3333/profile_images/${u_infos.profile_photo}`);
+            document.getElementById('img_profile').setAttribute('src', `../../profile_images/${u_infos.profile_photo}`);
         }else{
             document.getElementById('img_profile').setAttribute('src',`../../resources/profile_photos/default.png`)
         }
@@ -168,7 +168,7 @@ async function ConcluirPerfil(){
             "peso" : peso
         }
 
-        const dados = await fetch('http://localhost:3333/cadastrar/imc',{
+        const dados = await fetch('../../cadastrar/imc',{
             method: "POST",
             body: JSON.stringify(json),
             headers: {
@@ -191,7 +191,7 @@ async function ConcluirPerfil(){
             "altura" : document.querySelector("#hinput").value,
             "peso" : document.querySelector("#winput").value
         }
-        const dados = await fetch('http://localhost:3333/cadastrar/imc',{
+        const dados = await fetch('../../cadastrar/imc',{
             method: "POST",
             body: JSON.stringify(json),
             headers: {

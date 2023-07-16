@@ -15,9 +15,9 @@ class Chats{
         ChatsBD.chats.push(chat)
         P.fs.mkdir(`./public/chats/${chat.id}`,(err) => {
         })
-
         this.GuardarIdnosUsuarios(chat)
         P.Guardar("./data/chats.json",ChatsBD)
+        return chat.id
     }
     GuardarIdnosUsuarios(Chat){
         let Usuarios = P.Buscar("./data/users.json")
@@ -49,6 +49,15 @@ class Chats{
             }
         })
         return user
+    }
+    async RegistrarMensagens(chatId,Mensagem){
+        let ChatsBD = P.Buscar("./data/chats.json")
+        ChatsBD.chats.forEach(chat => {
+            if(chat.id === chatId){
+                chat.historico.push(Mensagem)
+            }
+        })
+        P.Guardar("./data/chats.json",ChatsBD)
     }
 }
 

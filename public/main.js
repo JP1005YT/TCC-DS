@@ -14,16 +14,16 @@ function troca_menu(){
 }
 function Troca_Pagina(e){
     if(u_infos && e == "acess"){
-        window.location.href = `pages/profile/`
+        window.location.href = `./pages/profile/`
     }else{
-        window.location.href = `pages/${e}/`
+        window.location.href = `./pages/${e}/`
     }
 }
 // Funções de Back-End
 // Ex: Processamento de dados e encaminhamento para o banco
 
 async function Query_Alguem_Logado(json){
-    const dados = await fetch('http://localhost:3333/check',{
+    const dados = await fetch('./check',{
         method: "POST",
         body: JSON.stringify(json),
         headers: {

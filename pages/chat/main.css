@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    overflow: hidden;
+    background: url("http://localhost:3333/resources/assets/FundoSocial.png");
+    background-size: 20%;
+    height: 100%;
+}
+i{
+    top: 0;
+    left: 0;
+    margin: 1%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5%;
+    font-size: 25px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+#chat{
+    width: 80%;
+    margin-left:10% ;
+    height: 100%;
+    background: white;
+}
+#messages{
+    padding: 0 3% 0 3%;
+    overflow-y: scroll;
+    height: 90%;
+}
+#messages li{
+    padding: 0.7%;
+    list-style-type: none;
+}
+#messages .title{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#messages .title::before{
+    position: absolute;
+    content: "";
+    width: 90%;
+    height: 5px;
+    background: #ccc;
+}
+#messages .title div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: bold;
+    width: 20%;
+    background: #fff;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background: #ccc;
+}
+#messages li div{
+    display: flex;
+    font-size: 20px;
+    width: fit-content;
+    background-color: #DCF8C6;
+    border-radius: 15px;
+    padding: 10px;
+    position: relative;
+}
+#messages li span{
+    font-size: 11px;
+    color: #777;
+    display: block;
+    padding-left: 5px;
+    margin-top: 10px;
+}
+#messages .me{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+#message-form{
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#message-form input{
+    padding: 1%;
+    font-size: 35px;
+    width: 90%;
+}
+#message-form button{
+    padding: 1%;
+    font-size: 35px;
+    width: 10%;
+}

@@ -83,7 +83,7 @@ async function Query_Cadastrar(json){
     // }
 }
 async function Query_Logar(json){
-    const dados = await fetch('http://localhost:3333/login', {
+    const dados = await fetch('../../login', {
         method: "POST",
         headers: {
             "Content-Type": "application/json" // Define o cabeçalho para JSON

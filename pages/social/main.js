@@ -8,7 +8,7 @@ function volta(){
 }
 
 async function Query_Alguem_Logado(json){
-    const dados = await fetch('http://localhost:3333/check',{
+    const dados = await fetch('../../check',{
         method: "POST",
         body: JSON.stringify(json),
         headers: {
@@ -19,7 +19,7 @@ async function Query_Alguem_Logado(json){
     u_infos = resposta
     LoadDirects()
     if(!u_infos){
-      window.location.href = "http://localhost:3333/pages/acess/"
+      window.location.href = "../../pages/acess/"
     }
 }
 
@@ -33,7 +33,7 @@ function ToNovaTag(){
 
 async function LoadDirects(){
   u_infos.chats.forEach(async element => {
-    const dados = await fetch('http://localhost:3333/ChatsInfos',{
+    const dados = await fetch('../../ChatsInfos',{
         method: "POST",
         body: JSON.stringify({"idchat":element,"iduser":u_infos.id}),
         headers: {
@@ -44,7 +44,7 @@ async function LoadDirects(){
     let li = document.createElement("li")
     li.innerHTML = resposta.nome
     li.addEventListener("click",() => {
-      window.location.href = `http://localhost:3333/pages/chat/?id=${element}`
+      window.location.href = `../../pages/chat/?id=${element}`
     })
     document.querySelector("#chatsopn").appendChild(li)
   })
@@ -52,7 +52,7 @@ async function LoadDirects(){
 
 let Hashtags
 async function LoadTags() {
-    const dados = await fetch('http://localhost:3333/tags', {
+    const dados = await fetch('../../tags', {
         method: "POST"
     });
     const resposta = await dados.json();
@@ -67,13 +67,13 @@ async function LoadTags() {
 }
 
 async function LoadPosts(){
-    const dados = await fetch('http://localhost:3333/buscarpost', {
+    const dados = await fetch('../../buscarpost', {
         method: "POST"
     });
     const resposta = await dados.json();
     resposta.posts.forEach(async post => {
       // Checar se tem imagems
-      const dados = await fetch('http://localhost:3333/checkpost', {
+      const dados = await fetch('../../checkpost', {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -88,7 +88,7 @@ async function LoadPosts(){
         span_quempostou.addEventListener("click",function(){
           const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
           localStorage.setItem('scrollPosition', scrollPosition);
-          window.location.href = "http://localhost:3333/pages/profile/?id=" + post.User_ID
+          window.location.href = "../../pages/profile/?id=" + post.User_ID
         })
         let title_post = document.createElement("h2")
         let ul_post = document.createElement("ul")
@@ -108,7 +108,7 @@ async function LoadPosts(){
         div_post.appendChild(p)
         temImagem.forEach(img => {
           let img_dom = document.createElement("img")
-          img_dom.setAttribute("src",`http://localhost:3333/posts_images/${post.Post_ID}/${img}`)
+          img_dom.setAttribute("src",`../../posts_images/${post.Post_ID}/${img}`)
           div_post.appendChild(img_dom)
         })
         document.querySelector('#dashboard').appendChild(div_post)
@@ -224,7 +224,7 @@ function RankHashTags() {
       li.setAttribute("id", HashtagsHere2[MaiorUsoP].display);
       
       li.addEventListener("click", function() {
-        window.location.href = `http://localhost/TCC-DS/pages/social?tag=${this.id}`;
+        window.location.href = `../../pages/social/?tag=${this.id}`;
       });
       
       li.appendChild(spanDisplay);
@@ -244,7 +244,7 @@ function NovaTag(){
 }
 
 async function QueryNovaTag(tag){
-    const dados = await fetch('http://localhost:3333/newtag',{
+    const dados = await fetch('../../newtag',{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -275,7 +275,7 @@ function NovoPost() {
 
   const xhr = new XMLHttpRequest();
   let id = makeid(10)
-  xhr.open("POST", `http://localhost:3333/newpost/${id}`);
+  xhr.open("POST", `../../newpost/${id}`);
   xhr.onload = function () {
     if (xhr.status === 200) {
       console.log("Arquivo enviado com sucesso!");

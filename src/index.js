@@ -9,6 +9,7 @@ const {Profile_Photo_Manager} = require("../classes/Profile_ImG.js")
 const {Server} = require("../configs/Server.js");
 const {Novo_Post} = require("../classes/Criar_Novo_Post.js")
 const {Chats} = require("../classes/Chats.js")
+const ChatManager = new Chats()
 const UploadImagePosts = require("../classes/UploadImagePost.js")
 const UploadImage = require("../classes/UploadImagePerfil.js");
  
@@ -22,9 +23,15 @@ const io = S.io
 io.on('connection', (socket) => {
     console.log('Novo usuário conectado');
 
-    socket.on('chat', (chatId, message) => {
+    socket.on('chat',(chatId, message) => {
+        let MensagemFormatada = {
+            "msg" : message[0],
+            "date" : message[1],
+            "id_user" : message[2]
+        }
+        ChatManager.RegistrarMensagens(chatId,MensagemFormatada)
         console.log(`Mensagem recebida no chat "${chatId}":`, message);
-        io.emit(chatId,message)
+        io.emit(chatId,MensagemFormatada)
     });
 
 
@@ -132,16 +139,25 @@ app.post('/upimage', UploadImage.single('image'), async (req, res) => {
     }
 });
 
-const ChatManager = new Chats()
 app.post('/newchat',async (req,res) => {
-    // res.send(ChatManager.CriarChat(req.body))
-    res.send({"id":"b89de274-f1af-476e-9934-ea7a3cb61494"})
+    res.send(ChatManager.CriarChat(req.body))
 })
 
 app.post('/ChatsInfos',async (req,res) => {
     let nome = ChatManager.BuscaChatsInfos(req)
     res.send({"nome":nome})
 })
-  
+
+app.post('/ChatAll',async (req,res) => {
+    let infos = await P.Buscar("./data/chats.json")
+    infos.chats.forEach(item => {
+        console.log(req.query.id)
+        if(item.id === req.query.id){
+            res.send(item)
+        }else{
+            res.send(false)
+        }
+    })
+})
 // Quando for QUERY(variavel na url "?aa=teste") req.query
 // Quando for variavel de local id/:id e para ler req.params.id

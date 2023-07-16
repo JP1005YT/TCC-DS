@@ -6,7 +6,38 @@
                 "d58187c3-128c-49b2-8068-6b1ea29d7a41",
                 "9f8fbb43-566b-47de-9cba-c00cc1fbcd19"
             ],
-            "historico": []
+            "historico": [
+                {
+                    "msg": "Bom Dia",
+                    "date": "14/07/23 20:22",
+                    "id_user": "d58187c3-128c-49b2-8068-6b1ea29d7a41"
+                },
+                {
+                    "msg": "Bom dia",
+                    "date": "14/07/23 20:22",
+                    "id_user": "9f8fbb43-566b-47de-9cba-c00cc1fbcd19"
+                },
+                {
+                    "msg": "Que Bonito",
+                    "date": "15/07/23 20:22",
+                    "id_user": "d58187c3-128c-49b2-8068-6b1ea29d7a41"
+                },
+                {
+                    "msg": "Lindo até",
+                    "date": "15/07/23 20:22",
+                    "id_user": "9f8fbb43-566b-47de-9cba-c00cc1fbcd19"
+                },
+                {
+                    "msg": "Tudo bem?",
+                    "date": "15/07/23 21:26",
+                    "id_user": "d58187c3-128c-49b2-8068-6b1ea29d7a41"
+                },
+                {
+                    "msg": "Até que ta",
+                    "date": "15/07/23 21:27",
+                    "id_user": "9f8fbb43-566b-47de-9cba-c00cc1fbcd19"
+                }
+            ]
         }
     ]
 }
