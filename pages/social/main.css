@@ -197,12 +197,13 @@ main > nav > ul li{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2%;
+    padding: 3%;
     border-radius: 10px;
+    background: var(--base1);
 }
 main > nav > ul li:hover{
     cursor: pointer;
-    background: var(--contraste);
+    /* background: var(--contraste); */
 }
 main #dashboard{
     padding: 2%;
@@ -466,4 +467,29 @@ main #dashboard .post ul{
 .tag-page.ativo div span{
     margin-top: 12%;
     font-size: 35px;
+}
+#deleteBtn{
+    font-size: 25px;
+    border-radius: 0px 10px 10px 0px;
+    background: var(--base1);
+    cursor: pointer;
+}
+#deleteBtn:hover{
+    background:red;
+    color: var(--branco);
+}
+main > nav > ul div {
+    display: flex;
+    width: 100%;
+    margin: 2%;
+}
+/* main > nav > ul div:hover li{
+    background: var(--contraste);
+} */
+main > nav > ul div li{
+    border-radius: 10px 0 0 10px;
+}
+
+#morehashs li{
+    margin: 2%;
 }

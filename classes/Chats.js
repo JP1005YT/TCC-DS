@@ -13,8 +13,8 @@ class Chats{
             "historico" : []
         }
         ChatsBD.chats.push(chat)
-        P.fs.mkdir(`./public/chats/${chat.id}`,(err) => {
-        })
+        // P.fs.mkdir(`./public/chats/${chat.id}`,(err) => {
+        // })
         this.GuardarIdnosUsuarios(chat)
         P.Guardar("./data/chats.json",ChatsBD)
         return chat.id
@@ -58,6 +58,25 @@ class Chats{
             }
         })
         P.Guardar("./data/chats.json",ChatsBD)
+    }
+    async DeletarChat(ChatId){
+        let ChatsBD = P.Buscar("./data/chats.json")
+        let UsuariosBD = P.Buscar("./data/users.json")
+        ChatsBD.chats.forEach(Chat => {
+            if(ChatId.idchat === Chat.id){
+                Chat.users.forEach(ChatUser => {
+                    UsuariosBD.users.forEach(Usuario => {
+                        if(Usuario.id === ChatUser){
+                            Usuario.chats.splice(Usuario.chats.indexOf(Chat.id),1)
+                        }
+                    })
+                    P.Guardar("./data/users.json",UsuariosBD)
+                })
+                ChatsBD.chats.splice(ChatsBD.chats.indexOf(Chat),1)
+            }
+        })
+        P.Guardar("./data/chats.json",ChatsBD)
+        return true
     }
 }
 

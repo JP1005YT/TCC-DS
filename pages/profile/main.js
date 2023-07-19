@@ -3,6 +3,24 @@ const params = new URLSearchParams(queryString)
 let u_infos
 let u_infos2
 
+async function flag(Usuario){
+    const dados = await fetch('https://restcountries.com/v3.1/all', {
+        method: "GET",
+        headers: {
+            "Accept": "application/json"
+          }
+    });
+    resposta = await dados.json();
+    let bandeira    
+    resposta.forEach(element => {
+        if(element.name.common == Usuario.pais){
+            bandeira = element.flags.svg
+        }
+    });
+    document.querySelector("#flag").setAttribute('src',bandeira)
+}
+
+
 function volta(){
     if(params.has("id")){
     window.location.href = `../../pages/social/`;
@@ -103,6 +121,7 @@ async function ConstruirProfile(another){
         });
         resposta = await dados.json();
         u_infos2 = resposta
+        flag(u_infos2)
         user_profile.innerHTML = u_infos2['nome']
         if(u_infos2.profile_photo){
             document.getElementById('img_profile').setAttribute('src', `../../profile_images/${u_infos2.profile_photo}`);
@@ -121,6 +140,7 @@ async function ConstruirProfile(another){
     }else{
 
         user_profile.innerHTML = u_infos['nome']
+        flag(u_infos)
         if(u_infos.profile_photo){
             document.getElementById('img_profile').setAttribute('src', `../../profile_images/${u_infos.profile_photo}`);
         }else{
@@ -205,22 +225,4 @@ async function ConcluirPerfil(){
     }
 }
 
-flag()
-async function flag(){
-    const dados = await fetch('https://restcountries.com/v3.1/all', {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    });
-    resposta = await dados.json();
-    let bandeira
-    let u_indos2 = u_infos2
-    resposta.forEach(element => {
-        if(element.name.common == u_infos2.pais){
-            bandeira = element.flags.svg
-        }
-    });
-    document.querySelector("#flag").setAttribute('src',bandeira)
-}
 Query_Alguem_Logado()

@@ -41,12 +41,32 @@ async function LoadDirects(){
         }
     });
     resposta = await dados.json();
+    let div = document.createElement("div")
     let li = document.createElement("li")
+    let dell = document.createElement("i")
+
+    dell.setAttribute("class","bx bx-x")
+    dell.setAttribute("id","deleteBtn")
+    dell.addEventListener("click",async() => {
+      const dados = await fetch('../../deletechat',{
+        method: "POST",
+        body: JSON.stringify({"idchat":element}),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      resposta = await dados.json()
+      if(resposta){
+        window.location.href = "../../pages/social/"
+      }
+    })
     li.innerHTML = resposta.nome
     li.addEventListener("click",() => {
       window.location.href = `../../pages/chat/?id=${element}`
     })
-    document.querySelector("#chatsopn").appendChild(li)
+    div.appendChild(li)
+    div.appendChild(dell)
+    document.querySelector("#chatsopn").appendChild(div)
   })
 }
 

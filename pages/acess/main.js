@@ -70,7 +70,7 @@ function Processar_Login(){
     document.getElementById('senha_l').value = ""
 }
 async function Query_Cadastrar(json){
-    const dados = await fetch('http://localhost:3333/cadastrar', {
+    const dados = await fetch('../../cadastrar', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -78,9 +78,7 @@ async function Query_Cadastrar(json){
         body: JSON.stringify(json)
     });
     resposta = await dados.json();
-    // if(resposta.nome){
-    //     u_name = resposta.nome
-    // }
+    window.location.href = '../../pages/acess/'
 }
 async function Query_Logar(json){
     const dados = await fetch('../../login', {

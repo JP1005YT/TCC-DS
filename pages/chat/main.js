@@ -8,7 +8,7 @@ let conversa
 let u_infos
 
 async function obterdados(){
-    const dados = await fetch('../../ChatAll?id=' + Id_Chat,{
+    const dados = await fetch('../../ChatAll?id=' + Id_Chat + '&id_user=' + u_infos.id,{
         method: "POST",
         headers: {
             teste: "true",
@@ -16,7 +16,11 @@ async function obterdados(){
         }
     });
     conversa = await dados.json();
-    carregarMensagems()
+    if(conversa){
+        carregarMensagems()
+    }else{
+        window.location.href = `../../`;
+    }
 }
 async function Query_Alguem_Logado(){
     const dados = await fetch('../../check',{
@@ -27,6 +31,7 @@ async function Query_Alguem_Logado(){
     });
     resposta = await dados.json();
     u_infos = resposta
+    obterdados()
 }
 function formatarData(data) {
     const dia = String(data.getDate()).padStart(2, '0');
@@ -63,7 +68,6 @@ socket.on(Id_Chat, (mensagem) => {
         
         div.textContent = mensagem.msg;
         span.textContent = hora
-        console.log(hora)
         div.appendChild(span)
         li.appendChild(div)
 
@@ -73,13 +77,13 @@ socket.on(Id_Chat, (mensagem) => {
             li.setAttribute("class","another")
         }
         messagesList.appendChild(li);
+        messagesList.scrollTop = messagesList.scrollHeight;
 });
 
 function carregarMensagems(){
     let dia = new Date()
     let primeiro = true
     conversa.historico.forEach(mensagem => {
-        console.log(mensagem)
         const messagesList = document.getElementById('messages');
         let li = document.createElement('li')
         let div = document.createElement('div')
@@ -101,10 +105,6 @@ function carregarMensagems(){
 
         dia.setHours(0, 0, 0, 0);
         dataAtual.setHours(0, 0, 0, 0);
-        
-        console.log(dia)
-        console.log(dataPerData)
-        console.log('---')
         
         if(dia.getDay() !== dataPerData.getDay()){
             dia = dataPerData
@@ -139,11 +139,12 @@ function carregarMensagems(){
             li.setAttribute("class","another")
         }
         messagesList.appendChild(li);
+        messagesList.scrollTop = messagesList.scrollHeight;
     })
 }
+
 function back(){
     window.location.href = "../../pages/social/"
 }
 
 Query_Alguem_Logado()
-obterdados()

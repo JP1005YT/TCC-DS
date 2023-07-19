@@ -150,14 +150,21 @@ app.post('/ChatsInfos',async (req,res) => {
 
 app.post('/ChatAll',async (req,res) => {
     let infos = await P.Buscar("./data/chats.json")
+    let chatExiste = false
     infos.chats.forEach(item => {
-        console.log(req.query.id)
         if(item.id === req.query.id){
-            res.send(item)
-        }else{
-            res.send(false)
+            chatExiste = item
+        }
+        if(item.users.indexOf(req.query.id_user) === -1){
+            chatExiste = false
         }
     })
+    res.send(chatExiste)
+})
+
+app.post('/deletechat',async (req,res) => {
+    let resp = await ChatManager.DeletarChat(req.body)
+    res.send(resp)
 })
 // Quando for QUERY(variavel na url "?aa=teste") req.query
 // Quando for variavel de local id/:id e para ler req.params.id
