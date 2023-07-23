@@ -47,9 +47,11 @@ document.getElementById('message-form').addEventListener('submit', (event) => {
     event.preventDefault();
     const input = document.getElementById('input-message');
     const dataAgora = new Date()
-    const message = [input.value,formatarData(dataAgora),u_infos.id];
-    socket.emit("chat",Id_Chat,message);
-    input.value = '';
+    if(input.value){
+        const message = [input.value,formatarData(dataAgora),u_infos.id];
+        socket.emit("chat",Id_Chat,message);
+        input.value = '';
+    }
 });
 
 // Manipulador de eventos para exibir novas mensagens recebidas
