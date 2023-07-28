@@ -12,14 +12,15 @@ font-family: 'Roboto', sans-serif; */
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: '?]]~~', sans-serif;
 }
 body{
     position:relative;
     overflow-x: hidden;
     width: 100vw;
     height: 300vw;
-    background: linear-gradient(var(--cor1),rgb(5, 155, 165));
+    background: url('./resources/assets/FundoSocial.png');
+    background-size: 20%;
 }
 /* Headers */
 .menu{

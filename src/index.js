@@ -37,6 +37,11 @@ io.on('connection', (socket) => {
 
 });
 
+app.get('/socorro',async (req,res) => {
+    let resp = await NovoPOST.RecarregarTags()
+    res.send(resp)
+})
+
 app.get("/pages/:page", (req, res) => {
     const page = req.params.page;
     const filePath = P.path.join(__dirname,"..", "Pages", page, "index.html");

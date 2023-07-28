@@ -17,7 +17,9 @@ Home,
     A --> G(Social)
 ```
 ## Anotações JP
-    > **IMPORTANTE** Adicionar Peso,Altura no banco
+    > Ao criar chat , redirecionar para o mesmo
+    > Ao criar nova tag retirar arrumar o recarregamento do rank que esta duplicando
+    > Ao criar novo post fechar a pagina e zerar os inputs
     > Foto_de_Perfil
     > Checagem de Usuario (Existente)
     > Enter para formularios
