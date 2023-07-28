@@ -82,7 +82,7 @@ async function Query_Image(event) {
     formData.append('id', u_infos.id);
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', '../..:3333/upimage');
+    xhr.open('POST', '../../upimage');
     xhr.onload = function () {
         if (xhr.status === 200) {
             console.log('Arquivo enviado com sucesso!');
