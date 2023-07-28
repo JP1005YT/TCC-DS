@@ -35,4 +35,3 @@ Home,
 > $ git config --global user.name "JP1005YT"
 
 >https://jwt.io/
->https://caloriasporalimentoapi.herokuapp.com/
