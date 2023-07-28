@@ -28,3 +28,4 @@ Home,
 > $ git config --global user.name "JP1005YT"
 
 >https://jwt.io/
+>https://prod.liveshare.vsengsaas.visualstudio.com/join?DB628DA1F6C6D7D7530976A45B1B02DE604B
