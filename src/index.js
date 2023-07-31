@@ -12,7 +12,7 @@ const {Chats} = require("../classes/Chats.js")
 const ChatManager = new Chats()
 const UploadImagePosts = require("../classes/UploadImagePost.js")
 const UploadImage = require("../classes/UploadImagePerfil.js");
- 
+
 let S = new Server()
 S.start()
 const app = S.app

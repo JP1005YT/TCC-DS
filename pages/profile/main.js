@@ -93,6 +93,7 @@ async function Query_Image(event) {
         }
     };
     xhr.send(formData);
+    window.location.href = "../../pages/profile/"
 }
 function MudarImagem(){
     document.querySelector('#troca_imagem_screen').classList.toggle('ativo') 
