@@ -19,6 +19,7 @@ function Troca_Pagina(e){
         window.location.href = `./pages/${e}/`
     }
 }
+
 // Funções de Back-End
 // Ex: Processamento de dados e encaminhamento para o banco
 

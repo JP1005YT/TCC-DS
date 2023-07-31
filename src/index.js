@@ -145,7 +145,9 @@ app.post('/upimage', UploadImage.single('image'), async (req, res) => {
 });
 
 app.post('/newchat',async (req,res) => {
-    res.send(ChatManager.CriarChat(req.body))
+    let id = await ChatManager.CriarChat(req.body)
+    console.log(id)
+    res.send(id)
 })
 
 app.post('/ChatsInfos',async (req,res) => {

@@ -320,6 +320,7 @@ body{
     border: none;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     text-align: center;
     width: 15%;
@@ -333,6 +334,10 @@ body{
     border-radius: 25px;
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.419);
     background: linear-gradient(60deg ,var(--cor2),rgb(5, 155, 165));
+}
+#sendDirect span{
+    padding: 10px 0 0 0;
+    font-size: 15px;
 }
 #sendDirect:hover{
     cursor: pointer;

@@ -13,11 +13,9 @@ class Chats{
             "historico" : []
         }
         ChatsBD.chats.push(chat)
-        // P.fs.mkdir(`./public/chats/${chat.id}`,(err) => {
-        // })
         this.GuardarIdnosUsuarios(chat)
         P.Guardar("./data/chats.json",ChatsBD)
-        return chat.id
+        return {"id" : chat.id}
     }
     GuardarIdnosUsuarios(Chat){
         let Usuarios = P.Buscar("./data/users.json")

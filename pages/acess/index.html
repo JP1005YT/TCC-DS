@@ -23,6 +23,7 @@
                 <input id="email_l" placeholder="E-mail" type="email">
                 <input id="senha_l" placeholder="Senha" type="password">
                 <button onclick="Processar_Login()">Entrar</button>
+                <a id="link" onclick="troca_cor_log()">Não Tem Conta?</a>
             </div>
             <div class="sign_box" id="sign">
                 
@@ -51,8 +52,9 @@
                     <h2>País</h2>
                     <input list="opcoes" id="paisinput">
                     <datalist id="opcoes"></datalist>
-
+                    
                     <button onclick="Processar_Cadastro()">Cadastrar-se</button>
+                    <a id="link" onclick="troca_cor_log()">Ja Tem Conta?</a>
                 </div>
                 <!-- <input type="file" accept=".png, .jpg, .jpeg"> -->
             </div>

@@ -69,6 +69,11 @@ function Processar_Login(){
     document.getElementById('email_l').value = ""
     document.getElementById('senha_l').value = ""
 }
+addEventListener("keydown",(k)=>{
+    if(k.key === "Enter"){
+        Processar_Login()
+    }
+})
 async function Query_Cadastrar(json){
     const dados = await fetch('../../cadastrar', {
         method: "POST",

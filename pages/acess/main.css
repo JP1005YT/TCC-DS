@@ -6,7 +6,19 @@ font-family: 'Roboto', sans-serif; */
     --cor1:#fff;
     --cor2:rgb(40, 170, 98);
 }
-
+#link{
+    transition: 200ms;
+    position: absolute;
+    bottom: 0;
+    font-size: 15px;
+    margin: 3%;
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+#link:hover{
+    font-size: 20px;
+}
 /* Definições Basicas */
 input:not([type="radio"]){
     border-radius: 25px;
@@ -81,13 +93,14 @@ body{
     align-items: center;
     width: 45%;
     height: 70%;
-    background: #fff;
+    background: #247549;
+    color: white;
     border-radius: 25px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 .login_screen > span div h2.ativo{
-    background:#247549;
-    color: white;
+    background:#fff;
+    color: #247549;
 }
 .login_screen section{
     display: flex;
@@ -104,6 +117,7 @@ body{
     display: none;
 }
 .sign_box.ativo {
+    position: relative;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -130,6 +144,7 @@ body{
     flex-direction: column;
 }
 .login_box.ativo{
+    position: relative;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
