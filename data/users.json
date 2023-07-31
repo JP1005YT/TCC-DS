@@ -1,1 +1,90 @@
-{"users":[{"nome":"João Pedro Garcia Girotto","user":"JP1005YT","email":"godlolpro32@gmail.com","senha":"$2b$10$vmOaWT4F5u/7BUpzmDyRDeY1RdjrFk/tAl6Efng54UZtwF/9OaEnq","data":"2006-01-04","sexo":"Masculino","pais":"Brazil","id":"d58187c3-128c-49b2-8068-6b1ea29d7a41","profile_photo":"88b92ba6-0fb9-4f88-8057-3de9a3cdb53f.png","peso":"72","altura":"1.82","chats":[]},{"nome":"ZIKI","user":"JP LINDO GOSTOSO CHEIROSO","email":"ziki@gemi.com","senha":"$2b$10$uFRE5GGWqs9rxdIG8Aa3/el5SekffYhvVhbPK5A6GLiG7Mv4YjHkm","data":"1989-10-31","sexo":"Outros","pais":"Brazil","id":"849b265f-f78e-4055-9e8b-1aea7ce5e60c"},{"nome":"Manoela Pinheiro da Silva","user":"Ma29","email":"manoela2903@outlook.com","senha":"$2b$10$AjdKHatBf54Pa3Iu51JjbOeT/04A58rz8Zq1NQ.HEeZ4FZHomMamS","data":"2006-03-29","sexo":"Feminino","pais":"Brazil","id":"a484a242-0c31-4f7a-9121-fff41d574905","peso":"59.55","altura":"1.63","chats":[]},{"nome":"teste","user":"teste","email":"teste","senha":"$2b$10$lX0OcNFfMO1THBJ1o3BwReybGqHnEQJFurkRuLsv3RuFQ4hEBNmtK","data":"2001-01-01","sexo":"Masculino","pais":"Brazil","id":"9f8fbb43-566b-47de-9cba-c00cc1fbcd19","chats":["dd3b0e38-88d2-429d-85dd-24346819463e"],"peso":"76","altura":"1.80"},{"nome":"PRETO","user":"PRETO","email":"irmaosgrachahuehue@gmail.com","senha":"$2b$10$AWdAw5o2C9rCTCopyvqogefx22pxq6qmxphrg0NuRrdcfxgG3iqne","data":"2005-10-08","sexo":"Masculino","pais":"Brasil","id":"2f8e76ca-e1e1-4de2-9a8e-142b8d589cd1","chats":[]},{"nome":"Conta2","user":"Conta2","email":"teste2","senha":"$2b$10$4.Erpxad2DX/KrmWo5qxhuftjQMH24MHIv3rIHu2/P0sYgruosuVi","data":"2006-01-04","sexo":"Outros","pais":"Estonia","id":"002207ce-6237-4233-aab5-e854071ee379"},{"nome":"João Pedro Vieira Pereira","user":"Jaumzin","email":"joaopedrovieirapereira5@gmail.com","senha":"$2b$10$bzTYDd4YDgP.pY5ek2iayeRFbYLB0cLv/bdkSA1WkltOcO18XoOOe","data":"2005-01-25","sexo":"Masculino","pais":"Angola","id":"5ace3bf7-e9af-4596-b2fb-5ada5feca826","peso":"54.55","altura":"1.76"}]}
+{
+    "users": [
+        {
+            "nome": "João Pedro Garcia Girotto",
+            "user": "JP1005YT",
+            "email": "godlolpro32@gmail.com",
+            "senha": "$2b$10$vmOaWT4F5u/7BUpzmDyRDeY1RdjrFk/tAl6Efng54UZtwF/9OaEnq",
+            "data": "2006-01-04",
+            "sexo": "Masculino",
+            "pais": "Brazil",
+            "id": "d58187c3-128c-49b2-8068-6b1ea29d7a41",
+            "profile_photo": "f41b7fab-852c-427c-8da5-2ef6c5408c5a.png",
+            "peso": "72",
+            "altura": "1.82",
+            "chats": []
+        },
+        {
+            "nome": "ZIKI",
+            "user": "JP LINDO GOSTOSO CHEIROSO",
+            "email": "ziki@gemi.com",
+            "senha": "$2b$10$uFRE5GGWqs9rxdIG8Aa3/el5SekffYhvVhbPK5A6GLiG7Mv4YjHkm",
+            "data": "1989-10-31",
+            "sexo": "Outros",
+            "pais": "Brazil",
+            "id": "849b265f-f78e-4055-9e8b-1aea7ce5e60c"
+        },
+        {
+            "nome": "Manoela Pinheiro da Silva",
+            "user": "Ma29",
+            "email": "manoela2903@outlook.com",
+            "senha": "$2b$10$AjdKHatBf54Pa3Iu51JjbOeT/04A58rz8Zq1NQ.HEeZ4FZHomMamS",
+            "data": "2006-03-29",
+            "sexo": "Feminino",
+            "pais": "Brazil",
+            "id": "a484a242-0c31-4f7a-9121-fff41d574905",
+            "peso": "59.55",
+            "altura": "1.63",
+            "chats": [],
+            "profile_photo": "95eda856-6be6-419b-9435-ab612c87cd21.png"
+        },
+        {
+            "nome": "teste",
+            "user": "teste",
+            "email": "teste",
+            "senha": "$2b$10$lX0OcNFfMO1THBJ1o3BwReybGqHnEQJFurkRuLsv3RuFQ4hEBNmtK",
+            "data": "2001-01-01",
+            "sexo": "Masculino",
+            "pais": "Brazil",
+            "id": "9f8fbb43-566b-47de-9cba-c00cc1fbcd19",
+            "chats": [
+                "dd3b0e38-88d2-429d-85dd-24346819463e"
+            ],
+            "peso": "76",
+            "altura": "1.80"
+        },
+        {
+            "nome": "PRETO",
+            "user": "PRETO",
+            "email": "irmaosgrachahuehue@gmail.com",
+            "senha": "$2b$10$AWdAw5o2C9rCTCopyvqogefx22pxq6qmxphrg0NuRrdcfxgG3iqne",
+            "data": "2005-10-08",
+            "sexo": "Masculino",
+            "pais": "Brasil",
+            "id": "2f8e76ca-e1e1-4de2-9a8e-142b8d589cd1",
+            "chats": []
+        },
+        {
+            "nome": "Conta2",
+            "user": "Conta2",
+            "email": "teste2",
+            "senha": "$2b$10$4.Erpxad2DX/KrmWo5qxhuftjQMH24MHIv3rIHu2/P0sYgruosuVi",
+            "data": "2006-01-04",
+            "sexo": "Outros",
+            "pais": "Estonia",
+            "id": "002207ce-6237-4233-aab5-e854071ee379"
+        },
+        {
+            "nome": "João Pedro Vieira Pereira",
+            "user": "Jaumzin",
+            "email": "joaopedrovieirapereira5@gmail.com",
+            "senha": "$2b$10$bzTYDd4YDgP.pY5ek2iayeRFbYLB0cLv/bdkSA1WkltOcO18XoOOe",
+            "data": "2005-01-25",
+            "sexo": "Masculino",
+            "pais": "Angola",
+            "id": "5ace3bf7-e9af-4596-b2fb-5ada5feca826",
+            "peso": "54.55",
+            "altura": "1.76"
+        }
+    ]
+}
