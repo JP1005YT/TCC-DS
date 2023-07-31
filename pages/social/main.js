@@ -104,6 +104,7 @@ async function LoadPosts(){
       if(temImagem){
         let div_post = document.createElement("div")
         div_post.setAttribute("class","post")
+        div_post.setAttribute("id",post.Post_ID)
         let span_quempostou = document.createElement("span")
         span_quempostou.addEventListener("click",function(){
           const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -133,13 +134,21 @@ async function LoadPosts(){
         })
         document.querySelector('#dashboard').appendChild(div_post)
       }else{
+        
         let div_post = document.createElement("post")
         div_post.setAttribute("class","post")
         let title_post = document.createElement("h2")
         let ul_post = document.createElement("ul")
         let p = document.createElement ("p")
+        let span_quempostou = document.createElement("span")
+        span_quempostou.addEventListener("click",function(){
+          const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+          localStorage.setItem('scrollPosition', scrollPosition);
+          window.location.href = "../../pages/profile/?id=" + post.User_ID
+        })
         title_post.innerHTML = post.title
         p.innerHTML = post.content
+        span_quempostou.innerHTML = post.User_Name
         post.hashtags.forEach(hashtag =>{
           let li = document.createElement("li")
           li.innerHTML = `#${hashtag}`
@@ -147,6 +156,7 @@ async function LoadPosts(){
         })
         div_post.appendChild(title_post)
         div_post.appendChild(document.createElement("hr"))
+        div_post.appendChild(span_quempostou)
         div_post.appendChild(ul_post)
         div_post.appendChild(p)
         document.querySelector('#dashboard').appendChild(div_post)

@@ -37,7 +37,7 @@ async function Query_Alguem_Logado(json){
 }
 async function Carregar_Foto(){
     esperar = await Query_Alguem_Logado()
-    if(u_infos){
+    if(u_infos.profile_photo){
             document.querySelector('.img_profile').setAttribute('src',`../../profile_images/${u_infos.profile_photo}`)
             document.querySelector('#icon_remove').style.display = 'none'
     }else{
@@ -45,4 +45,4 @@ async function Carregar_Foto(){
     }
 }
 
-Carregar_Foto() 
+Carregar_Foto()

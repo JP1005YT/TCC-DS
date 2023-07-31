@@ -20,6 +20,7 @@ Home,
     > Ao criar nova tag retirar arrumar o recarregamento do rank que esta duplicando
     > Ao criar novo post fechar a pagina e zerar os inputs
     > Checagem de Usuario (Existente)
+    > Checar se chat ja existem
 ### Anotações Manu
     > Fazer a logo.
     > A barra de pesquisar do social não funciona.
