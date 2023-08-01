@@ -1,3 +1,6 @@
+const queryString = window.location.search
+const params = new URLSearchParams(queryString)
+
 function Checa_Senha(key){
     let senha_s = document.getElementById('senha_s')
     let senhac_s = document.getElementById('senhac_s')
@@ -112,7 +115,12 @@ function troca_cor_log(){
     kapa[1].classList.toggle('ativo')
 }
 function volta(){
-    window.location.href = `../../`;
+    
+    if(params.has("pag")){
+        window.location.href = `../../pages/${params.get('pag')}/`;
+    }else{
+        window.location.href = `../../`;
+    }
 }
 colo()
 async function colo(){
