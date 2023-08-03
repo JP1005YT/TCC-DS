@@ -127,7 +127,7 @@ async function ConstruirProfile(another){
         if(u_infos2.profile_photo){
             document.getElementById('img_profile').setAttribute('src', `../../profile_images/${u_infos2.profile_photo}`);
         }else{
-            document.getElementById('img_profile').setAttribute('src',`../../resources/profile_photos/default.png`)
+            document.getElementById('img_profile').setAttribute('src',`../../resources/assets/defaut.png`)
         }
         document.querySelector("#p_user").innerHTML = u_infos2.user
         document.querySelector("#p_email").innerHTML = u_infos2.email
@@ -145,7 +145,7 @@ async function ConstruirProfile(another){
         if(u_infos.profile_photo){
             document.getElementById('img_profile').setAttribute('src', `../../profile_images/${u_infos.profile_photo}`);
         }else{
-            document.getElementById('img_profile').setAttribute('src',`../../resources/profile_photos/default.png`)
+            document.getElementById('img_profile').setAttribute('src',`../../resources/assets/defaut.png`)
         }
         document.querySelector("#p_user").innerHTML = u_infos.user
         document.querySelector("#p_email").innerHTML = u_infos.email

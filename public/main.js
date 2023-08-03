@@ -39,11 +39,15 @@ async function Carregar_Foto(){
     esperar = await Query_Alguem_Logado()
     if(u_infos.profile_photo){
             document.querySelector('.img_profile').setAttribute('src',`../../profile_images/${u_infos.profile_photo}`)
+            document.querySelector('#text-entry').style.display = 'none'
+            document.querySelector('#icon_remove').style.display = 'none'
+        }else if(u_infos){
+            document.querySelector('.img_profile').setAttribute('src',`../../resources/assets/defaut.png`)
             document.querySelector('#icon_remove').style.display = 'none'
             document.querySelector('#text-entry').style.display = 'none'
-    }else{
-        document.querySelector('.img_profile').style.display = 'none'
-    }
+        }else{
+            document.querySelector('.img_profile').style.display = 'none'
+        }
 }
 
 Carregar_Foto()

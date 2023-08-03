@@ -12,7 +12,7 @@ font-family: 'Roboto', sans-serif; */
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-    font-family: '?]]~~', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 body{
     position:relative;
@@ -153,7 +153,14 @@ body{
     font-size:40px;
 }
 /* Corpo */
-#cel > img{ 
+.img{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 40%;
+}
+#cel .img img{
+    transform: translateX(25%);
     height: 90%;
 }
 #cel{
@@ -161,7 +168,23 @@ body{
     width: 100%;
     height: 100%;
     justify-content: flex-start;
-    align-items: center;
+    /* align-items: center; */
+}
+#cel .text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+#cel .text *{
+    margin: 1%;
+}
+#cel .text h1{
+    font-weight: 900;
+    font-size: 60px;
+}
+#cel .text h2{
+    font-size: 50px;
 }
 .main{
     display: flex;
