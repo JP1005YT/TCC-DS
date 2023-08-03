@@ -30,4 +30,4 @@ Home,
 
 >https://jwt.io/
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?0356CF4B4BFDD6BF2DC2A59F2D50C6F08B3F
+https://prod.liveshare.vsengsaas.visualstudio.com/join?540383E30535FB716F5E5C1EEBBDAA0192C3
