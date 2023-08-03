@@ -30,14 +30,4 @@ Home,
 
 >https://jwt.io/
 
-makeid(length) {
-        let result = '';
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        const charactersLength = characters.length;
-        let counter = 0;
-        while (counter < length) {
-            result += characters.charAt(Math.floor(Math.random() * charactersLength));
-            counter += 1;
-        }
-        return result;
-    }
+https://prod.liveshare.vsengsaas.visualstudio.com/join?0356CF4B4BFDD6BF2DC2A59F2D50C6F08B3F
