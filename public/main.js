@@ -40,6 +40,7 @@ async function Carregar_Foto(){
     if(u_infos.profile_photo){
             document.querySelector('.img_profile').setAttribute('src',`../../profile_images/${u_infos.profile_photo}`)
             document.querySelector('#icon_remove').style.display = 'none'
+            document.querySelector('#text-entry').style.display = 'none'
     }else{
         document.querySelector('.img_profile').style.display = 'none'
     }

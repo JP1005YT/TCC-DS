@@ -76,6 +76,10 @@ body{
     width: 33%;
     height: 100%;
 }
+.rightside > div {
+    flex-direction: column;
+    font-weight: bold;
+}
 /* Menu Lateral */
 #boxmenu{
     top: 0;
@@ -149,15 +153,14 @@ body{
     font-size:40px;
 }
 /* Corpo */
-#cel > img{
-    width: 20%;
-    height: 80%;
+#cel > img{ 
+    height: 90%;
 }
 #cel{
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 .main{
