@@ -343,17 +343,55 @@ body{
     padding-left: 2%;
 }
 
-.sobreplat>.imageplat{
-    margin-top: -5%;
+.sobreplat{
+    display: flex;
+    background-image: url(resources/assets/sobre\ a\ plataforma.png);
+    background-repeat: no-repeat;
+    background-size: 99%;
     width: 100%;
+    height: 1000px;
+    margin-bottom: -8%;
+    margin-top: -18%;
 }
 
 .receitas{
     display: flex;
-    background-image: url(resources/assets/comidaSaudavel.png);
+    background-image: url(resources/assets/Receitas.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
     width: 100%;
-    height: auto;
-    margin-top: -5%;
+    height: 1000px;
+    margin-bottom: -8%;
+}
+
+.CEO{
+    display: flex;
+    background-image: url(resources/assets/CEO.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 1000px;
+    margin-bottom: -8%;
+}
+
+.rede{
+    display: flex;
+    background-image: url(resources/assets/redeSo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 1000px;
+    margin-bottom: -8%;
+}
+
+.rodape{
+    display: flex;
+    background-image: url(resources/assets/roda.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 900px;
+    margin-bottom: -18%;
 }
 
 .receitas>.textos>.topo{
@@ -365,6 +403,7 @@ body{
     height: 25%;
     margin-top: 25%;
 }
+
 
 /* PAGINA DE LOGIN E CADASTRO */
 
