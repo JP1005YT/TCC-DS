@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif; */
+:root{
+    --branco:#fff;
+    --preto:#000;
+    --contraste:#b8b8b8;
+    --base1:rgb(40, 170, 98);
+    --base2:rgb(5, 155, 165);
+}
+*{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    overflow-x:hidden;
+    width: 100vw;
+    height: 100vh;
+}
+header{
+    width: 100%;
+    height: 10vh;
+    background: var(--base1);
+}
+h1,h2,h3{
+    font-family: 'Poppins',sans-serif;
+}
+main{
+    height: 300vh;
+}
+main .rosto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    background:url('../../resources/assets/fitness/background.png');
+    background-size: 100%;
+    box-shadow: 0 0 100px black inset;
+}
+main .rosto .align-items{
+    user-select: none;
+    padding: 2%;
+    width: 85%;
+    /* background:red; */
+}
+main .rosto .align-items div{
+    padding: 5%;
+    width: 55%;
+    background: var(--base2);
+    color: white;
+}
+main .rosto .align-items div h1{
+    font-size: 70px;
+    padding-bottom: 10%;
+}
+main .rosto .align-items div h3{
+    font-size: 30px;
+}
+.sobre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../resources/assets/FundoSocial.png');
+}
+.sobre .align-items{
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 100%;
+    flex-direction: row;
+}
+.sobre .align-items div{
+    border-radius: 25px;
+    color: #fff;
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.196);
+    background: var(--base1);
+}
+.sobre .align-items .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    padding: 1%;
+    margin: 1%;
+    text-align: center;
+    width: 100%;
+    height: 15%;
+}
+.sobre .align-items .container{
+    padding: 2%;
+    width: 30%;
+    height: 75%;
+
+}
+.sobre .align-items .container h2{
+    font-size: 30px;
+    height: 15%;
+}
+.sobre .align-items .container p{
+    text-align: justify;
+    font-size: 20px;
+}
