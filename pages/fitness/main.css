@@ -108,3 +108,60 @@ main .rosto .align-items div h3{
     text-align: justify;
     font-size: 20px;
 }
+.exercicios{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+.exercicios h2{
+    font-size: 50px;;
+}
+.exercicios .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 1%;
+    background: #fff;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.255);
+}
+.exercicios .container input{
+    padding: 1%;
+    font-size: 30px;
+    width: 92%;
+    outline: none;
+    border: none;
+}
+.exercicios .container input:focus{
+    border-bottom: 2px solid var(--base1);
+}
+.exercicios .container input:not(:placeholder-shown) {
+    border-bottom: 2px solid var(--base1);
+}
+.exercicios .container i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.255);
+}
+.exercicios section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    background: green;
+}
+.exercicios section .card{
+    width: 20px;
+    height: 20px;
+    background: #fff;
+}
