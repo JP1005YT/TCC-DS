@@ -22,6 +22,11 @@ body{
     background: url('./resources/assets/FundoSocial.png');
     background-size: 20%;
 }
+
+.home_screen{
+    display: flex;
+    flex-wrap: wrap;
+}
 /* Headers */
 .menu{
     background: var(--cor2);
@@ -80,77 +85,22 @@ body{
     flex-direction: column;
     font-weight: bold;
 }
-/* Menu Lateral */
-#boxmenu{
-    top: 0;
+/* carrosel */
+.carrosel{
+    background-color: red;
     width: 100%;
-    height: 100%;
-    position: absolute;
+    height: 90vh;
 }
-.men_lateral{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    position: sticky;
-    width: 0vw;
-    height: 100vh;
-    background: white;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+
+.sliders{
+    margin: 0 auto;
+    width: 90%;
+    height: 90%;
+    overflow: hidden;
 }
-.men_lateral .content-menu{
-    display: none;
-}
-.men_lateral.ativo{
-    width: 27vw;
-    animation: menu_entra 300ms ease;
-}
-.men_lateral.ativo .content-menu{
-    display: flex;
-}
-.menu div div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-@keyframes menu_entra {
-    0%{width: 0;}
-    100%{width: 27vw;}
-}
-@keyframes menu_saida {
-    0%{width: 27vw;}
-    100%{width: 0vw;}
-}
-.content-menu{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    width: 95%;
-    height: 95%;
-    border-radius: 10px;
-}
-.content-menu div{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px;
-    border-radius: 25px;
-    width: 80%;
-    height: 10%;
-    font-size: 25px;
-    background: var(--cor2);
-}
-.content-menu div:hover{
-    cursor: pointer;
-    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.7);
-}
-.content-menu i{
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    font-size:40px;
+
+.conteudo{
+    
 }
 /* Corpo */
 .img{
@@ -271,137 +221,11 @@ body{
 
 /* QUEM SOMOS */
 
-.quemSomos{
+.quemsomos{
     display: flex;
     flex-wrap: wrap;
     background-color: var(--cor2);
     width: 100%;
-}
-
-.textos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-}
-
-.textos>.topo{
-    display: flex;
-    justify-content: center;
-    background-color: var(--cor1);
-    border-radius: 0px 0px 25px 25px;
-    width: 50%;
-    font-size: 80px;
-}
-
-.informaçoes{
-    display: flex;
-    flex-direction: row;
-    padding-top: 10%;
-    padding-bottom: 2%;
-}
-
-.informaçoes>.text1{
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    background-color: var(--cor1);
-    box-shadow: 1px 1px 100px white;
-    font-size: 180%;
-    border-radius: 0px 5% 65% 0px;
-    width: 48.8%;
-    height: 55%;
-    padding-left: 15px;
-}
-
-.informaçoes>.text2{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: var(--cor1);
-    box-shadow: 0 0 100px white;
-    font-size: 180%;
-    border-radius: 65% 0px 0px 5%;
-    width: 50%;
-    margin-top: 25%;
-}
-
-.textos>.informaçoes>.text1>.image{
-    display: flex;
-    width: 75%;
-    height: 75%;
-}
-
-.textos>.informaçoes>.text2>.image{
-    display: flex;
-    width: 75%;
-    height: 75%;
-    padding-left: 2%;
-}
-
-.sobreplat{
-    display: flex;
-    background-image: url(resources/assets/sobre\ a\ plataforma.png);
-    background-repeat: no-repeat;
-    background-size: 99%;
-    width: 100%;
-    height: 1000px;
-    margin-bottom: -8%;
-    margin-top: -18%;
-}
-
-.receitas{
-    display: flex;
-    background-image: url(resources/assets/Receitas.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 1000px;
-    margin-bottom: -8%;
-}
-
-.CEO{
-    display: flex;
-    background-image: url(resources/assets/CEO.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 1000px;
-    margin-bottom: -8%;
-}
-
-.rede{
-    display: flex;
-    background-image: url(resources/assets/redeSo.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 1000px;
-    margin-bottom: -8%;
-}
-
-.rodape{
-    display: flex;
-    background-image: url(resources/assets/roda.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-    height: 900px;
-    margin-bottom: -18%;
-}
-
-.receitas>.textos>.topo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--cor2);
-    width: 50%;
-    height: 25%;
-    margin-top: 25%;
 }
 
 

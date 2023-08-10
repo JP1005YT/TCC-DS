@@ -8,101 +8,73 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" sizes="32x32" />
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src='main.js' defer></script>
 </head>
-<body class="any">
+<body>
     <div class="home_screen">
         <header class="menu">
             <div class="leftside">
+                
+            </div>
+            <div class="midside">
                 <div>
-                    <span id="btnmenu" class="btn"onclick="troca_menu()">
-                        <i class='bx bx-menu'></i>
+                    <img src="./resources/assets/logo.png" width="20%">
+                </div>
+            </div>
+            <div class="rightside">
+                <div>
+                    <div id="btnmenu" onclick="Troca_Pagina('acess')">
+                        <i class='bx bxs-user' id="icon_remove"></i>
+                        <img class="img_profile" width="120%">
+                    </div>
+                    <span id="text-entry">
+                        Entrar
                     </span>
                 </div>
             </div>
-                <div class="midside">
-                    <div>
-                        <img src="./resources/assets/logo.png" width="20%">
-                    </div>
-                </div>
-                <div class="rightside">
-                    <div>
-                        <div id="btnmenu" onclick="Troca_Pagina('acess')">
-                            <i class='bx bxs-user' id="icon_remove"></i>
-                            <img class="img_profile" width="120%">
-                        </div>
-                        <span id="text-entry">
-                            Entrar
-                        </span>
-                    </div>
-                </div>
         </header>
-        <div class="main">
-                <div class="carrossel">
-                    <div class="left"><i class='bx bxs-left-arrow'></i></div>
-                    <div class="content">
-                        <div id="cel">
-                            <div class="img">
-                                <img src="resources/assets/Carrosel.png">
-                            </div>
-                            <div class="text">
-                                <h1>Aproveite o dia!</h1>
-                                <h2>Transforme minutos em perca de calorias!</h2>
-                            </div>
-                        </div>
+        <div class="carrosel">
+            <div class="sliders">
+                <div class="slides">
+                    <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+
+                <div class="conteudo">
+                    <div class="slide1">
+                        <img src="resources/assets/celular.png"/>
+                        <h1>Aproveite o dia!</h1>
+                        <h2>Transforme minutos em perca de calorias!</h2>
                     </div>
-                    <div class="right"><i class='bx bxs-right-arrow' ></i></div>
-                </div>
-            <!-- AKI -->
-            <div class="quemSomos">
-                <div class="textos">
-                    <div class="topo">
-                        <b>Quem somos?</b>
+                    <div class="slide2">
+                        <h1>JP GAY</h1>
                     </div>
-                    <div class="informaçoes">
-                        <div class="text1">
-                            <p>Somos a food and physical health, um site feito para ajudar as pessoas a terem uma vida saudável através de sugestões para uma boa alimentação, receitas mais saudáveis e prática de exercícios físicos.</p>
-                            <img src="resources/assets/frutas.png" class="image">
-                        </div>
-                        <div class="text2">
-                            <img src="resources/assets/meditacao.png" class="image">
-                            <p>Estamos no mercado desde 2021, por isso estamos sempre antenados aos novos costumes alimentares. O nosso objetivo é proporcionar uma maneira de obter uma vida saudável de maneira gratuita.</p>
-                        </div>
+                    <div class="slide3">
+                        <h1>JP GAY2</h1>
                     </div>
                 </div>
-            </div>
-            <div class="sobreplat"></div>
-            <div class="receitas"></div>
-            <div class="CEO"></div>
-            <div class="rede"></div>
-            <div class="rodape"></div>
-        </div>
-        <div id="boxmenu">
-            <div id="menu" class="men_lateral">
-                <nav class="content-menu">
-                    <div>
-                        <i class='bx bxs-capsule'></i>
-                        <span>Doenças</span>
-                    </div>
-                    <div>
-                        <i class='bx bx-bowl-hot'></i>
-                        <span>Alimentos</span>
-                    </div>
-                    <div onclick="Troca_Pagina('fitness')">
-                        <i class='bx bx-dumbbell'></i> 
-                        <span>Fitness</span>
-                    </div>
-                    <div>
-                        <i class='bx bx-math' ></i>
-                        <span>Calculadora</span>
-                    </div>
-                    <div onclick="Troca_Pagina('social')">
-                        <i class='bx bxs-group'></i>
-                        <span>Social</span>
-                    </div>
-                </nav>
+
+                <div class="auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                </div>
+
+                <div class="manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                </div>
+                </div>
             </div>
         </div>
+        <div class="quemsomos">
+            
+        </div>
+        <div class="sobreplat"></div>
+        <div class="receitas"></div>
+        <div class="ceo"></div>
+        <div class="redes"></div>
     </div>
-    <script src='main.js'></script>
 </body>
 </html>
