@@ -173,5 +173,10 @@ app.post('/deletechat',async (req,res) => {
     let resp = await ChatManager.DeletarChat(req.body)
     res.send(resp)
 })
+
+app.post('/fitness',async (req,res) => {
+    let resp = P.Buscar("./data/fitness/data.json")
+    res.send(resp)
+})
 // Quando for QUERY(variavel na url "?aa=teste") req.query
-// Quando for variavel de local id/:id e para ler req.params.id
+// Quando for variavel de local id/:id e para ler req.params.id'

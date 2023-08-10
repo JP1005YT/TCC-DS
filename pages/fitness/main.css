@@ -67,6 +67,7 @@ main .rosto .align-items div h3{
     width: 100%;
     height: 100vh;
     background-image: url('../../resources/assets/FundoSocial.png');
+    z-index: 0;
 }
 .sobre .align-items{
     background: #fff;
@@ -115,6 +116,8 @@ main .rosto .align-items div h3{
     flex-direction: column;
     width: 100%;
     height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.255);
+    z-index: 5;
 }
 .exercicios h2{
     font-size: 50px;;
@@ -153,15 +156,40 @@ main .rosto .align-items div h3{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.255);
 }
 .exercicios section{
+    transition: 500ms;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
     height: 70%;
-    background: green;
+    background: var(--base1);
+    overflow: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.255);
 }
 .exercicios section .card{
-    width: 20px;
-    height: 20px;
+    user-select: none;
+    transition: 500ms;
+    overflow: hidden;
+    width: 20%;
+    height: 50px;
     background: #fff;
+    padding: 0.5%;
+    margin: 4% 1% 0% 1%;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.255);
+}
+.exercicios section .card h1{
+    font-size: 25px;
+}
+.exercicios section .card:hover{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 200px;
+}
+footer{
+    width: 100%;
+    height: 30vh;
 }

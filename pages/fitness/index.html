@@ -8,14 +8,14 @@
     <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" sizes="32x32" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <script src='main.js' defer></script>
 </head>
 <body>
     <header>
         
     </header>
     <main>
-        <section class="rosto" style="display: none;">
+        <section class="rosto">
             <div class="align-items">
                 <div>
                     <h1>Construindo um amanhã mais saudável, hoje.</h1>
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </section>
-        <section class="sobre" style="display: none;">
+        <section class="sobre">
             <div class="align-items">
                 <div class="title">
                     <h1>Qual a relação entre a saúde e os exercícios físicos?</h1>
@@ -48,21 +48,11 @@
                 <input type="text" placeholder="">
                 <i class='bx bx-search' ></i>
             </div>
-            <section>
-                <div class="card">
-                    
-                </div>
-                <div class="card">
-                    
-                </div>
-                <div class="card">
-                    
-                </div>
-            </section>
+            <section id="items-here" class="scrollable-div" tabindex="0"></section>
         </section>
     </main>
     <footer>
-
+        teste
     </footer>
 </body>
 </html>

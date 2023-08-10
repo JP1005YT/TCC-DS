@@ -1,0 +1,229 @@
+{
+    "Exercicios": [
+        {
+            "name": "Corrida ou Caminhada Rápida",
+            "tipo": "Cardiovasculares",
+            "sobre": "A corrida ou caminhada rápida é um exercício cardiovascular que ajuda a melhorar a saúde cardiovascular, aumentar a resistência e queimar calorias. É uma atividade de baixo impacto que pode ser praticada ao ar livre ou em uma esteira."
+        },
+        {
+            "name": "Ciclismo",
+            "tipo": "Cardiovasculares",
+            "sobre": "O ciclismo é uma atividade cardiovascular que fortalece as pernas, melhora a resistência e é uma excelente forma de transporte ecológica. Pode ser praticado tanto em ambientes internos quanto externos, utilizando bicicletas."
+        },
+        {
+            "name": "Pular Corda",
+            "tipo": "Cardiovasculares",
+            "sobre": "Pular corda é um exercício de alta intensidade que melhora a coordenação, a agilidade e a saúde cardiovascular. É uma atividade que queima calorias de maneira eficaz e pode ser feita em qualquer lugar."
+        },
+        {
+            "name": "Natação",
+            "tipo": "Cardiovasculares",
+            "sobre": "A natação é um exercício cardiovascular de baixo impacto que trabalha vários grupos musculares ao mesmo tempo. Ela melhora a resistência, a força e a saúde pulmonar."
+        },
+        {
+            "name": "Dança Aeróbica",
+            "tipo": "Cardiovasculares",
+            "sobre": "A dança aeróbica é uma forma divertida de exercício que combina movimentos de dança com atividades cardiovasculares. Ela ajuda a melhorar o condicionamento físico, a coordenação e o humor."
+        },
+        {
+            "name": "Elíptico",
+            "tipo": "Cardiovasculares",
+            "sobre": "O treinamento elíptico é uma atividade cardiovascular de baixo impacto que simula o movimento de corrida, mas reduz o estresse nas articulações. Ele trabalha diversos músculos e melhora a resistência."
+        },
+        {
+            "name": "Subir Escadas",
+            "tipo": "Cardiovasculares",
+            "sobre": "Subir escadas é uma atividade cardiovascular que fortalece as pernas, os glúteos e melhora a saúde do coração. Pode ser realizada em escadas internas ou ao ar livre."
+        },
+        {
+            "name": "HIIT",
+            "tipo": "Cardiovasculares",
+            "sobre": "O HIIT é um método de treinamento cardiovascular que envolve alternar entre períodos curtos de exercícios intensos e períodos de descanso. É eficaz para queimar calorias e melhorar a resistência em um curto período de tempo."
+        },
+        {
+            "name": "Remo",
+            "tipo": "Cardiovasculares",
+            "sobre": "O remo é um exercício cardiovascular que trabalha vários grupos musculares, incluindo costas, ombros, pernas e core. Pode ser praticado em uma máquina de remo ou em um barco no corpo d'água."
+        },
+        {
+            "name": "Corrida em Esteira",
+            "tipo": "Cardiovasculares",
+            "sobre": "A corrida em esteira é uma alternativa conveniente para a corrida ao ar livre. Ela permite controlar a velocidade e a inclinação do terreno, criando um treinamento cardiovascular eficaz."
+        },
+        {
+            "name": "Agachamentos",
+            "tipo": "Força",
+            "sobre": "Os agachamentos são exercícios compostos que fortalecem as pernas, glúteos e core. Eles podem ser realizados com o próprio peso corporal ou com pesos adicionais, como halteres ou barra."
+        },
+        {
+            "name": "Levantamento de Peso",
+            "tipo": "Força",
+            "sobre": "O levantamento de peso envolve levantar pesos em uma variedade de movimentos, como agachamento, supino e levantamento terra. Ele é eficaz para desenvolver força, massa muscular e resistência."
+        },
+        {
+            "name": "Flexões de Braço",
+            "tipo": "Força",
+            "sobre": "As flexões de braço são um exercício de força que trabalha os músculos do peito, ombros e tríceps. Elas podem ser modificadas para se adaptarem ao nível de condicionamento físico de cada pessoa."
+        },
+        {
+            "name": "Prancha",
+            "tipo": "Força",
+            "sobre": "A prancha é um exercício de fortalecimento do core que envolve manter o corpo reto em posição de prancha por um período de tempo. Ela trabalha os músculos abdominais, lombares e glúteos."
+        },
+        {
+            "name": "Puxada de Barra",
+            "tipo": "Força",
+            "sobre": "As puxadas de barra são exercícios de força que trabalham os músculos das costas, ombros e braços. Elas podem ser feitas em diferentes variações, como puxadas pronadas e supinadas."
+        },
+        {
+            "name": "Lunges",
+            "tipo": "Força",
+            "sobre": "Os lunges, ou afundos, são exercícios que fortalecem as pernas e glúteos. Eles podem ser realizados em várias direções e com diferentes variações para desafiar diferentes grupos musculares."
+        },
+        {
+            "name": "Levantamento Terra",
+            "tipo": "Força",
+            "sobre": "O levantamento terra é um exercício de força que trabalha os músculos das costas, pernas e core. Ele envolve levantar um peso do chão até a posição ereta."
+        },
+        {
+            "name": "Rosca Direta",
+            "tipo": "Força",
+            "sobre": "A rosca direta é um exercício de isolamento que trabalha os músculos do bíceps. Pode ser feito com halteres, barras ou máquinas de cabo."
+        },
+        {
+            "name": "Desenvolvimento de Ombro",
+            "tipo": "Força",
+            "sobre": "O desenvolvimento de ombro é um exercício que trabalha os músculos dos ombros e tríceps. Pode ser realizado com halteres ou barra acima da cabeça."
+        },
+        {
+            "name": "Agachamento com Peso Corporal",
+            "tipo": "Força",
+            "sobre": "O agachamento com peso corporal é uma variação do agachamento que utiliza apenas o peso do próprio corpo como resistência. É um exercício eficaz para fortalecer as pernas e o core."
+        },
+        {
+            "name": "Alongamentos Estáticos",
+            "tipo": "Flexibilidade e Equilíbrio",
+            "sobre": "Os alongamentos estáticos ajudam a melhorar a flexibilidade, alongando gradualmente os músculos e mantendo a posição por um período de tempo. Eles podem ser feitos após o exercício para relaxar os músculos."
+        },
+        {
+            "name": "Ioga",
+            "tipo": "Flexibilidade e Equilíbrio",
+            "sobre": "A ioga combina alongamento, equilíbrio e respiração para melhorar a flexibilidade, a postura e a saúde mental. Existem várias formas de ioga, desde as mais suaves até as mais intensas."
+        },
+        {
+            "name": "Pilates",
+            "tipo": "Flexibilidade e Equilíbrio",
+            "sobre": "O Pilates é um método de exercício que se concentra no fortalecimento do core, na postura e na flexibilidade. Ele utiliza movimentos controlados e respiração para melhorar a força e a coordenação."
+        },
+        {
+            "name": "Exercícios de Equilíbrio em Pé",
+            "tipo": "Flexibilidade e Equilíbrio",
+            "sobre": "Os exercícios de equilíbrio em pé, como ficar sobre um pé só, ajudam a melhorar a estabilidade e a postura. Eles são importantes para prevenir lesões e melhorar a consciência corporal."
+        },
+        {
+            "name": "Alongamento de Quadríceps",
+            "tipo": "Flexibilidade e Equilíbrio",
+            "sobre": "O alongamento de quadríceps ajuda a soltar os músculos da frente das coxas, melhorando a flexibilidade das pernas. É especialmente útil após atividades que envolvem corrida ou agachamentos."
+        },
+        {
+            "name": "Posturas de Ioga para Equilíbrio",
+            "tipo": "Flexibilidade e Equilíbrio",
+            "sobre": "As posturas de ioga que envolvem equilíbrio, como a árvore ou o guerreiro III, trabalham os músculos estabilizadores e melhoram a consciência corporal."
+        },
+        {
+            "name": "Alongamento de Isquiotibiais",
+            "tipo": "Flexibilidade e Equilíbrio",
+            "sobre": "O alongamento de isquiotibiais alonga os músculos da parte de trás das coxas, melhorando a flexibilidade e prevenindo tensões musculares. Ele pode ser feito em pé ou deitado."
+        },
+        {
+            "name": "Alongamento de Panturrilha",
+            "tipo": "Flexibilidade e Equilíbrio",
+            "sobre": "O alongamento de panturrilha alonga os músculos da panturrilha, que são frequentemente solicitados durante atividades como corrida e salto. Ele pode ser feito em pé ou apoiando-se contra uma parede."
+        },
+        {
+            "name": "Alongamento de Costas",
+            "tipo": "Flexibilidade e Equilíbrio",
+            "sobre": "O alongamento de costas ajuda a soltar a musculatura das costas, aliviando a tensão e melhorando a flexibilidade da coluna vertebral. Ele pode ser feito em posição sentada ou em pé."
+        },
+        {
+            "name": "Tai Chi",
+            "tipo": "Flexibilidade e Equilíbrio",
+            "sobre": "O Tai Chi é uma prática chinesa que combina movimentos lentos e fluidos com foco na respiração e no equilíbrio. Ele melhora a flexibilidade, a força e a coordenação."
+        },
+        {
+            "name": "Prancha com Elevação de Braço",
+            "tipo": "Core",
+            "sobre": "A prancha com elevação de braço é uma variação da prancha tradicional, onde você alterna entre apoiar-se nos antebraços e nas mãos estendidas. Isso desafia os músculos do core e dos ombros."
+        },
+        {
+            "name": "Prancha com Elevação de Pernas Alternadas",
+            "tipo": "Core",
+            "sobre": "Neste exercício, você alterna a elevação de cada perna enquanto mantém a posição de prancha. Isso ajuda a fortalecer o core e a estabilidade."
+        },
+        {
+            "name": "Prancha com Rotação de Quadril",
+            "tipo": "Core",
+            "sobre": "A prancha com rotação de quadril envolve levantar um quadril em direção ao teto enquanto mantém o corpo reto. Isso trabalha os oblíquos e o core."
+        },
+        {
+            "name": "Prancha com Braço e Perna Estendidos",
+            "tipo": "Core",
+            "sobre": "Neste exercício, você estende simultaneamente um braço e a perna oposta enquanto mantém a posição de prancha. Isso desafia o equilíbrio e fortalece o core."
+        },
+        {
+            "name": "Prancha em Bosu",
+            "tipo": "Core",
+            "sobre": "A prancha em Bosu envolve apoiar as mãos ou os antebraços em uma superfície instável, como um Bosu. Isso requer maior ativação do core para manter a estabilidade."
+        },
+        {
+            "name": "Remada",
+            "tipo": "Músculos das Costas",
+            "sobre": "A remada é um exercício que trabalha os músculos das costas, incluindo os dorsais e os trapézios. Pode ser realizado com halteres, máquinas ou elásticos."
+        },
+        {
+            "name": "Levantamento Terra",
+            "tipo": "Músculos das Costas",
+            "sobre": "O levantamento terra trabalha os músculos das costas, especialmente os trapézios, eretores da espinha e dorsais. É um exercício que exige boa forma e postura."
+        },
+        {
+            "name": "Puxada de Barra",
+            "tipo": "Músculos das Costas",
+            "sobre": "A puxada de barra é um exercício que foca nos músculos das costas, especialmente os dorsais e o latíssimo do dorso. Pode ser realizada com diferentes pegadas."
+        },
+        {
+            "name": "Superman",
+            "tipo": "Músculos das Costas",
+            "sobre": "O Superman é um exercício que envolve levantar simultaneamente os braços e as pernas do chão, trabalhando os músculos das costas e glúteos."
+        },
+        {
+            "name": "Bent Over Row",
+            "tipo": "Músculos das Costas",
+            "sobre": "O Bent Over Row é um exercício que trabalha os músculos das costas e bíceps. Ele envolve inclinar-se para a frente e puxar um peso em direção ao corpo."
+        },
+        {
+            "name": "Hiperextensão Lombar",
+            "tipo": "Músculos das Costas",
+            "sobre": "A hiperextensão lombar é um exercício que fortalece os músculos das costas, especialmente os eretores da espinha. Ele ajuda a melhorar a postura e a saúde lombar."
+        },
+        {
+            "name": "Face Pull",
+            "tipo": "Músculos das Costas",
+            "sobre": "O Face Pull é um exercício que trabalha os músculos das costas, ombros e trapézios superiores. Ele é realizado utilizando uma corda em uma polia alta."
+        },
+        {
+            "name": "Pull Down",
+            "tipo": "Músculos das Costas",
+            "sobre": "O Pull Down é um exercício que foca nos músculos das costas, especialmente o latíssimo do dorso. Ele é realizado em uma máquina de puxada alta."
+        },
+        {
+            "name": "Chin-up",
+            "tipo": "Músculos das Costas",
+            "sobre": "O Chin-up é um exercício que trabalha os músculos das costas, bíceps e ombros. Ele é realizado puxando-se em direção a uma barra com as palmas voltadas para você."
+        },
+        {
+            "name": "Mergulho em Barra Fixa",
+            "tipo": "Músculos das Costas",
+            "sobre": "O mergulho em barra fixa é um exercício que trabalha os músculos das costas, ombros e tríceps. Ele envolve levantar o corpo enquanto segura uma barra fixa."
+        }
+    ]
+}

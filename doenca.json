@@ -1,0 +1,10 @@
+{
+    "Exercicios" : [
+        {
+            "name":"Corrida Ou Caminhada Rapida",
+            "tipo": "Cardiovasculares",
+            "sobre": "{FALA SOBRE O EXECICIO}",
+            "kph": "{QUEIMA CALORICA}"
+        }
+    ]
+}
