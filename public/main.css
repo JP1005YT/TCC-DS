@@ -2,9 +2,13 @@
 
 /* font-family: 'Poppins', sans-serif;
 font-family: 'Roboto', sans-serif; */
+
 :root{
-    --cor1:#fff;
+    --branco:#fff;
+    --preto:#000;
+    --contraste:#b8b8b8;
     --cor2:rgb(40, 170, 98);
+    --base2:rgb(5, 155, 165);
 }
 
 /* Definições Basicas */
@@ -30,7 +34,6 @@ body{
 /* Headers */
 .menu{
     background: var(--cor2);
-    backdrop-filter: blur(5px);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
     z-index: 1;
     position: sticky;
@@ -38,20 +41,21 @@ body{
     flex-direction: row;
     width: 100%;
     height:10vh;
+    background: linear-gradient(30deg,var(--cor2), var(--base2));
 }
 #btnmenu{
     transition: 100ms;
     margin: 0 20px 0 20px;
     display: flex;
-    border: 1px solid black;
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     font-size: 30px;
     background-color: white;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 #btnmenu:hover{
     cursor: pointer;
@@ -60,9 +64,41 @@ body{
 }
 .leftside{
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 33%;
     height: 100%;
     align-items: center;
+}
+.leftside nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
+    align-items: center;
+    background: white;
+    width: 85%;
+    border-radius: 25px;
+}
+.leftside nav div{
+    cursor: pointer;
+    user-select: none;
+    transition: 500ms;
+    padding: 10px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 70px;
+    background: linear-gradient(70deg,var(--cor2), var(--base2));
+}
+.leftside nav div:hover{
+    width: 160px;
+}
+.leftside nav div i{
+    font-size: 50px;
+}
+.leftside nav div span{
+    margin-left: 10px;
 }
 .leftside.ativo{
     justify-content: flex-end;
@@ -82,8 +118,14 @@ body{
     height: 100%;
 }
 .rightside > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     font-weight: bold;
+}
+.rightside > div span{
+    padding: 3px;
 }
 /* carrosel */
 .carrosel{
@@ -99,9 +141,9 @@ body{
     overflow: hidden;
 }
 
-.conteudo{
+/* .conteudo{
     
-}
+} */
 /* Corpo */
 .img{
     display: flex;

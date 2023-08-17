@@ -173,6 +173,10 @@ app.post('/deletechat',async (req,res) => {
     let resp = await ChatManager.DeletarChat(req.body)
     res.send(resp)
 })
+app.post('/deletepost',async (req,res) => {
+    let resp = await NovoPOST.DeletarPosts(req.query.id)
+    res.send(true)
+})
 
 app.post('/fitness',async (req,res) => {
     let resp = P.Buscar("./data/fitness/data.json")

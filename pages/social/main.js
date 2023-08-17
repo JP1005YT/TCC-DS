@@ -91,7 +91,8 @@ async function LoadPosts(){
         method: "POST"
     });
     const resposta = await dados.json();
-    resposta.posts.forEach(async post => {
+    const respostaInversa = resposta.posts.reverse()
+    respostaInversa.forEach(async post => {
       // Checar se tem imagems
       const dados = await fetch('../../checkpost', {
         method: "POST",
@@ -116,6 +117,17 @@ async function LoadPosts(){
         let p = document.createElement ("p")
         title_post.innerHTML = post.title
         span_quempostou.innerHTML = post.User_Name
+        if(post.User_ID === u_infos.id){
+          let deletebtn = document.createElement('i')
+          deletebtn.setAttribute("class","bx bx-x")
+          deletebtn.setAttribute("id","deleteBton")
+          deletebtn.addEventListener("click",function(){
+            if (confirm("Você tem certeza que EXCLUIR esse POST?")) {
+              DeletarPost(post.Post_ID)
+            }
+          })
+          div_post.appendChild(deletebtn)
+        }
         p.innerHTML = post.content
         post.hashtags.forEach(hashtag =>{
           let li = document.createElement("li")
@@ -149,6 +161,9 @@ async function LoadPosts(){
         title_post.innerHTML = post.title
         p.innerHTML = post.content
         span_quempostou.innerHTML = post.User_Name
+        if(post.User_ID === u_infos.id){
+          console.log('bim')
+        }
         post.hashtags.forEach(hashtag =>{
           let li = document.createElement("li")
           li.innerHTML = `#${hashtag}`
@@ -326,6 +341,12 @@ function makeid(length) {
       counter += 1;
   }
   return result;
+}
+async function DeletarPost(Id) {
+  const dados = await fetch(`../../deletepost?id=${Id}`,{
+    method: "POST",
+});
+resposta = await dados.json();
 }
 LoadTags()
 LoadPosts()

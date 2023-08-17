@@ -108,7 +108,7 @@ header > div{
     align-items: center;
     width: 30%;
     height: 90%;
-    background: linear-gradient(var(--base1),var(--base2));
+    background: linear-gradient(70deg,var(--base1),var(--base2));
     border-radius: 25px;
 }
 header > div span{
@@ -134,7 +134,6 @@ header > div span input{
 }
 header > div span input:focus{
     outline: none;
-    box-shadow: 0 0 20px var(--base2);
 }
 header > div  > span #btna{
     display: flex;
@@ -145,7 +144,8 @@ header > div  > span #btna{
     height:90%;
 }
 header > div  > span #btna:hover{
-    box-shadow: 0 0 20px var(--base2);
+    background: linear-gradient(70deg,var(--base1),var(--base2));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 main{
     display: flex;
@@ -237,6 +237,19 @@ main #dashboard .post ul{
 }
 .post.midia img{
     width: 35%;
+}
+.post #deleteBton{
+    font-size: 50px;
+    position: absolute;
+    left: calc(50% - 25px);
+    top: 0;
+    color: red;
+    background: var(--base1);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.post #deleteBton:hover{
+    cursor: pointer;
 }
 .post span{
     /* margin: 2%; */

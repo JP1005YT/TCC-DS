@@ -168,6 +168,7 @@ main .rosto .align-items div h3{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.255);
 }
 .exercicios section .card{
+    cursor: pointer;
     user-select: none;
     transition: 500ms;
     overflow: hidden;

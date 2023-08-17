@@ -32,6 +32,11 @@ class Novo_Post{
         })
         P.Guardar("./data/tags.json",Bd_tags)
     }
+    async DeletarPosts(id){
+        let BD_posts = await P.Buscar("./data/posts.json")
+        let indice = BD_posts.posts.findIndex(post => (post.Post_ID === id))
+        console.log(indice)
+    }
 }
 module.exports = {
     Novo_Post
