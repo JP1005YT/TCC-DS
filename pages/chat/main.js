@@ -6,6 +6,13 @@ const Id_Chat = params.get("id")
 
 let conversa
 let u_infos
+function emitirSomDeNotificacao() {
+    // Obter o elemento de áudio
+    const audioElement = document.getElementById('notificationSound');
+    
+    // Reproduzir o som
+    audioElement.play();
+  }
 
 async function obterdados(){
     const dados = await fetch('../../ChatAll?id=' + Id_Chat + '&id_user=' + u_infos.id,{
@@ -33,22 +40,12 @@ async function Query_Alguem_Logado(){
     u_infos = resposta
     obterdados()
 }
-function formatarData(data) {
-    const dia = String(data.getDate()).padStart(2, '0');
-    const mes = String(data.getMonth() + 1).padStart(2, '0');
-    const ano = String(data.getFullYear()).slice(-2);
-    const hora = String(data.getHours()).padStart(2, '0');
-    const minutos = String(data.getMinutes()).padStart(2, '0');
-
-    return `${dia}/${mes}/${ano} ${hora}:${minutos}`;
-}
 // Manipuladores de eventos do formulário de envio de mensagens
 document.getElementById('message-form').addEventListener('submit', (event) => {
     event.preventDefault();
     const input = document.getElementById('input-message');
-    const dataAgora = new Date()
     if(input.value){
-        const message = [input.value,formatarData(dataAgora),u_infos.id];
+        const message = [input.value,u_infos.id];
         socket.emit("chat",Id_Chat,message);
         input.value = '';
     }
@@ -77,6 +74,7 @@ socket.on(Id_Chat, (mensagem) => {
             li.setAttribute("class","me")
         }else{
             li.setAttribute("class","another")
+            emitirSomDeNotificacao()
         }
         messagesList.appendChild(li);
         messagesList.scrollTop = messagesList.scrollHeight;

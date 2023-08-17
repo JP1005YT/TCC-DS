@@ -35,7 +35,12 @@ class Novo_Post{
     async DeletarPosts(id){
         let BD_posts = await P.Buscar("./data/posts.json")
         let indice = BD_posts.posts.findIndex(post => (post.Post_ID === id))
-        console.log(indice)
+        BD_posts.posts.splice(indice,1)
+        let deleteimage = "./public/posts_images/" + id
+        P.rimraf.rimraf((deleteimage))
+        P.Guardar("./data/posts.json",BD_posts)
+        this.RecarregarTags()
+        return true
     }
 }
 module.exports = {

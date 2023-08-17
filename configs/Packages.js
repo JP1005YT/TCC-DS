@@ -8,6 +8,7 @@ class Pacotes{
     multer = require("multer")
     path = require("path")
     io = require("socket.io")
+    rimraf = require("rimraf")
     // Presets
 
     Guardar(Local,Conteudo) {

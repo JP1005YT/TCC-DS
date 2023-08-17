@@ -20,14 +20,25 @@ const io = S.io
 
 // paginas e soquete
 
+function formatarData(data) {
+    const dia = String(data.getDate()).padStart(2, '0');
+    const mes = String(data.getMonth() + 1).padStart(2, '0');
+    const ano = String(data.getFullYear()).slice(-2);
+    const hora = String(data.getHours()).padStart(2, '0');
+    const minutos = String(data.getMinutes()).padStart(2, '0');
+
+    return `${dia}/${mes}/${ano} ${hora}:${minutos}`;
+}
+const dataAgora = new Date()
+
 io.on('connection', (socket) => {
     console.log('Novo usuário conectado');
 
     socket.on('chat',(chatId, message) => {
         let MensagemFormatada = {
             "msg" : message[0],
-            "date" : message[1],
-            "id_user" : message[2]
+            "date" : formatarData(dataAgora),
+            "id_user" : message[1]
         }
         ChatManager.RegistrarMensagens(chatId,MensagemFormatada)
         console.log(`Mensagem recebida no chat "${chatId}":`, message);
@@ -100,6 +111,7 @@ app.post('/sair', async function (req, res) {
 // Parte Social
 
 app.post('/tags', async function (req, res) {
+    NovoPOST.RecarregarTags()
     const tags = JSON.parse(P.fs.readFileSync('./data/tags.json'))
 
     res.send({ "tags": tags.tags })
@@ -161,10 +173,12 @@ app.post('/ChatAll',async (req,res) => {
     infos.chats.forEach(item => {
         if(item.id === req.query.id){
             chatExiste = item
+            if(item.users.indexOf(req.query.id_user) === -1){
+                chatExiste = false
+                return
+            }
         }
-        if(item.users.indexOf(req.query.id_user) === -1){
-            chatExiste = false
-        }
+
     })
     res.send(chatExiste)
 })
@@ -175,7 +189,7 @@ app.post('/deletechat',async (req,res) => {
 })
 app.post('/deletepost',async (req,res) => {
     let resp = await NovoPOST.DeletarPosts(req.query.id)
-    res.send(true)
+    res.send(resp)
 })
 
 app.post('/fitness',async (req,res) => {

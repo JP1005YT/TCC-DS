@@ -162,7 +162,15 @@ async function LoadPosts(){
         p.innerHTML = post.content
         span_quempostou.innerHTML = post.User_Name
         if(post.User_ID === u_infos.id){
-          console.log('bim')
+          let deletebtn = document.createElement('i')
+          deletebtn.setAttribute("class","bx bx-x")
+          deletebtn.setAttribute("id","deleteBton")
+          deletebtn.addEventListener("click",function(){
+            if (confirm("Você tem certeza que EXCLUIR esse POST?")) {
+              DeletarPost(post.Post_ID)
+            }
+          })
+          div_post.appendChild(deletebtn)
         }
         post.hashtags.forEach(hashtag =>{
           let li = document.createElement("li")
@@ -329,6 +337,7 @@ function NovoPost() {
     }
   };
   xhr.send(formData);
+  window.location.href = `../../pages/social/`
 }
 
 function makeid(length) {
@@ -347,7 +356,24 @@ async function DeletarPost(Id) {
     method: "POST",
 });
 resposta = await dados.json();
+if(resposta){
+  window.location.href = `../../pages/social/`
 }
+}
+
+let SearchInput = document.querySelector("#SearchInput");
+
+SearchInput.addEventListener("keyup", () => {
+  if(SearchInput.value.includes("#")){
+    console.log("hashtag")
+  }else if(SearchInput.value.includes("@")){
+    console.log("user")
+  }else{
+    console.log("title")
+  }
+});
+
+
 LoadTags()
 LoadPosts()
 Query_Alguem_Logado()
