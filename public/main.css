@@ -128,19 +128,54 @@ body{
     padding: 3px;
 }
 /* carrosel */
-.carrosel{
+.container-slider{
+    display: flex;
     background-color: red;
-    width: 100%;
     height: 90vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
-.sliders{
-    margin: 0 auto;
-    width: 90%;
-    height: 90%;
-    overflow: hidden;
+.container-images{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
 }
 
+.slider{
+    opacity: 0;
+    transition: opacity .2s;
+    position: absolute;
+    width: 100%;
+}
+
+.on{
+    opacity: 1;
+}
+
+.slider img{
+    width: 25%;
+}
+
+#prev-button, #next-button{
+    width: 5em;
+    height: 5em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#prev-button img, #next-button img{
+    width: 100%;
+    height: 100%;
+}
+
+#prev-button{
+    transform: rotate(180deg);
+}
 /* .conteudo{
     
 } */
@@ -268,9 +303,208 @@ body{
     flex-wrap: wrap;
     background-color: var(--cor2);
     width: 100%;
+    height: 101vh;
+    justify-content: center;
 }
 
+.quemsomos>header{
+    background-color: white;
+    width: 30%;
+    height: 10vh;
+    border-radius: 0 0 10em 10em;
+}
 
+.quemsomos>header>h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 300%;
+}
+
+.quemsomos>.conteudo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 89vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.quemsomos>.conteudo>.text1 , .text2{
+    display: flex;
+    width: 95%;
+    height: 50%;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    font-size: 200%;
+    padding: 2.5%;
+}
+
+.quemsomos>.conteudo>.text1 img, .text2 img{
+    width: 35%;
+    height: 80%;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+/* sobre plataforma */
+.sobreplat{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+}
+
+.infoleft{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 150%;
+    height: 100vh;
+}
+
+.infoleft>.sobre{
+    width: 100%;
+    height: 90vh;
+}
+
+.infoleft>header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    font-size: 300%;
+}
+
+.infoleft>.sobre>.infos{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 18vh;
+    font-size: 150%;
+}
+
+.infos img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 50%;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.inforight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.imagens{
+    display: flex;
+    background-color: var(--cor2);
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    border-radius: 5em;
+}
+
+.img1{
+    z-index: 3;
+    width: 35%;
+    margin-bottom: 25%;
+    margin-left: 5%;
+}
+
+.img2{
+    z-index: 2;
+    width: 45%;
+    margin-top: 25%;
+    margin-left: -5%;
+}
+/* receita */
+.receitas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(resources/images/frutas.jpg);
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+}
+
+.receitas header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor2);
+    width: 100%;
+    height: 20vh;
+}
+
+.receitas header h1{
+    font-size: 400%;
+}
+
+.receita{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+}
+
+.receita .receit p{
+    font-size: 150%;
+}
+
+.receit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor2);
+    width: 20%;
+    height: 30%;
+    border: 2px solid black;
+    border-radius: 2.5em;
+}
+
+.recei{
+    display: flex;
+    flex-direction: row;
+    margin-left: 15%;
+}
+
+.imgsuco1{
+    width: 40%;
+    height: 6em;
+    border-radius: 5em;
+}
+
+/* Ceos */
+.ceo{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: red;
+}
+
+.ceo header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200%;
+}
 /* PAGINA DE LOGIN E CADASTRO */
 
 /* PAGINA DE PERFIL */
