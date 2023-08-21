@@ -2,6 +2,8 @@ let u_infos
 function Troca_Pagina(e){
     if(u_infos && e == "acess"){
         window.location.href = `../../pages/profile/`
+    }else if(e == "acess"){
+        window.location.href = `../../pages/${e}/?pag=calculadora`
     }else{
         window.location.href = `../../pages/${e}/`
     }

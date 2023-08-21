@@ -12,7 +12,6 @@ function Constructor(Data){
     Data.Exercicios.forEach(element => {
         const item = document.createElement('div')
         item.setAttribute("class","card")
-
         const title = document.createElement('h1')
         title.setAttribute("class","title")
         title.innerHTML = element.name
@@ -31,20 +30,12 @@ function Constructor(Data){
 }
 LoadEx()
 
-const scrollableDiv = document.querySelector('.scrollable-div');
-
-scrollableDiv.addEventListener('focus', () => {
-    scrollableDiv.style.overflow = 'auto'; // Ativa as barras de rolagem
-});
-
-scrollableDiv.addEventListener('blur', () => {
-    scrollableDiv.style.overflow = 'hidden'; // Desativa as barras de rolagem
-});
-
 let u_infos
 function Troca_Pagina(e){
     if(u_infos && e == "acess"){
         window.location.href = `../../pages/profile/`
+    }else if(e == "acess"){
+        window.location.href = `../../pages/${e}/?pag=fitness`
     }else{
         window.location.href = `../../pages/${e}/`
     }

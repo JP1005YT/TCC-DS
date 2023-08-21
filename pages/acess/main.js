@@ -115,7 +115,6 @@ function troca_cor_log(){
     kapa[1].classList.toggle('ativo')
 }
 function volta(){
-    
     if(params.has("pag")){
         window.location.href = `../../pages/${params.get('pag')}/`;
     }else{
