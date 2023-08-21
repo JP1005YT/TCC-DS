@@ -11,8 +11,45 @@
     <script src='main.js' defer></script>
 </head>
 <body>
-    <header>
-        
+    <header class="menu">
+        <div class="leftside">
+            <nav>
+                <div onclick="Troca_Pagina('social')">
+                    <i class='bx bx-conversation' ></i>
+                    <span>Social</span>
+                </div>
+                <div onclick="Troca_Pagina('fitness')">
+                    <i class='bx bx-dumbbell'></i>
+                    <span>Fitness</span>
+                </div>
+                <div onclick="Troca_Pagina('alimentos')">
+                    <i class='bx bxs-baguette'></i>
+                    <span>Alimentos</span>
+                </div>
+                <div onclick="Troca_Pagina('doencas')">
+                    <i class='bx bxs-virus'></i>
+                    <span>Doenças</span>
+                </div>
+                <div onclick="Troca_Pagina('calculadora')">
+                    <i class='bx bxs-calculator'></i>
+                    <span>Calculadora</span>
+                </div>
+            </nav>
+        </div>
+        <div class="midside">
+            <img src="../../resources/assets/logo.png" width="20%">
+        </div>
+        <div class="rightside">
+            <div>
+                <div id="btnmenu" onclick="Troca_Pagina('acess')">
+                    <i class='bx bxs-user' id="icon_remove"></i>
+                    <img class="img_profile" width="120%">
+                </div>
+                <span id="text-entry">
+                    Entrar
+                </span>
+            </div>
+        </div>
     </header>
     <main>
         <section class="rosto">

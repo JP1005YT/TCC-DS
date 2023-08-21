@@ -17,12 +17,15 @@ Home,
     A --> G(Social)
 ```
 ## Anotações JP
-    > Ao criar nova tag retirar arrumar o recarregamento do rank que esta duplicando
-    > Ao criar novo post fechar a pagina e zerar os inputs
     > Checagem de Usuario (Existente)
     > Checar se chat ja existem
+    > Barra de pesquisar do social
+    > Confirmação ao Sair
+    > Arrumar os exercicios fisicos
+    > Footer do Fitness
+    > Calculadora e Pagina dos Exercicios
+    > Ao entrar em outra pagina e tentar fazer login retornar para esta e nao para a home
 ### Anotações Manu
-    > Fazer a logo.
     > A barra de pesquisar do social não funciona.
     
 > $ git config --global user.email "godlolpro32@gmail.com"
