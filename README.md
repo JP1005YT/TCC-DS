@@ -25,6 +25,8 @@ Home,
     > Footer do Fitness
     > Calculadora e Pagina dos Exercicios
     > Ao entrar em outra pagina e tentar fazer login retornar para esta e nao para a home
+    > trocar exercicios para : alterações.txt
+    > colocar no input "Digite o conteudo do post"
 ### Anotações Manu
     > A barra de pesquisar do social não funciona.
     
