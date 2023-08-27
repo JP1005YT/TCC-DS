@@ -18,7 +18,9 @@ font-family: 'Roboto', sans-serif; */
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
+body{
+    overflow-x: hidden;
+}
 .menu{
     background: var(--cor2);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
@@ -115,17 +117,85 @@ font-family: 'Roboto', sans-serif; */
     padding: 3px;
 }
 
-section{
+#screen_main{
+    flex-direction: column;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items:center;
     width: 100vw;
-    height: 90vh;
+    height: 190vh;
     background: url('../../resources/assets/FundoSocial.png');
     background-size: 20%;
 }
 #screen_main input{
-    padding: 2%;
-    width: 90%;
+    outline: none;
+    border: none;
+    width: 80%;
+    padding: 20px;
     font-size: 35px;
+}
+#screen_main span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    font-size: 80px;
+    width: 10%;
+    height: 90%;
+    background: var(--cor2);
+    color: #fff;
+    cursor: pointer;
+}
+#screen_main span:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#screen_main input:focus{
+    border-bottom: 2px solid black;
+}
+.inputcn{
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    margin: 5%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 80%;
+    height: 150px;
+    background: #fff;
+}
+#screen_infos{
+    width: 100%;
+    height: 1000px;
+}
+.inative{
+    display: none;
+}
+.infos1{
+    width: 100%;
+    height: 500px;
+    background: red;
+    animation: entra 1s;
+}
+.infos2{
+    width: 100%;
+    height: 500px;
+    background:blue;
+    animation: entra2 1s;
+}
+
+@keyframes entra {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes entra2 {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
 }

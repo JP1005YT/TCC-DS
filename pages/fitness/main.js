@@ -1,3 +1,4 @@
+let exe
 async function LoadEx(){
     const dados = await fetch('../../fitness',{
         method: "POST",
@@ -6,12 +7,15 @@ async function LoadEx(){
         }
     });
     resposta = await dados.json()
+    exe = resposta
     Constructor(resposta)
 }
 function Constructor(Data){
-    Data.Exercicios.forEach(element => {
+    let i = 0
+    Data.Exercicios.forEach((element,index) => {
         const item = document.createElement('div')
         item.setAttribute("class","card")
+        item.setAttribute("id",`card_${index}`)
         const title = document.createElement('h1')
         title.setAttribute("class","title")
         title.innerHTML = element.name
@@ -21,7 +25,13 @@ function Constructor(Data){
         const about = document.createElement('p')
         about.setAttribute("class","about")
         about.innerHTML = element.sobre
-        
+        if(i < 3){
+            item.classList.add('flex')
+            i++
+        }else{
+            item.classList.add('inv')
+            i++
+        }
         item.appendChild(title)
         item.appendChild(type)
         item.appendChild(about)
@@ -49,7 +59,6 @@ async function Query_Alguem_Logado(json){
         }
     });
     resposta = await dados.json();
-    console.log(resposta)
     u_infos = resposta
 }
 async function Carregar_Foto(){
@@ -65,6 +74,52 @@ async function Carregar_Foto(){
         }else{
             document.querySelector('.img_profile').style.display = 'none'
         }
+}
+document.querySelector("#Tr_esq").addEventListener("click",function(){
+    ChangeCarrousel(0)
+})
+document.querySelector("#Tr_dir").addEventListener("click",function(){
+    ChangeCarrousel(1)
+})
+
+const deixar = [
+    [0,1,2],
+    [3,4,6],
+    [6,7,8]
+]
+let atual = 1
+
+function ChangeCarrousel(lado){
+    let cards = document.querySelectorAll(".card");
+    cards = Array.from(cards); // Convertendo NodeList para Array
+    cards.forEach(card => {
+        card.classList.remove("flex")
+        card.classList.add("inv");
+    });
+
+    switch (lado) {
+        case 0:
+            if(atual === 0){
+                atual = 2
+            }else{
+                atual--
+            }
+        break;
+        case 1:
+            if(atual === 2){
+                atual = 0
+            }else{
+                atual++
+            }
+        break;
+    }
+
+    
+
+    deixar[atual].forEach(id => {
+        document.querySelector("#card_" + id).classList.remove("inv")
+        document.querySelector("#card_" + id).classList.add("flex")
+    });
 }
 
 Carregar_Foto()

@@ -36,3 +36,28 @@ async function Carregar_Foto(){
 }
 
 Carregar_Foto()
+
+document.querySelector("#btnCalc").addEventListener("click",function(){
+    document.querySelector(".infos1").classList.remove("inative")
+})
+
+// Função para atualizar a exibição da posição do scroll
+let posAnterior = 0
+function updateScrollPosition() {
+    const scrollPosition = window.scrollY
+    
+    while(posAnterior <= scrollPosition){
+        let obj = document.querySelector(".h-"+posAnterior)
+        if(obj){
+            console.log(obj)
+            obj.classList.remove("inative")
+        }
+        posAnterior++
+    }
+
+    posAnterior = scrollPosition
+}
+  
+  // Atualiza a posição do scroll quando o usuário faz o scroll
+  window.addEventListener('scroll', updateScrollPosition);
+  
