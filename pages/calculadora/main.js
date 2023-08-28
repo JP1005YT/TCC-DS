@@ -38,24 +38,67 @@ async function Carregar_Foto(){
 Carregar_Foto()
 
 document.querySelector("#btnCalc").addEventListener("click",function(){
-    document.querySelector(".infos1").classList.remove("inative")
+    document.querySelector(".infos").classList.remove("inative")
+    document.querySelector(".infos").style.display = 'flex'
+    document.querySelector("body").classList.remove("off")
+    desativado = false
+    CarregaContas()
 })
+const valoresporGrama = {
+    "Maca" : 0.53,
+    "Granola" : 3.70,
+    "Pizza" : 4.50
+}
+const exerciosporHora = {
+    "corrida" : 1176,
+    "pular" : 735,
+    "polichinelo" : 588
+}
+const obj = {
+    "displaysDaCalc" : document.querySelectorAll("#num_calc"),
+    "displayMaca" : document.querySelector("#val_maca"),
+    "displayGranola" : document.querySelector("#val_granola"),
+    "displayPizza" : document.querySelector("#val_pizza"),
+    "displayCorrida" : document.querySelector("#val_corr"),
+    "displayPular" : document.querySelector("#val_pula"),
+    "displayPoli" : document.querySelector("#val_poli"),
+    
+}
+function CarregaContas(){
+    let valorDoDisplay = document.querySelector("#numRo").value
+    obj.displaysDaCalc.forEach(ele => {
+        ele.innerHTML = valorDoDisplay
+    })
+
+    obj.displayMaca.innerHTML = Math.floor(valorDoDisplay / valoresporGrama.Maca)
+    obj.displayGranola.innerHTML = Math.floor(valorDoDisplay / valoresporGrama.Granola)
+    obj.displayPizza.innerHTML = Math.floor(valorDoDisplay / valoresporGrama.Pizza)
+    obj.displayCorrida.innerHTML = Math.floor((valorDoDisplay * 60) / exerciosporHora.corrida)
+    obj.displayPular.innerHTML = Math.floor((valorDoDisplay * 60) / exerciosporHora.pular)
+    obj.displayPoli.innerHTML = Math.floor((valorDoDisplay * 60) / exerciosporHora.polichinelo)
+}
 
 // Função para atualizar a exibição da posição do scroll
 let posAnterior = 0
+let desativado = true
 function updateScrollPosition() {
-    const scrollPosition = window.scrollY
+    if(desativado){
+        window.scroll(0,0)
+    }else{
+        const scrollPosition = window.scrollY
     
-    while(posAnterior <= scrollPosition){
-        let obj = document.querySelector(".h-"+posAnterior)
-        if(obj){
-            console.log(obj)
-            obj.classList.remove("inative")
+        while(posAnterior <= scrollPosition){
+            let obj = document.querySelector(".h-"+posAnterior)
+            if(obj){
+                console.log(obj)
+                obj.classList.remove("inative")
+                obj.style.display = 'flex'
+            }
+            posAnterior++
         }
-        posAnterior++
+    
+        posAnterior = scrollPosition
     }
-
-    posAnterior = scrollPosition
 }
   
   // Atualiza a posição do scroll quando o usuário faz o scroll

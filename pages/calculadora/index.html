@@ -7,7 +7,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src='main.js' defer></script>
 </head>
 <body>
     <header class="menu">
@@ -52,25 +51,58 @@
     </header>
     <section id="screen_main">
         <div class="inputcn">
-            <input type="number" placeholder="Quantas calorias você quer perder?">
+            <input type="number" placeholder="Quantas calorias você quer perder?" id="numRo">
             <span id="btnCalc">
                 <i class='bx bx-math'></i>
             </span>
         </div>
         <section id="screen_infos">
-            <div class="infos1 inative">
-                
+            <div class="infos inative">
+                <section>
+                    <h2><span id="num_calc"></span>Kcal Equivale a:</h2>
+                    <div>
+                        <img src="../../resources/assets/calc/apple.jpg" width="80%">
+                        <p><span id="val_maca"></span>g de Maça</p>
+                    </div>
+                    <div>
+                        <img src="../../resources/assets/calc/granola.jpg" width="80%">
+                        <p><span id="val_granola"></span>g de Granola</p>
+                    </div>
+                    <div>
+                        <img src="../../resources/assets/calc/pizza.jpg" width="80%">
+                        <p><span id="val_pizza"></span>g de Pizza (1 fatia = 100g)</p>
+                    </div>
+                </section>
             </div>
-            <div class="infos2 inative h-200">
-    
+            <div class="infos inative h-200">
+                <section>    
+                    <h2><span id="num_calc"></span>Kcal da pra ser queimada fazendo:</h2>
+                    <div>
+                        <img src="../../resources/assets/calc/corrida.jpg" width="80%">
+                        <p><span id="val_corr"></span> minutos Correndo(16/kph)</p>
+                    </div>
+                    <div>
+                        <img src="../../resources/assets/calc/pulando.jpg" width="80%">
+                        <p><span id="val_pula"></span> minutos Pulando corda</p>
+                    </div>
+                    <div>
+                        <img src="../../resources/assets/calc/polichinelo.png" width="80%">
+                        <p><span id="val_poli"></span> minutos de Polichinelo</p>
+                    </div>
+                </section>
             </div>
-            <div class="infos1 inative h-300">
-                
+            <div class="infos anm inative h-500">
+                <section>
+                    
+                </section>
             </div>
-            <div class="infos2 inative h-400">
-    
+            <div class="infos inative h-800">
+                <section>
+                    
+                </section>
             </div>
         </section>
     </section>
+    <script src='main.js'></script>
 </body>
 </html>
