@@ -22,7 +22,7 @@ body{
     position:relative;
     overflow-x: hidden;
     width: 100vw;
-    height: 300vw;
+    height: 100vh;
     background: url('./resources/assets/FundoSocial.png');
     background-size: 20%;
 }
@@ -328,6 +328,7 @@ body{
     height: 89vh;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
     margin-top: 1%;
 }
 
@@ -335,7 +336,6 @@ body{
     display: flex;
     width: 95%;
     height: 50%;
-    background-color: white;
     justify-content: center;
     align-items: center;
     border-radius: 2em;
@@ -343,11 +343,16 @@ body{
     padding: 2.5%;
 }
 
+.quemsomos>.conteudo>.text1 img{
+    margin-right: 5%;
+}
+
 .quemsomos>.conteudo>.text1 img, .text2 img{
     width: 35%;
     height: 80%;
     border: 1px solid black;
-    border-radius: 50%;
+    background-color: white;
+    border-radius: 1em;
 }
 
 /* sobre plataforma */
@@ -388,6 +393,7 @@ body{
     width: 100%;
     height: 18vh;
     font-size: 150%;
+    font-weight: bolder;
 }
 
 .infos img{
@@ -397,7 +403,8 @@ body{
     width: 20%;
     height: 50%;
     border: 2px solid black;
-    border-radius: 50%;
+    border-radius: 1em;
+    margin-left: 2%;
 }
 
 .inforight{
@@ -464,6 +471,7 @@ body{
 
 .receita .receit p{
     font-size: 150%;
+    font-weight: bolder;
 }
 
 .receit{
@@ -496,14 +504,227 @@ body{
     flex-direction: column;
     height: 100vh;
     width: 100%;
-    background-color: red;
+    background-color: white;
 }
 
 .ceo header{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 4em;
+    height: 30vh;
+    width: 100%;
+    font-weight: bolder;
+}
+
+.ceos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    margin-top: 11.8em;
+    height: 70vh;
+    width: 100%;
+}
+
+.ceoss{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 18em;
+    margin-top: 1em;
+}
+
+.fotoceo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 35em;
+    height: 12em;
+    margin-bottom: 15em;
+}
+
+.fotoceo img{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 35%;
+    height: 100%;
+}
+
+.caxavd{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    background-color: var(--cor2);
+    border-radius: 0.5rem;
+    width: 90%;
+    height: 80em;
     font-size: 200%;
+    font-weight: bolder;
+    padding-left: 6%;
+    padding-bottom: 3%;
+}
+
+.depoimento{
+    width: 90%;
+    padding-left: 2%;
+}
+/* redes */
+.redes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+}
+
+.psocial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    background-color: white;
+}
+
+.mensagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 50%;
+    height: 100vh;
+    padding: 2em;
+}
+
+.mensagemen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90vh;
+    border-radius: 2rem;
+    background-color: var(--cor2);
+}
+
+.mensagemmensagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 96%;
+    height: 96%;
+    border-radius: 2rem;
+    padding: 1%;
+}
+
+.mensagemmensagem>h1{
+    font-size: 350%;
+}
+
+.mensagemmensagem>h2{
+    text-align: center;
+    font-size: 200%;
+    width: 91%;
+}
+
+.mensagemmensagem>img{
+    width: 12em;
+    height: 12em;
+}
+/* footer */
+.footer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+}
+
+.imagems{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40%;
+    height: 100vh;
+    background-color: var(--cor2);
+}
+
+.imagems img{
+    border: 1px solid black;
+    border-radius: 0.4em;
+    width: 19em;
+    height: 15em;
+}
+
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 100vh;
+    background-color: var(--cor2);
+}
+
+.informacoes h1{
+    font-size: 600%;
+}
+
+.informacoes h3{
+    font-size: 350%;
+}
+
+.informacoes h4{
+    font-size: 250%;
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    height: 40%;
+    padding-right: 0.7rem;
+}
+
+.bot{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 60%;
+}
+
+.git{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 125%;
+}
+
+.face{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 125%;
+}
+
+.insta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 125%;
 }
 /* PAGINA DE LOGIN E CADASTRO */
 
