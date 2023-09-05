@@ -1,4 +1,7 @@
 let exe
+document.querySelector("#logohere").addEventListener("click",function(){
+    window.location.href = "../../"
+})
 async function LoadEx(){
     const dados = await fetch('../../fitness',{
         method: "POST",

@@ -39,7 +39,8 @@ font-family: 'Roboto', sans-serif; */
     width: 20%;
     height: 70%;
     border-radius: 25px;
-    background: #fff;
+    background: linear-gradient(50deg,var(--base1) ,var(--base2));
+    color: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     margin: 0.6%;
     margin-right: 1%;
@@ -57,10 +58,10 @@ font-family: 'Roboto', sans-serif; */
     align-items: center;
     font-size: 35px;
     border-radius: 25px;
-    background: #fff;
+    background: linear-gradient(80deg,var(--base1) ,var(--base2));
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    color: black;
-    padding: 2%;
+    color: white;
+    padding: 3%;
 }
 #btnright:hover{
     cursor: pointer;
@@ -195,13 +196,14 @@ main > nav > ul li{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3%;
+    padding: 5%;
     border-radius: 10px;
     background: var(--base1);
+    color: white;
 }
 main > nav > ul li:hover{
     cursor: pointer;
-    /* background: var(--contraste); */
+    background: var(--base2);
 }
 main #dashboard{
     padding: 2%;
@@ -226,10 +228,18 @@ main #dashboard .post{
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 main #dashboard .post ul{
+    padding: 10px 0px 10px 0px;
     display: flex;
     list-style: none;
 }
+main #dashboard .post h2{
+    padding-bottom: 0.5%;
+}
+main #dashboard .post p{
+    padding-bottom: 0.5%;
+}
 .post.text{
+    background: red;
     min-height: 5%;
 }
 .post.midia{
@@ -480,10 +490,14 @@ main #dashboard .post ul{
     font-size: 35px;
 }
 #deleteBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 25px;
     border-radius: 0px 10px 10px 0px;
     background: var(--base1);
     cursor: pointer;
+    color: white;
 }
 #deleteBtn:hover{
     background:red;

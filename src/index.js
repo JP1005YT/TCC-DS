@@ -9,6 +9,7 @@ const {Profile_Photo_Manager} = require("../classes/Profile_ImG.js")
 const {Server} = require("../configs/Server.js");
 const {Novo_Post} = require("../classes/Criar_Novo_Post.js")
 const {Chats} = require("../classes/Chats.js")
+const {SearchPosts} = require("../classes/SearchPosts.js")
 const ChatManager = new Chats()
 const UploadImagePosts = require("../classes/UploadImagePost.js")
 const UploadImage = require("../classes/UploadImagePerfil.js");
@@ -136,8 +137,9 @@ app.post('/newpost/:postId', UploadImagePosts.array('images',5),async (req,res) 
     res.send("OK")
 })
 
+const GerenciadorPosts = new SearchPosts()
 app.post('/buscarpost', async (req,res) => {
-    res.send(P.Buscar("./data/posts.json"))
+    res.send(GerenciadorPosts.Buscar(req.body))
 })
 
 app.post('/checkpost',async (req,res) => {

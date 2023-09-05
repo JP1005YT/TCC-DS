@@ -3,6 +3,15 @@ let hashtagstonewpost = []
 let comparetag
 let u_infos
 
+// Pega a URL atual
+const url = window.location.href;
+
+// Cria um objeto URL a partir da URL
+const urlObj = new URL(url);
+
+// Pega o valor do parâmetro 'tag' da URL
+const tagValue = urlObj.searchParams.get('tag');
+
 function volta(){
     window.location.href = `../../`;
 }
@@ -48,17 +57,20 @@ async function LoadDirects(){
     dell.setAttribute("class","bx bx-x")
     dell.setAttribute("id","deleteBtn")
     dell.addEventListener("click",async() => {
-      const dados = await fetch('../../deletechat',{
-        method: "POST",
-        body: JSON.stringify({"idchat":element}),
-        headers: {
-          "Content-Type": "application/json"
+      if(confirm("DESEJA DELETAR O CHAT COM " + resposta.nome + "?")){
+        const dados = await fetch('../../deletechat',{
+          method: "POST",
+          body: JSON.stringify({"idchat":element}),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        resposta = await dados.json()
+        if(resposta){
+          window.location.href = "../../pages/social/"
         }
-      })
-      resposta = await dados.json()
-      if(resposta){
-        window.location.href = "../../pages/social/"
       }
+      
     })
     li.innerHTML = resposta.nome
     li.addEventListener("click",() => {
@@ -86,9 +98,14 @@ async function LoadTags() {
     RankHashTags()
 }
 
-async function LoadPosts(){
+async function LoadPosts(json){
+    document.querySelector('#dashboard').innerHTML = ""
     const dados = await fetch('../../buscarpost', {
-        method: "POST"
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(json)
     });
     const resposta = await dados.json();
     const respostaInversa = resposta.posts.reverse()
@@ -364,16 +381,30 @@ if(resposta){
 let SearchInput = document.querySelector("#SearchInput");
 
 SearchInput.addEventListener("keyup", () => {
-  if(SearchInput.value.includes("#")){
-    console.log("hashtag")
-  }else if(SearchInput.value.includes("@")){
-    console.log("user")
-  }else{
-    console.log("title")
+  let json = {
+    "type" : "",
+    "content" : SearchInput.value
   }
+  if(SearchInput.value.length === 0){
+    json.content = "*"
+    json.type = "*"
+  }else{
+    if(SearchInput.value.includes("#")){
+      json.type = "tag"
+    }else if(SearchInput.value.includes("@")){
+      json.type = "user"
+    }else{
+      json.type = "title"
+    }
+  }
+  LoadPosts(json)
 });
 
 
 LoadTags()
-LoadPosts()
+if(!tagValue){
+  LoadPosts({"type":"*","content":"*"})
+}else{
+  LoadPosts({"type":"tag","content":tagValue})
+}
 Query_Alguem_Logado()

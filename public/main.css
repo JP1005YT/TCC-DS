@@ -861,3 +861,9 @@ body{
     cursor: pointer;
     box-shadow: 0 0 5px black inset;
 }
+.logoHome{
+    width: 10%;
+}
+.logoHome:hover{
+    width: 30%;
+}

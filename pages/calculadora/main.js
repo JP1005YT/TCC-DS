@@ -34,7 +34,9 @@ async function Carregar_Foto(){
             document.querySelector('.img_profile').style.display = 'none'
         }
 }
-
+document.querySelector("#logohere").addEventListener("click",function(){
+    window.location.href = "../../"
+})
 Carregar_Foto()
 
 document.querySelector("#btnCalc").addEventListener("click",function(){
