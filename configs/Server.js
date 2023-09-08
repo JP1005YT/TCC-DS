@@ -17,7 +17,7 @@ class Server{
         this.app.use(P.cors());
 
         // Porta do servidor
-        const PORT = 3333;
+        const PORT = 3000;
 
         // Abri o server
         this.server.listen(PORT, () => {

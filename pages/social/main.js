@@ -32,8 +32,16 @@ async function Query_Alguem_Logado(json){
     }
 }
 
+let bodyover = false
 function ToNovoPost(){
     document.querySelector("#post-page").classList.toggle("ativo")
+    if(bodyover === false){
+        document.querySelector("body").style.overflowY = 'hidden'
+      bodyover = true
+    }else{
+      document.querySelector("body").style.overflowY = 'visible' 
+      bodyover = false
+    }
 }
 
 function ToNovaTag(){

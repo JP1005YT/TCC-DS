@@ -253,12 +253,13 @@ main #dashboard .post p{
     position: absolute;
     left: calc(50% - 25px);
     top: 0;
-    color: red;
+    color: #f83c3e;
     background: var(--base1);
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
 .post #deleteBton:hover{
+    background: var(--base2);
     cursor: pointer;
 }
 .post span{
@@ -348,15 +349,21 @@ main #dashboard .post p{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
 }
 .post-page.ativo .screen > section input{
-    width: 100%;
-    padding: 1%;
+    outline: none;
+    padding: 10px;
+    width: 90%;
     font-size: 35px;
+    margin-left: 5%;
 }
 .post-page.ativo .screen > section textarea{
-    width: 100%;
+    border-top: none;
+    outline: none;
+    padding: 10px;
+    width: 90%;
     resize: none;
     height: 90%;
     font-size: 25px;
+    margin-left: 5%;
 }
 .post-page.ativo .screen > div > section {
     display: flex;
@@ -373,8 +380,9 @@ main #dashboard .post p{
     border-radius: 10px;
 }
 .post-page.ativo .screen > div section label{
+    width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     padding: 5%;
 }
@@ -386,10 +394,12 @@ main #dashboard .post p{
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 50%;
-    height: 50%;
+    width: 70%;
+    height: 90%;
     padding: 2%;
     overflow-y: scroll;
+    overflow-x: hidden;
+    color: white;
 }
 .post-page.ativo .screen > div > section nav span{
     border-radius: 15px;
@@ -401,7 +411,7 @@ main #dashboard .post p{
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2) inset;
 }
 .post-page.ativo .screen > div > section nav span.ativo{
-    background: linear-gradient(80deg,rgb(40, 170, 98),rgb(5, 155, 165));
+    background: var(--base2);
 }
 /* Pagina TAGS */
 
