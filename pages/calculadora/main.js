@@ -81,14 +81,14 @@ function CarregaContas(){
 }
 
 // Função para atualizar a exibição da posição do scroll
-let posAnterior = 0
+let posAnterior = 1
 let desativado = true
 function updateScrollPosition() {
     if(desativado){
         window.scroll(0,0)
     }else{
-        const scrollPosition = window.scrollY
-    
+        const scrollPosition = Math.floor(window.scrollY)
+        
         while(posAnterior <= scrollPosition){
             let obj = document.querySelector(".h-"+posAnterior)
             if(obj){
@@ -96,6 +96,7 @@ function updateScrollPosition() {
                 obj.classList.remove("inative")
                 obj.style.display = 'flex'
             }
+            console.log(posAnterior)
             posAnterior++
         }
     
