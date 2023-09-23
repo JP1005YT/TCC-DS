@@ -23,9 +23,9 @@ function Constructor(Data){
         const type = document.createElement('span')
         type.setAttribute("class","type")
         type.innerHTML = element.tipo
-        const about = document.createElement('p')
-        about.setAttribute("class","about")
-        about.innerHTML = element.sobre
+        // const about = document.createElement('p')
+        // about.setAttribute("class","about")
+        // about.innerHTML = element.sobre
         if(i < 3){
             item.classList.add('flex')
             i++
@@ -35,7 +35,7 @@ function Constructor(Data){
         }
         item.appendChild(title)
         item.appendChild(type)
-        item.appendChild(about)
+        // item.appendChild(about)
         document.querySelector("#items-here").appendChild(item)
     });
 }
@@ -85,7 +85,7 @@ document.querySelector("#Tr_dir").addEventListener("click",function(){
 
 const deixar = [
     [0,1,2],
-    [3,4,6],
+    [3,4,5  ],
     [6,7,8]
 ]
 let atual = 1

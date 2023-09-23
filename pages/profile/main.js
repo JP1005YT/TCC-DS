@@ -136,6 +136,8 @@ async function ConstruirProfile(another){
         document.querySelector("#p_sexo").innerHTML = u_infos2.sexo
         if(u_infos2.peso){
             let IMC = u_infos2.peso / (u_infos2.altura * u_infos2.altura)
+            let DEG_SETA = ((IMC * 180) / 40) - 90
+            console.log(DEG_SETA)
             document.querySelector("#imchere").innerHTML = IMC.toFixed(1)
         }
     }else{
@@ -162,7 +164,18 @@ async function ConstruirProfile(another){
             document.querySelector("#hinput").readOnly = true
         }
         if(u_infos.peso && u_infos.altura){
+            let Medidor = [-80,-43,-3,37,79]
             let IMC = u_infos.peso / (u_infos.altura * u_infos.altura)
+            let seta = document.querySelector("#img2")
+            if (IMC < 18.5) {
+                seta.style.transform = `rotate(${Medidor[0]}deg)`;
+            } else if (IMC >= 18.5 && IMC <= 24.9) {
+                seta.style.transform = `rotate(${Medidor[1]}deg)`;
+            } else {
+                console.log(IMC);
+            }
+            
+            
             document.querySelector("#imchere").innerHTML = IMC.toFixed(1)
             document.querySelector("#btnImc").innerHTML = "Editar"
         }

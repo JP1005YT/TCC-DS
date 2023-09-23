@@ -344,3 +344,15 @@ body{
     text-shadow: 0 0 5px #fff;
     background: linear-gradient(120deg ,var(--cor2),rgb(5, 155, 165));
 }
+.imc-img-div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#img2{
+    transform-origin: bottom;
+    position: absolute;
+    bottom: 50px;
+}
