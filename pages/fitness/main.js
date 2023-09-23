@@ -1,4 +1,3 @@
-let exe
 document.querySelector("#logohere").addEventListener("click",function(){
     window.location.href = "../../"
 })
@@ -10,7 +9,6 @@ async function LoadEx(){
         }
     });
     resposta = await dados.json()
-    exe = resposta
     Constructor(resposta)
 }
 function Constructor(Data){

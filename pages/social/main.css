@@ -236,6 +236,7 @@ main #dashboard .post h2{
     padding-bottom: 0.5%;
 }
 main #dashboard .post p{
+    word-wrap: break-word;
     padding-bottom: 0.5%;
 }
 .post.text{

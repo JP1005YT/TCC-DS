@@ -44,8 +44,8 @@ html,body{
     transition: 100ms;
     margin: 0 20px 0 20px;
     display: flex;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     font-size: 30px;
     background-color: white;
@@ -70,7 +70,7 @@ html,body{
 .leftside nav{
     display: flex;
     justify-content: space-around;
-    padding: 1%;
+    padding: 0.5%;
     align-items: center;
     background: white;
     width: 85%;
@@ -86,6 +86,7 @@ html,body{
     align-items: center;
     overflow: hidden;
     width: 70px;
+    color: #fff;
     background: linear-gradient(70deg,var(--base1), var(--base2));
 }
 .leftside nav div:hover{
@@ -279,6 +280,7 @@ main .rosto .align-items div h3{
     width: 90%;
 }
 .exercicios #items-here .card{
+    transition: 200ms;
     user-select: none;
     flex-direction: column;
     width: 30%;
@@ -290,6 +292,8 @@ main .rosto .align-items div h3{
     border-radius: 25px;
 }
 .exercicios #items-here .card:hover{
+    width: 35%;
+    cursor: pointer;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 .card.inv{

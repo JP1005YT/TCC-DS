@@ -47,8 +47,8 @@ body{
     transition: 100ms;
     margin: 0 20px 0 20px;
     display: flex;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     font-size: 30px;
     background-color: white;
@@ -73,7 +73,7 @@ body{
 .leftside nav{
     display: flex;
     justify-content: space-around;
-    padding: 1%;
+    padding: 0.5%;
     align-items: center;
     background: white;
     width: 85%;
@@ -89,6 +89,7 @@ body{
     align-items: center;
     overflow: hidden;
     width: 70px;
+    color: #fff;
     background: linear-gradient(70deg,var(--cor2), var(--base2));
 }
 .leftside nav div:hover{
