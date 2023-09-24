@@ -28,11 +28,6 @@ function volta(){
         window.location.href = `../../`;
     }
 }
-document.querySelector("#configBtn").addEventListener("click",setting_screen)
-
-function setting_screen(){
-    document.querySelector('#configuracoes_screen').classList.toggle('ativo') 
-}
 document.querySelector("#sendDirect").addEventListener("click",async function(){
     const dados = await fetch('../../newchat', {
         method: "POST",
@@ -62,7 +57,6 @@ async function Query_Alguem_Logado(json){
     if(params.has("id") && params.get("id") != u_infos.id){
         ConstruirProfile(params.get("id"))
         document.querySelector("#exitBtn").style.display = 'none'
-        document.querySelector("#configBtn").style.display = 'none'
         document.querySelector(".imc-infos").style.display = 'none'
         document.querySelector(".profile_image").setAttribute("onclick","")
         document.querySelector(".profile_image").setAttribute("class","profile_imag")
@@ -99,16 +93,18 @@ function MudarImagem(){
     document.querySelector('#troca_imagem_screen').classList.toggle('ativo') 
 }
 async function Sair(){
-    const dados = await fetch('../../sair',{
-        method: "POST",
-        headers: {
-            "token": localStorage.getItem("token")
+    if(confirm('Deseja Sair?')){
+        const dados = await fetch('../../sair',{
+            method: "POST",
+            headers: {
+                "token": localStorage.getItem("token")
+            }
+        });
+        if(dados){
+            localStorage.removeItem("token")
         }
-    });
-    if(dados){
-        localStorage.removeItem("token")
+        volta()
     }
-    volta()
 }
 async function ConstruirProfile(another){
     let user_profile= document.querySelector("#screen_username")
@@ -130,16 +126,31 @@ async function ConstruirProfile(another){
             document.getElementById('img_profile').setAttribute('src',`../../resources/assets/defaut.png`)
         }
         document.querySelector("#p_user").innerHTML = u_infos2.user
-        document.querySelector("#p_email").innerHTML = u_infos2.email
+        // document.querySelector("#p_email").innerHTML = u_infos2.email
         let dn = u_infos2.data.split("-")
         document.querySelector("#p_datanasc").innerHTML = `${dn[2]}/${dn[1]}/${dn[0]}`
         document.querySelector("#p_sexo").innerHTML = u_infos2.sexo
+        let Medidor = [-80,-43,-3,37,79]
+        let IMC = u_infos.peso / (u_infos.altura * u_infos.altura)
+        let seta = document.querySelector("#img2")
+        if (IMC < 18.5) {
+            seta.style.transform = `rotate(${Medidor[0]}deg)`;
+        } else if (IMC >= 18.5 && IMC <= 24.9) {
+            seta.style.transform = `rotate(${Medidor[1]}deg)`;
+        } else if (IMC >= 24.9 && IMC <= 29.9){
+            seta.style.transform = `rotate(${Medidor[2]}deg)`
+        }else if (IMC >= 29.9 && IMC <= 35){
+            seta.style.transform = `rotate(${Medidor[3]}deg)`
+        }else if (IMC >= 40){
+            seta.style.transform = `rotate(${Medidor[4]}deg)`
+        }
         if(u_infos2.peso){
             let IMC = u_infos2.peso / (u_infos2.altura * u_infos2.altura)
             let DEG_SETA = ((IMC * 180) / 40) - 90
             console.log(DEG_SETA)
-            document.querySelector("#imchere").innerHTML = IMC.toFixed(1)
+            document.querySelector("#imchere").innerHTML = "IMC:" + IMC.toFixed(1)
         }
+        // document.querySelector("#btnImc").style.display = 'none'
     }else{
 
         user_profile.innerHTML = u_infos['nome']
@@ -150,7 +161,7 @@ async function ConstruirProfile(another){
             document.getElementById('img_profile').setAttribute('src',`../../resources/assets/defaut.png`)
         }
         document.querySelector("#p_user").innerHTML = u_infos.user
-        document.querySelector("#p_email").innerHTML = u_infos.email
+        // document.querySelector("#p_email").innerHTML = u_infos.email
         let dn = u_infos.data.split("-")
         document.querySelector("#p_datanasc").innerHTML = `${dn[2]}/${dn[1]}/${dn[0]}`
         document.querySelector("#p_sexo").innerHTML = u_infos.sexo
@@ -171,12 +182,16 @@ async function ConstruirProfile(another){
                 seta.style.transform = `rotate(${Medidor[0]}deg)`;
             } else if (IMC >= 18.5 && IMC <= 24.9) {
                 seta.style.transform = `rotate(${Medidor[1]}deg)`;
-            } else {
-                console.log(IMC);
+            } else if (IMC >= 24.9 && IMC <= 29.9){
+                seta.style.transform = `rotate(${Medidor[2]}deg)`
+            }else if (IMC >= 29.9 && IMC <= 35){
+                seta.style.transform = `rotate(${Medidor[3]}deg)`
+            }else if (IMC >= 40){
+                seta.style.transform = `rotate(${Medidor[4]}deg)`
             }
             
             
-            document.querySelector("#imchere").innerHTML = IMC.toFixed(1)
+            document.querySelector("#imchere").innerHTML = "IMC:" + IMC.toFixed(1)
             document.querySelector("#btnImc").innerHTML = "Editar"
         }
     }
