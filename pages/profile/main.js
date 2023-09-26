@@ -148,8 +148,8 @@ async function ConstruirProfile(another){
             let IMC = u_infos2.peso / (u_infos2.altura * u_infos2.altura)
             let DEG_SETA = ((IMC * 180) / 40) - 90
             console.log(DEG_SETA)
-            document.querySelector("#imchere").innerHTML = "IMC:" + IMC.toFixed(1)
         }
+        document.querySelector("#imchere").innerHTML = "IMC:" + IMC.toFixed(1)
         // document.querySelector("#btnImc").style.display = 'none'
     }else{
 
