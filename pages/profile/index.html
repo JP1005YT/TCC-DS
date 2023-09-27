@@ -18,12 +18,6 @@
                 <input type="file" id="file" name="arquivo" accept=".png,.jpg">
             </div>
         </div>
-        <div id="configuracoes_screen" class="configuracoes_screen">
-            <div>
-                <i class='bx bx-arrow-back' onclick="setting_screen()"></i>
-                <h1>Configurações</h1>
-            </div>
-        </div>
         <section>
             <div class="upper">
                 <figure class="profile_image" onclick="MudarImagem()">
@@ -41,14 +35,9 @@
             </div>
             <div class="bottom">
                 <div class="personal">
-                    <i class='bx bxs-cog' id="configBtn"></i>
                     <label>
                         User:
                         <span id="p_user"></span>
-                    </label>
-                    <label>
-                        E-Mail:
-                        <span id="p_email"></span>
                     </label>
                     <label>
                         Data Nascimento:
@@ -61,9 +50,10 @@
                 </div>
                 <div class="imc">
                     <div class="imc-img-div">
-                        <img src="../../Ideia.avif" width="100%">
+                        <img src="../../Ideia.png" height="80%">
+                        <img src="../../Seta.png" height="60%" id="img2">
                     </div>
-                    <label>IMC:<h2 id="imchere">Any%</h2></label>
+                    <h2 id="imchere">Any%</h2>
                     <div class="imc-infos">
                         <div>
                             <label>Altura</label>
