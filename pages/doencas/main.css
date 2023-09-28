@@ -23,9 +23,7 @@ html,body{
 }
 
 body{
-    display: flex;
-    flex-direction: column;
-    background-image: url(../../public/resources/assets/FundoSocial.png);
+    background-image: url(../../resources/assets/FundoSocial.png);
 }
 
 .menu{
@@ -160,11 +158,13 @@ body{
 .screen1 h1{
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 4em;
     margin-left: 1%;
     height: 100%;
+    width: 100%;
     text-align: center;
-    background: linear-gradient(75deg, rgba(0, 0, 0, 0.15), var(--base2));
+    background: linear-gradient(80deg, rgba(0, 0, 0, 0.0005), var(--base2));
 }
 
 .screen2{
@@ -221,7 +221,7 @@ body{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 150vh;
+    height: 100vh;
     background-color: var(--cor1);
 }
 
@@ -230,7 +230,7 @@ body{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 150vh;
+    height: 100vh;
     background-color: var(--cor1);
 }
 
@@ -319,14 +319,14 @@ body{
     background-color: var(--cor1);
     border-radius: 3em;
     padding: 4%;
-    font-size: 1.7em;
+    font-size: 2.7em;
 }
 
 .screen3{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300vh;
+    height: 100vh;
     width: 100%;
     background: var(--base2);
 }
@@ -341,7 +341,7 @@ body{
     background-color: var(--branco);
     border-radius: 3em;
     padding: 4%;
-    font-size: 2.5em;
+    font-size: 2.2em;
 }
 
 .doencas5 iframe{

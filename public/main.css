@@ -163,33 +163,23 @@ body{
 .quad{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     width: 100%;
     height: 100%;
 }
 
 .quad img{
-    height: 45%;
-    width: 45%;
-    margin-left: -6em;
+    width: 40%;
+    height: 50%;
 }
 
-.quad .infofo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 65%;
-    width: 50%;
-
+.quad h1{
+    font-size: 7em;
 }
 
-.quad .infofo h1{
-    font-size: 4.7em;
-}
-
-.quad .infofo h3{
-    font-size: 1.7em;
+.quad h3{
+    font-size: 3em;
 }
 
 #prev-button, #next-button{

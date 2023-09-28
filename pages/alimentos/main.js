@@ -44,40 +44,40 @@ document.querySelector("#logohere").addEventListener("click",function(){
 
 Carregar_Foto()
 
-let container = document.querySelectorAll('#container');
-let imagemAtual = 0;
-let intervalo = 2000;
+// let container = document.querySelectorAll('#container');
+// let imagemAtual = 0;
+// let intervalo = 2000;
 
-function hideSlider(){
-    container.forEach(item => item.idList.remove('on'));
-}
-
-function showSlider(){
-    container[imagemAtual].idList.add('on');
-}
-
-function trocaimg(){
-    hideSlider();
-    if(imagemAtual == container.length -1){
-        imagemAtual = 0;
-    }
-    else{
-        imagemAtual++;
-    }
-    showSlider();
-}
-
-
-setInterval(trocaimg(), intervalo, trocaimg());
-
-// var images = document.querySelectorl('#carrosel .on');
-// var currentImageIndex = 0;
-// var interval = 3000;
-
-// function changeImage() {
-//   images[currentImageIndex].style.opacity = 0;
-//   currentImageIndex = (currentImageIndex + 1) % images.length;
-//   images[currentImageIndex].style.opacity = 1;
+// function hideSlider(){
+//     container.forEach(item => item.idList.remove('on'));
 // }
 
-// setInterval(changeImage, interval);
+// function showSlider(){
+//     container[imagemAtual].idList.add('on');
+// }
+
+// function trocaimg(){
+//     hideSlider();
+//     if(imagemAtual == container.length -1){
+//         imagemAtual = 0;
+//     }
+//     else{
+//         imagemAtual++;
+//     }
+//     showSlider();
+// }
+
+
+// setInterval(trocaimg(), intervalo, trocaimg());
+
+// // var images = document.querySelectorl('#carrosel .on');
+// // var currentImageIndex = 0;
+// // var interval = 3000;
+
+// // function changeImage() {
+// //   images[currentImageIndex].style.opacity = 0;
+// //   currentImageIndex = (currentImageIndex + 1) % images.length;
+// //   images[currentImageIndex].style.opacity = 1;
+// // }
+
+// // setInterval(changeImage, interval);
