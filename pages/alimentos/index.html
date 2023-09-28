@@ -6,9 +6,100 @@
     <title>Aki</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    
+    <header class="menu">
+        <div class="leftside">
+            <nav>
+                <div onclick="Troca_Pagina('social')">
+                    <i class='bx bx-conversation' ></i>
+                    <span>Social</span>
+                </div>
+                <div onclick="Troca_Pagina('fitness')">
+                    <i class='bx bx-dumbbell'></i>
+                    <span>Fitness</span>
+                </div>
+                <div onclick="Troca_Pagina('alimentos')">
+                    <i class='bx bxs-baguette'></i>
+                    <span>Alimentos</span>
+                </div>
+                <div onclick="Troca_Pagina('doencas')">
+                    <i class='bx bxs-virus'></i>
+                    <span>Doenças</span>
+                </div>
+                <div onclick="Troca_Pagina('calculadora')">
+                    <i class='bx bxs-calculator'></i>
+                    <span>Calculadora</span>
+                </div>
+            </nav>
+        </div>
+        <div class="midside">
+            <img src="../../resources/assets/logo.png" width="20%" class="logoHome" id="logohere">
+        </div>
+        <div class="rightside">
+            <div>
+                <div id="btnmenu" onclick="Troca_Pagina('acess')">
+                    <i class='bx bxs-user' id="icon_remove"></i>
+                    <img class="img_profile" height="100%">
+                </div>
+                <span id="text-entry">
+                    Entrar
+                </span>
+            </div>
+        </div>
+    </header>
+    <div class="screen1">
+        <div id="carrosel"></div>
+            <div id="container on"><img src="../../public/resources/assets/refeicao.jpg" alt="Imagem de refeição completa"></div>
+            <div id="container"><img src="../../public/resources/assets/sanduiche.jpg" alt="Imagem de lanches naturais"></div>
+            <div id="container"><img src="../../public/resources/assets/alintegrais.png" alt="Imagem de alimentos integrais"></div>
+    </div>
+    <div class="doencas1">
+        <h1>Alimente-se devagar</h1>
+        <p>Alimentar-se rápido demais deixa a sensação de peso, e sonolência, fazendo com que comamos mais do que o necessário. Para evitar isso, pode-se desligar os aparelhos durante as refeições, pois estes podem disparar a ansiedade fazendo com que a pessoa coma depressa, com isso sempre que possível, é preferível que as pessoas almocem na companhia de outras, para que possam conversar e saborear a comida, fazendo sua refeição mais agradável.</p>
+        <img src="../../public/resources/assets/alidevagar.jpg" alt="Imagem sobre se alimentar mais devagar">
+    </div>
+    <div class="doencas2">
+        <h1>Beba 2 litros de água por dia</h1>
+        <p>Precisamos de água pois nosso sangue é composto por 90% dela, e nosso corpo pode variar entre 50% e 75%, então cada vez que perdemos líquido (suor, etc.), é preciso repor. Além do mais, a água faz uma limpeza em todo nosso organismo, hidrata nossa pele, e é por ela que vitaminas e minerais chegam nas células de todo nosso corpo.</p>
+        <img src="../../public/resources/assets/agua.jpg" alt="Imagem sobre beber água">
+    </div>
+    <div class="doencas1">
+        <h1>Reduza os níveis de açúcar</h1>
+        <p>O açúcar refinado é um composto que vem da cana-de-açúcar, porém, toda a parte boa dele foi retirada, sobrando apenas as calorias. Reduzir significa deixar de ingerir uma quantidade de calorias desnecessárias para nosso organismo. Procure também substituir a versão refinada pelo mascavo, por exemplo, que não passou pelo processo de refinamento, e ainda mantém os valores nutricionais.</p>
+        <img src="../../public/resources/assets/acucar.jpg" alt="Imagem sobre redução de açúcar">
+    </div>
+    <div class="doencas2">
+        <h1>Dê preferência para alimentos integrais</h1>
+        <p>Da mesma forma acontece com a farinha branca, ou seja, após um processo de refinamento, todo o valor nutricional dela foi retirado, restando apenas o carboidrato. Prefira as opções integrais do macarrão, arroz, pão, etc., que ainda preservam os nutrientes naturais. E fique atento para não ser enganado, pois o único tipo de farinha na lista de ingredientes do produto deve ser “Farinha de Trigo Integral”. Se tiver outro tipo de farinha de trigo, o produto não é 100% integral.</p>
+        <img src="../../public/resources/assets/integrais.jpg" alt="Imagem sobre alimentos integrais">
+    </div>
+    <div class="doencas1">
+        <h1>Inclua alimentos orgânicos em sua alimentação</h1>
+        <p>São preferidos pois são produzidos sem utilização de agrotóxicos e conservantes, que são substâncias maléficas para o nosso organismo, caso não seja possível encontrar nestas versões, sempre escolha preferir frutas, verduras e legumes.</p>
+        <img src="../../public/resources/assets/organicos.jpg" alt="Imagem sobre alimentos orgânicos">
+    </div>
+    <div class="doencas2">
+        <h1>Aposte em lanches saudáveis</h1>
+        <p>Prepare lanches saudáveis que você possa levar com você, por exemplo um mix de castanhas, que são facilmente transportadas em saquinhos, ou um sanduíche integral, frutas, entre outros, evitando de comer os produtos industrializados por aí.</p>
+        <img src="../../public/resources/assets/lanches.jpg" alt="Imagem sobre lanches naturais">
+    </div>
+    <div class="doencas1">
+        <h1>Coma a salada primeiro</h1>
+        <p>No almoço e no jantar sempre comece suas refeições com a salada, especialmente as saladas frias de folhas verdes, pois são ricas em nutrientes e vitaminas, e são excelentes fontes de fibras que conferirão saciedade, assim quando chegar no prato principal, evitará que você coma além da conta.</p>
+        <img src="../../public/resources/assets/salada.jpg" alt="Imagem sobre salada">
+    </div>
+    <div class="doencas2">
+        <h1>Consuma frutas todos os dias</h1>
+        <p>As frutas são excelentes alimentos, pois são ricas em fibras, vitaminas, minerais, e atuam sempre de forma benéfica em nosso organismo. Consuma, no mínimo, 3 porções por dia, e sempre que possível variando as frutas.</p>
+        <img src="../../public/resources/assets/fruta.jpg" alt="Imagem sobre frutas">
+    </div>
+    <div class="doencas1">
+        <h1>Faça de 4 a 6 refeições por dia</h1>
+        <p>Assim, você evita ter picos de fome durante o dia, o que te faria ter vontade de comer mais do que o necessário na próxima refeição. Fazendo desta forma, seu organismo estará sempre bem nutrido, e você comerá somente o necessário. Lembre-se que, quanto mais refeições você fizer ao dia, menor será cada porção.</p>
+        <img src="../../public/resources/assets/refeicoes.jpg" alt="Imagem sobre refeições">
+    </div>
+    <script src='main.js'></script>
 </body>
 </html>

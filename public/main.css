@@ -89,7 +89,7 @@ body{
     align-items: center;
     overflow: hidden;
     width: 70px;
-    color: #fff;
+    color: var(--preto);
     background: linear-gradient(70deg,var(--cor2), var(--base2));
 }
 .leftside nav div:hover{
