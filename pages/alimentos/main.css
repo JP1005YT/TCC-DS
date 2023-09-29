@@ -87,7 +87,7 @@ body{
     align-items: center;
     overflow: hidden;
     width: 70px;
-    color: black;
+    color: white;
     background: linear-gradient(70deg,var(--base2), var(--cor1));
 }
 

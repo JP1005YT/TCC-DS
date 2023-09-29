@@ -126,7 +126,7 @@ body{
     justify-content: start;
     align-items:center;
     width: 100vw;
-    height: 250vh;
+    height: 232vh;
     background: url('../../resources/assets/FundoSocial.png');
     background-size: 20%;
 }
@@ -224,6 +224,13 @@ body{
     background: var(--cor2);
     border-radius: 25px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+#screen_infos #lastBox section div{
+    width: 90%;
+    font-size: 25px;
+    padding: 20px;
+    color: white;
 }
 #screen_infos div section div img{
     border-radius: 25px;
