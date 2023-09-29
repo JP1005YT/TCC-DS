@@ -23,6 +23,9 @@ function Constructor(Data){
         const type = document.createElement('span')
         type.setAttribute("class","type")
         type.innerHTML = element.tipo
+        const inside = document.createElement('section')
+        inside.setAttribute("id","inside")
+        inside.innerHTML = "Ver Mais"
         // const about = document.createElement('p')
         // about.setAttribute("class","about")
         // about.innerHTML = element.sobre
@@ -35,6 +38,42 @@ function Constructor(Data){
         }
         item.appendChild(title)
         item.appendChild(type)
+        item.appendChild(inside)
+        item.addEventListener("click",function(){
+            document.querySelector("#absolutediv").style.display ='flex'
+            let title = document.createElement("h1")
+            title.innerHTML = element.name
+            let type = document.createElement("span")
+            type.innerHTML = element.tipo
+            let sobre = document.createElement("p")
+            sobre.innerHTML = element.sobre
+
+            let div = document.querySelector("#absolutediv div")
+            div.innerHTML = ""
+
+            let i = document.createElement("i")
+            i.setAttribute("class","bx bx-arrow-back")
+            i.setAttribute("id","btnBack")
+            i.addEventListener("click",function(){
+                document.querySelector("#absolutediv").style.display ='none'
+            })
+
+            div.appendChild(i)
+            let linha = document.createElement("div")
+
+            linha.appendChild(title)
+            linha.appendChild(type)
+
+            div.appendChild(linha)
+            div.appendChild(document.createElement("hr"))
+            div.appendChild(sobre)
+            
+            let video = document.createElement("iframe")
+            video.src = element.url
+            video.frameBorder = 0
+
+            div.appendChild(video)
+        })
         // item.appendChild(about)
         document.querySelector("#items-here").appendChild(item)
     });

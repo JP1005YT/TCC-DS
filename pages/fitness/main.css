@@ -280,6 +280,10 @@ main .rosto .align-items div h3{
     width: 90%;
 }
 .exercicios #items-here .card{
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
     transition: 200ms;
     user-select: none;
     flex-direction: column;
@@ -290,11 +294,34 @@ main .rosto .align-items div h3{
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     color: white;
     border-radius: 25px;
+    font-size: 15px;
 }
 .exercicios #items-here .card:hover{
+    font-size: 30px;
     width: 35%;
     cursor: pointer;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.exercicios #items-here .card:hover h1{
+    font-size: 35px;
+}
+.exercicios #items-here .card:hover #inside{
+    bottom: 0;
+}
+#inside{
+    transition: 500ms;
+    text-align: center;
+    padding: 10px;
+    bottom: -50px;
+    position: absolute;
+    width: 100%;
+    font-size: 30px;
+    background: var(--base2);
+}
+.exercicios #items-here .card h1{
+    transition: 300ms;
+    font-weight: bold;
+    font-size: 22px;
 }
 .card.inv{
     display: none;
@@ -340,4 +367,65 @@ footer .lista a:hover{
 }
 footer .lista i{
     font-size: 30px;
+}
+
+#absolutediv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    position: absolute;
+    backdrop-filter: blur(5px);
+    width: 100vw;
+    height: 100vh;
+}
+#absolutediv > div{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 80px;
+    height: 90%;
+    width: 50%;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+#absolutediv > div div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rebeccapurple; */
+}
+#absolutediv i{
+    transition: 200ms;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    width: 50px;
+    height: 50px;
+    border-radius: 35px;
+    background: var(--base1);
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: 0.7%;
+    border: none;
+}
+#absolutediv i:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset;    
+}
+#absolutediv iframe{
+    width: 100%;
+    height: 60%;
+}
+#absolutediv hr{
+    width: 100%;
 }
