@@ -163,15 +163,25 @@ body{
 .quad{
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
 }
 
+.info-slider{
+    width: 60%;
+}
+.image-slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+}
+
 .quad img{
-    width: 40%;
-    height: 50%;
+    height: 80%;
 }
 
 .quad h1{
@@ -186,8 +196,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 7em;
-    height: 8em;
+    padding: 15px;
+    margin: 15px;
     border: none;
     background-color: var(--cor2);
     border-radius: 1em;
@@ -202,9 +212,6 @@ body{
 #prev-button{
     transform: rotate(180deg);
 }
-/* .conteudo{
-    
-} */
 /* Corpo */
 .img{
     display: flex;
@@ -323,435 +330,71 @@ body{
 }
 
 /* QUEM SOMOS */
-
 .quemsomos{
     display: flex;
-    flex-wrap: wrap;
-    background-color: var(--cor2);
-    width: 100%;
-    height: 101vh;
-    justify-content: center;
-}
-
-.quemsomos>header{
-    background-color: white;
-    width: 30%;
-    height: 10vh;
-    border-radius: 0 0 10em 10em;
-}
-
-.quemsomos>header>h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 300%;
-}
-
-.quemsomos>.conteudo{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 89vh;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    margin-top: 1%;
-}
-
-.quemsomos>.conteudo>.text1 , .text2{
-    display: flex;
-    width: 95%;
-    height: 50%;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2em;
-    font-size: 200%;
-    padding: 2.5%;
-}
-
-.quemsomos>.conteudo>.text1 img{
-    margin-right: 5%;
-}
-
-.quemsomos>.conteudo>.text1 img, .text2 img{
-    width: 35%;
-    height: 80%;
-    border: 1px solid black;
-    background-color: white;
-    border-radius: 1em;
-}
-
-/* sobre plataforma */
-.sobreplat{
-    display: flex;
-    background-color: white;
-    width: 100%;
-    height: 100vh;
-}
-
-.infoleft{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 150%;
-    height: 100vh;
-}
-
-.infoleft>.sobre{
-    width: 100%;
-    height: 90vh;
-}
-
-.infoleft>header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 10vh;
-    font-size: 300%;
-}
-
-.infoleft>.sobre>.infos{
-    display: flex;
-    align-items: center;
-    background-color: white;
-    width: 100%;
-    height: 18vh;
-    font-size: 150%;
-    font-weight: bolder;
-}
-
-.infos img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    height: 50%;
-    border: 2px solid black;
-    border-radius: 1em;
-    margin-left: 2%;
-}
-
-.inforight{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.imagens{
-    display: flex;
-    background-color: var(--cor2);
-    justify-content: center;
-    align-items: center;
-    padding: 5%;
-    border-radius: 5em;
-}
-
-.img1{
-    z-index: 3;
-    width: 35%;
-    margin-bottom: 25%;
-    margin-left: 5%;
-}
-
-.img2{
-    z-index: 2;
-    width: 45%;
-    margin-top: 25%;
-    margin-left: -5%;
-}
-/* receita */
-.receitas{
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    background-image: url(resources/images/frutas.jpg);
-    background-size: 100%;
     width: 100%;
     height: 100vh;
-}
-
-.receitas header{
-    display: flex;
-    justify-content: center;
+    position: relative;
     align-items: center;
+    justify-content: center;
     background-color: var(--cor2);
-    width: 100%;
-    height: 20vh;
 }
 
-.receitas header h1{
-    font-size: 400%;
-}
-
-.receita{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: 90vh;
-}
-
-.receita .receit p{
-    font-size: 150%;
-    font-weight: bolder;
-}
-
-.receit{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--cor2);
-    width: 20%;
-    height: 30%;
-    border: 2px solid black;
-    border-radius: 2.5em;
-}
-
-.recei{
-    display: flex;
-    flex-direction: row;
-    margin-left: 15%;
-}
-
-.imgsuco1{
-    width: 40%;
-    height: 6em;
-    border-radius: 5em;
-}
-
-/* Ceos */
-.ceo{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    background-color: white;
-}
-
-.ceo header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 4em;
-    height: 30vh;
-    width: 100%;
-    font-weight: bolder;
-}
-
-.ceos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+.quemsomos>h1{
+    text-align: center;
+    border: none;
+    font-size: 5em;
     position: absolute;
-    margin-top: 11.8em;
-    height: 70vh;
-    width: 100%;
+    top: 0;
+    border-radius: 1em;
+    background: linear-gradient(75deg, var(--base2), rgba(255, 255, 255, 0.15), var(--base2));
+    width: 12em;
+    height: 10vh;
 }
 
-.ceoss{
+.informa{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    height: 18em;
+    text-align: center;
+    width: 85%;
+    height: 75vh;
+    font-size: 3.8em;
+    background-color: var(--base2);
+    padding: 4rem;
+    border-radius: 1em;
     margin-top: 1em;
 }
 
-.fotoceo{
+/* sobre plat*/
+.sobreplat{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 35em;
-    height: 12em;
-    margin-bottom: 15em;
-}
-
-.fotoceo img{
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 35%;
-    height: 100%;
-}
-
-.caxavd{
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: start;
-    background-color: var(--cor2);
-    border-radius: 0.5rem;
-    width: 90%;
-    height: 80em;
-    font-size: 200%;
-    font-weight: bolder;
-    padding-left: 6%;
-    padding-bottom: 3%;
-}
-
-.depoimento{
-    width: 90%;
-    padding-left: 2%;
-}
-/* redes */
-.redes{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: row;
     width: 100%;
     height: 100vh;
-}
-
-.psocial{
-    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 100vh;
-    background-color: white;
+    position: relative;
+    background-color: none;
 }
 
-.mensagem{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    width: 50%;
-    height: 100vh;
-    padding: 2em;
-}
-
-.mensagemen{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 90vh;
-    border-radius: 2rem;
-    background-color: var(--cor2);
-}
-
-.mensagemmensagem{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    width: 96%;
-    height: 96%;
-    border-radius: 2rem;
-    padding: 1%;
-}
-
-.mensagemmensagem>h1{
-    font-size: 350%;
-}
-
-.mensagemmensagem>h2{
+.sobreplat h1{
     text-align: center;
-    font-size: 200%;
-    width: 91%;
-}
-
-.mensagemmensagem>img{
-    width: 12em;
-    height: 12em;
-}
-/* footer */
-.footer{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100vh;
-    background-color: red;
-}
-
-.imagems{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 40%;
-    height: 100vh;
-    background-color: var(--cor2);
-}
-
-.imagems img{
+    font-size: 5em;
     border: 1px solid black;
-    border-radius: 0.4em;
-    width: 19em;
-    height: 15em;
-}
-
-.informacoes{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    height: 100vh;
+    border-radius: 0em 0em 1rem 1rem;
+    position: absolute;
+    top: 0;
+    margin-left: -4em;
     background-color: var(--cor2);
 }
 
-.informacoes h1{
-    font-size: 600%;
+.infoe{
+    
 }
 
-.informacoes h3{
-    font-size: 350%;
-}
-
-.informacoes h4{
-    font-size: 250%;
-}
-
-.top{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    width: 100%;
-    height: 40%;
-    padding-right: 0.7rem;
-}
-
-.bot{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    width: 100%;
-    height: 60%;
-}
-
-.git{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 125%;
-}
-
-.face{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 125%;
-}
-
-.insta{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 125%;
-}
 /* PAGINA DE LOGIN E CADASTRO */
 
 /* PAGINA DE PERFIL */
