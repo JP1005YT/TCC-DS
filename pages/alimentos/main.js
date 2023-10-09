@@ -46,3 +46,17 @@ Carregar_Foto()
 
 let slider = document.querySelectorAll(".slider")
 let slideronstage = 0
+
+setInterval(()=>{
+    slider.forEach(slide => {
+        slide.classList.value = 'slider'
+    })
+    
+    slider[slideronstage].classList.toggle("on")
+    
+    if(slideronstage === 2){
+        slideronstage = 0
+    }else{
+        slideronstage += 1
+    }
+},3000)
