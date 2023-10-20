@@ -342,6 +342,7 @@ main #dashboard .post p{
     position: absolute;
     right: 0;
     bottom: 0;
+    color: #fff;
     background: rgb(40, 170, 98);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 } 
@@ -378,6 +379,7 @@ main #dashboard .post p{
     padding: 1%;
     margin: 5%;
     background: rgb(40, 170, 98);
+    color: #fff;
     border-radius: 10px;
 }
 .post-page.ativo .screen > div section label{
