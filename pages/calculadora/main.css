@@ -156,7 +156,7 @@ body{
     border-bottom: 2px solid black;
 }
 .inputcn{
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
     border-radius: 25px;
     margin: 5%;
     display: flex;
