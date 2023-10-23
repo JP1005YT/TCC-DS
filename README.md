@@ -16,19 +16,16 @@ Home,
     A --> F(Perfil)
     A --> G(Social)
 ```
-## Anotações JP
-    > Checagem de Usuario (Existente)
-    > Checar se chat ja existem
-    > Barra de pesquisar do social
-    > Confirmação ao Sair
-    > Arrumar os exercicios fisicos
-    > Footer do Fitness
-    > Calculadora e Pagina dos Exercicios
-    > Ao entrar em outra pagina e tentar fazer login retornar para esta e nao para a home
-    > trocar exercicios para : alterações.txt
-    > colocar no input "Digite o conteudo do post"
-### Anotações Manu
-    > A barra de pesquisar do social não funciona.
+## Anotações DANIEL
+    > Trocar sozinho o carrosel
+    > Quando colocar o mouse nos sucos da home mostrar a receita , ou ao clicar
+    > Ceos ta ESTICADAÇO
+    > Print do social e rodapé
+    > CSS do doenças e rodapé , retirar fitness
+## JP 
+    > acabar comidas
+    > FOTOS NAO SAO ENVIADAS
+    > Mais exerciocio e mais comida na calculadora
     
 > $ git config --global user.email "godlolpro32@gmail.com"
 > $ git config --global user.name "JP1005YT"
