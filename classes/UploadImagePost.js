@@ -1,4 +1,4 @@
-const {Pacotes} = require("../configs/Packages.js");
+const {Pacotes, multer} = require("../configs/Packages.js");
 let P = new Pacotes()
 
 module.exports = (P.multer({

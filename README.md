@@ -24,7 +24,6 @@ Home,
     > CSS do doenças e rodapé , retirar fitness
 ## JP 
     > acabar comidas
-    > FOTOS NAO SAO ENVIADAS
     > Mais exerciocio e mais comida na calculadora
     
 > $ git config --global user.email "godlolpro32@gmail.com"

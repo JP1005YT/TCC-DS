@@ -133,7 +133,8 @@ app.post('/newtag', async function (req, res) {
 
 const NovoPOST = new Novo_Post();
 app.post('/newpost/:postId', UploadImagePosts.array('images',5),async (req,res) => {
-    NovoPOST.Processar(JSON.parse(req.body.post),req.body.user_id,req.params.postId,req.body.user_name)
+    const teste = NovoPOST.Processar(JSON.parse(req.body.post),req.body.user_id,req.params.postId,req.body.user_name)
+    console.log(teste)
     res.send("OK")
 })
 
