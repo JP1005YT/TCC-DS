@@ -398,15 +398,21 @@ body{
     height: 20%;
     padding: 1rem;
     align-items: center;
+    border: 0.5px solid black;
 }
 
 .imgs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 35%;
     height: 100%;
+    border: 1px solid black;
+    border-radius: 5em;
 }
 
-img{
-    /* width: 100%; */
+.imgsobre{
+    width: 100%;
     height: 100%;
     border-radius: 5em;
 }
@@ -448,7 +454,7 @@ img{
 .img2{
     margin-top: 30%;
     margin-left: -20%;
-    width: 24em;
+    width: 26em;
     height: 24em;
     border-radius: 3em;
     border: 1px solid black;
@@ -494,12 +500,40 @@ img{
     border: 1px solid black;
     border-radius: 2em 2em 5em 5em;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.600);
+    transition: 0.25s;
+}
+
+.quadre:hover{
+    height: 87vh;
+}
+
+.quadre:hover>.imgre{
+    height: 40%;
+}
+
+.quadre:hover>.off{
+    visibility: visible;
+    transition: 0.10s;
 }
 
 .imgre{
     border-radius: 2em 2em 0 0;
     width: 100%;
     height: 80%;
+    transition: 0.25s;
+}
+
+.off{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    font-size: 2em;
+    width: 95%;
+    height: 100%;
+    visibility: hidden;
+    transition: 0.25s;
 }
 
 .labelre{
@@ -509,6 +543,7 @@ img{
     align-items: center;
     text-align: center;
     margin-top: 1rem;
+    transition: 0.5s;
 }
 
 /* CEOS */
@@ -548,7 +583,7 @@ img{
 .fotoceo{
     z-index: 1;
     width: 50%;
-    height: 55%;
+    height: 60%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
     border: 1px solid black;
     border-radius: 10em;
@@ -714,4 +749,47 @@ img{
 }
 .logoHome:hover{
     width: 30%;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--base2);
+    width: 100%;
+    height: 30vh;
+}
+footer img{
+    width: 250px;
+}
+footer .lista{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    height: 90%;
+    font-size: 20px;
+}
+footer .lista h3{
+    font-weight: bold;
+    font-size: 30px;
+}
+footer .lista > *{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    margin: 2%;
+    width: 70%;
+    margin: 5px;
+    font-size: 25px;
+}
+footer .lista a:hover{
+    color: rgb(98, 112, 236);
+}
+footer .lista i{
+    font-size: 30px;
 }

@@ -138,42 +138,49 @@ body{
 
 /* Screens da pagina */
 
-.screen1{
+.main{
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    align-items: center;
     width: 100%;
     height: 90vh;
-    background-color: red;
 }
 
-.screen1 img{
-    width: 30em;
-    height: 30em;
-    background-color: white;
-    margin-left: 5%;
-}
-
-.screen1 h1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4em;
-    margin-left: 1%;
+.imgmain{
+    width: 60%;
     height: 100%;
-    width: 100%;
-    text-align: center;
-    background: linear-gradient(80deg, rgba(0, 0, 0, 0.0005), var(--base2));
 }
 
-.screen2{
+.mai{
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background: linear-gradient(90deg, rgba(255,0,0,0), var(--branco));
+    margin-left: -40%;
     width: 100%;
-    background: none;
+    height: 100%;
+}
+
+.mai>h1{
+    font-size: 6em;
+    text-align: center;
+}
+
+.submain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.submain2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250vh;
 }
 
 .text{
@@ -181,154 +188,14 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 95%;
-    height: 95%;
-    background-color: var(--cor1);
-    border-radius: 3em;
-    padding: 4%;
-    font-size: 2.5em;
-}
-
-.doencas1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--cor1);
-}
-
-.doencas2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
+    text-align: center;
+    font-size: 4em;
     background-color: var(--base2);
-}
-
-.doencas3{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 150vh;
-    background-color: var(--base2);
-}
-
-.doencas4{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--cor1);
-}
-
-.doencas5{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--cor1);
-}
-
-.doencas1 h1{
-    font-size: 4em;
-}
-
-.doencas1 p{
-    font-size: 2em;
-    text-align: center;
-}
-
-.doencas1 img{
-    background-color: red;
-    width: 45%;
-    height: 45%;
-}
-
-.doencas2 h1{
-    font-size: 4em;
-}
-
-.doencas2 p{
-    font-size: 2em;
-    text-align: center;
-}
-
-.doencas2 img{
-    background-color: red;
-    width: 45%;
-    height: 45%;
-}
-
-.doencas3 h1{
-    font-size: 4em;
-}
-
-.doencas3 p{
-    font-size: 2em;
-    text-align: center;
-}
-
-.doencas3 img{
-    background-color: red;
-    width: 45%;
-    height: 45%;
-}
-
-.doencas4 h1{
-    font-size: 4em;
-}
-
-.doencas4 p{
-    font-size: 2em;
-    text-align: center;
-}
-
-.doencas4 img{
-    background-color: red;
-    width: 45%;
-    height: 45%;
-}
-
-.doencas5 h1{
-    font-size: 4em;
-}
-
-.doencas5 p{
-    font-size: 2em;
-    text-align: center;
-}
-
-.doencas5 img{
-    background-color: red;
-    width: 45%;
-    height: 45%;
-}
-
-.text1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 95%;
-    height: 95%;
-    background-color: var(--cor1);
-    border-radius: 3em;
-    padding: 4%;
-    font-size: 2.7em;
-}
-
-.screen3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    background: var(--base2);
+    border-radius: 1em;
+    width: 90%;
+    height: 90%;
+    padding: 2rem;
+    box-shadow: 0 0 10px black;
 }
 
 .text2{
@@ -336,36 +203,294 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 95%;
-    height: 98%;
-    background-color: var(--branco);
-    border-radius: 3em;
-    padding: 4%;
-    font-size: 2.2em;
+    text-align: center;
+    font-size: 2.5em;
+    background-color: var(--base2);
+    border-radius: 1em;
+    width: 90%;
+    height: 90%;
+    padding: 2rem;
+    box-shadow: 0 0 10px black;
 }
 
-.doencas5 iframe{
-    width: 45%;
-    height: 35%;
+.text3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2.5em;
+    background-color: var(--base2);
+    border-radius: 1em;
+    width: 90%;
+    height: 90%;
+    padding: 2rem;
+    box-shadow: 0 0 10px black;
+    margin-top: 1rem;
 }
 
-
-.doencas4 iframe{
-    width: 45%;
-    height: 35%;
+.gastrite{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--base2);
 }
 
-.doencas3 iframe{
-    width: 45%;
-    height: 35%;
+.gastrite>h1{
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    font-size: 4em;
+    background-color: var(--cor1);
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
 }
 
-.doencas2 iframe{
-    width: 45%;
-    height: 35%;
+.texts{
+    width: 90%;
+    height: 40vh;
+    text-align: center;
+    font-size: 2.7em;
+    background-color: var(--cor1);
+    border-radius: 0 0 3em 3em;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
 }
 
-.doencas1 iframe{
-    width: 45%;
-    height: 35%;
+.imggas{
+    width: 40%;
+    height: 50vh;
+    border: 1px solid black;
+    border-radius: 0 0 6em 6em;
+    box-shadow: 0 0 10px black;
+}
+
+.diabetes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--cor1);
+}
+
+.diabetes>h1{
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    font-size: 4em;
+    background-color: var(--cor1);
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+.quadtest{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    width: 100%;
+    height: 90vh;
+}
+
+.textsdia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--base2);
+    text-align: center;
+    height: 100%;
+    width: 60%;
+    font-size: 3.5em;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+.imgdia{
+    height: 70%;
+    width: 35%;
+    border-radius: 0 4em 4em 0;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+.colesterol{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--base2);
+}
+
+.colesterol>h1{
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    font-size: 4em;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+.quadtestc{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 90vh;
+}
+
+.textsco{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor1);
+    text-align: center;
+    height: 100%;
+    width: 60%;
+    font-size: 3em;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+.imgco{
+    height: 70%;
+    width: 35%;
+    border-radius: 4em 0 0 4em;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+.obesidade{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.obesidade>h1{
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    font-size: 4em;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+    background: linear-gradient(90deg, var(--cor1), var(--base2));
+}
+
+.imgob{
+    height: 40vh;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 3em 3em 0 0;
+}
+
+.textsobe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 50vh;
+    text-align: center;
+    font-size: 2.5em;
+    background-color: var(--base2);
+    border: 1px solid black;
+    border-radius: 2em 2em 5em 5em;
+}
+
+.hipertensao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--base2);
+}
+
+.hipertensao>h1{
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    font-size: 4em;
+    background-color: var(--cor1);
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+.textshiper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 40vh;
+    text-align: center;
+    font-size: 2.7em;
+    background-color: var(--cor1);
+    border-radius: 0 0 3em 3em;
+    border: 1px solid black;
+    box-shadow: 0 0 10px black;
+}
+
+.imghiper{
+    width: 40%;
+    height: 50vh;
+    border: 1px solid black;
+    border-radius: 0 0 6em 6em;
+    box-shadow: 0 0 10px black;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--cor1);
+    width: 100%;
+    height: 30vh;
+}
+footer img{
+    width: 250px;
+}
+footer .lista{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    height: 90%;
+    font-size: 20px;
+}
+footer .lista h3{
+    font-weight: bold;
+    font-size: 30px;
+}
+footer .lista > *{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    margin: 2%;
+    width: 70%;
+    margin: 5px;
+    font-size: 25px;
+}
+footer .lista a:hover{
+    color: rgb(98, 112, 236);
+}
+footer .lista i{
+    font-size: 30px;
 }
