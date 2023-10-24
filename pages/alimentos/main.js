@@ -47,16 +47,26 @@ Carregar_Foto()
 let slider = document.querySelectorAll(".slider")
 let slideronstage = 0
 
-setInterval(()=>{
+
+function troca(dir){
     slider.forEach(slide => {
         slide.classList.value = 'slider'
     })
     
     slider[slideronstage].classList.toggle("on")
     
-    if(slideronstage === 2){
-        slideronstage = 0
+    if(dir){
+        if(slideronstage === 0){
+            slideronstage = 2
+        }else{
+            slideronstage -= 1
+        }
     }else{
-        slideronstage += 1
+        if(slideronstage === 2){
+            slideronstage = 0
+        }else{
+            slideronstage += 1
+        }
     }
-},3000)
+}
+setInterval(troca,3000)

@@ -17,13 +17,11 @@ Home,
     A --> G(Social)
 ```
 ## Anotações DANIEL
-    > Trocar sozinho o carrosel
     > Quando colocar o mouse nos sucos da home mostrar a receita , ou ao clicar
     > Ceos ta ESTICADAÇO
     > Print do social e rodapé
     > CSS do doenças e rodapé , retirar fitness
 ## JP 
-    > acabar comidas
     > Mais exerciocio e mais comida na calculadora
     
 > $ git config --global user.email "godlolpro32@gmail.com"
