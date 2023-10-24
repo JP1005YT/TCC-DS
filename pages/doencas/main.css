@@ -195,7 +195,6 @@ body{
     width: 90%;
     height: 90%;
     padding: 2rem;
-    box-shadow: 0 0 10px black;
 }
 
 .text2{
@@ -210,7 +209,6 @@ body{
     width: 90%;
     height: 90%;
     padding: 2rem;
-    box-shadow: 0 0 10px black;
 }
 
 .text3{
@@ -225,7 +223,6 @@ body{
     width: 90%;
     height: 90%;
     padding: 2rem;
-    box-shadow: 0 0 10px black;
     margin-top: 1rem;
 }
 
@@ -245,8 +242,6 @@ body{
     text-align: center;
     font-size: 4em;
     background-color: var(--cor1);
-    border: 1px solid black;
-    box-shadow: 0 0 10px black;
 }
 
 .texts{
@@ -256,16 +251,13 @@ body{
     font-size: 2.7em;
     background-color: var(--cor1);
     border-radius: 0 0 3em 3em;
-    border: 1px solid black;
-    box-shadow: 0 0 10px black;
 }
 
 .imggas{
     width: 40%;
     height: 50vh;
-    border: 1px solid black;
     border-radius: 0 0 6em 6em;
-    box-shadow: 0 0 10px black;
+
 }
 
 .diabetes{
@@ -284,8 +276,7 @@ body{
     text-align: center;
     font-size: 4em;
     background-color: var(--cor1);
-    border: 1px solid black;
-    box-shadow: 0 0 10px black;
+    /* box-shadow: 0 0 10px black; */
 }
 
 .quadtest{
@@ -307,16 +298,12 @@ body{
     height: 100%;
     width: 60%;
     font-size: 3.5em;
-    border: 1px solid black;
-    box-shadow: 0 0 10px black;
 }
 
 .imgdia{
     height: 70%;
     width: 35%;
     border-radius: 0 4em 4em 0;
-    border: 1px solid black;
-    box-shadow: 0 0 10px black;
 }
 
 .colesterol{
@@ -334,8 +321,6 @@ body{
     height: 10vh;
     text-align: center;
     font-size: 4em;
-    border: 1px solid black;
-    box-shadow: 0 0 10px black;
 }
 
 .quadtestc{
@@ -357,16 +342,12 @@ body{
     height: 100%;
     width: 60%;
     font-size: 3em;
-    border: 1px solid black;
-    box-shadow: 0 0 10px black;
 }
 
 .imgco{
     height: 70%;
     width: 35%;
     border-radius: 4em 0 0 4em;
-    border: 1px solid black;
-    box-shadow: 0 0 10px black;
 }
 
 .obesidade{
@@ -383,15 +364,12 @@ body{
     height: 10vh;
     text-align: center;
     font-size: 4em;
-    border: 1px solid black;
-    box-shadow: 0 0 10px black;
     background: linear-gradient(90deg, var(--cor1), var(--base2));
 }
 
 .imgob{
     height: 40vh;
     width: 50%;
-    border: 1px solid black;
     border-radius: 3em 3em 0 0;
 }
 
@@ -405,7 +383,6 @@ body{
     text-align: center;
     font-size: 2.5em;
     background-color: var(--base2);
-    border: 1px solid black;
     border-radius: 2em 2em 5em 5em;
 }
 
@@ -425,8 +402,6 @@ body{
     text-align: center;
     font-size: 4em;
     background-color: var(--cor1);
-    border: 1px solid black;
-    box-shadow: 0 0 10px black;
 }
 
 .textshiper{
@@ -440,16 +415,12 @@ body{
     font-size: 2.7em;
     background-color: var(--cor1);
     border-radius: 0 0 3em 3em;
-    border: 1px solid black;
-    box-shadow: 0 0 10px black;
 }
 
 .imghiper{
     width: 40%;
     height: 50vh;
-    border: 1px solid black;
     border-radius: 0 0 6em 6em;
-    box-shadow: 0 0 10px black;
 }
 
 footer{

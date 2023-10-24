@@ -130,45 +130,20 @@
         <div class="receitas">
             <h1 class="hrece">Receitas saudáveis</h1>
             <div class="quadreceita">
-                <div class="quadre">
+                <div class="quadre" onclick="receita(0)">
                     <img src="resources/images/suco.jpg" alt="Imagem do Suco Verde" class="imgre">
-                    <label class="labelre">Suco Verde</label>
-                    <label class="off">
-                        <p>1 folha grande de couve</p>
-                        <p>1 limão</p>
-                        <p>1 maçã</p>
-                        <p>1/2 pepino</p>
-                        <p>gengibre (a gosto)</p>
-                        <p>hortelã (a gosto)</p>
-                        <p>1 colher de sopa de linhaça</p>
-                        <p>1 colher de sopa de mel</p>
-                        <p>250 ml de água</p>
-                    </label>
+                    <h2>Ver Receita</h2>
+                    <h1>Suco Verde</h1>
                 </div>
-                <div class="quadre">
+                <div class="quadre" onclick="receita(1)">
                     <img src="resources/assets/sucoaba.png" alt="Imagem do Suco de Abacate" class="imgre">
-                    <label class="labelre">Suco de Abacate</label>
-                    <label class="off">
-                        <p>1 abacate</p>
-                        <p>1 litro de água ou leite se caso preferir gelados</p>
-                        <p>Açúcar ou adoçante (a gosto)</p>
-                    </label>
+                    <h2>Ver Receita</h2>
+                    <h1>Suco de Abacate</h1>
                 </div>
-                <div class="quadre">
+                <div class="quadre" onclick="receita(2)">
                     <img src="resources/assets/frangolegumes.jpg" alt="Imagem de Frango com Legumes" class="imgre">
-                    <label class="labelre">Frango com Legumes</label>
-                    <label class="off">
-                        <p>1 peito de frango</p>
-                        <p>1 cenoura</p>
-                        <p>1 pimentão</p>
-                        <p>1 cebola</p>
-                        <p>1 tomate</p>
-                        <p>2 alhos</p>
-                        <p>1 sachê de tempero especial para legumes</p>
-                        <p>1 pitada de tempero em pó curry</p>
-                        <p>salsinha (a gosto)</p>
-                        <p>sal e vinagre(a gosto)</p>
-                    </label>
+                    <h2>Ver Receita</h2>    
+                    <h1>Frango com Legumes</h1>
                 </div>
             </div>
         </div>
@@ -221,6 +196,91 @@
                 <span><i class='bx bxl-facebook-square'></i> @FPHoficial</span>
             </div>
         </footer>
+        <div class="recipe">
+            <section>
+                <i class='bx bx-x btnactive1' id="btnclose" onclick="close()"></i>
+                <div>
+                    <h1>Suco Verde</h1><hr>
+                    <h3>Ingredientes:</h3>
+                    <p>1 folha grande de couve</p>
+                    <p>1 limão</p>
+                    <p>1 maçã</p>
+                    <p>1/2 pepino</p>
+                    <p>gengibre (a gosto)</p>
+                    <p>hortelã (a gosto)</p>
+                    <p>1 colher de sopa de linhaça</p>
+                    <p>1 colher de sopa de mel</p>
+                    <p>250 ml de água</p>
+                </div>
+                <hr>
+                <div>
+                    <h3>Modo de Preparo:</h3>
+                    <p>1. Lave bem a folha de couve e o pepino. Descasque o limão e a maçã, removendo as sementes.</p>
+    
+                    <p>2. Corte a folha de couve, o limão, a maçã e o pepino em pedaços menores para facilitar a mistura.</p>
+    
+                    <p>3. Coloque todos os ingredientes cortados no liquidificador.</p>
+    
+                    <p>4. Adicione gengibre e hortelã a gosto para dar sabor.</p>
+    
+                    <p>5. Adicione a linhaça, o mel e a água.</p>
+    
+                    <p>6. Bata todos os ingredientes até obter uma mistura homogênea e suave.</p>
+    
+                    <p>7. Se necessário, adicione mais água para ajustar a consistência.</p>
+    
+                    <p>8. Sirva o suco verde imediatamente em um copo.</p>
+    
+                    <p>9. Aproveite o seu suco verde fresco e saudável!</p>
+    
+                </div>
+            </section>
+        </div>
+        <div class="recipe">
+            <section>
+                <i class='bx bx-x btnactive2' id="btnclose"></i>
+                <h1>Suco de Abacate</h1><hr>
+                <h3>Ingredientes:</h3>
+                <p>1 abacate</p>
+                <p>1 litro de água ou leite se caso preferir gelados</p>
+                <p>Açúcar ou adoçante (a gosto)</p><hr>
+                <h3>Modo de Preparo:</h3>
+                <p>1. Descasque o abacate, remova o caroço e corte a polpa em pedaços.</p>
+                <p>2. Coloque os pedaços de abacate no liquidificador.</p>
+                <p>3. Adicione 1 litro de água (ou leite, se preferir gelado) ao liquidificador.</p>
+                <p>4. Adoce o suco com açúcar ou adoçante a gosto.</p>
+                <p>5. Bata todos os ingredientes até obter uma mistura cremosa e homogênea.</p>
+                <p>6. Sirva imediatamente em um copo.</p>
+
+            </section>
+        </div>
+        <div class="recipe">
+            <section>
+                <i class='bx bx-x btnactive3' id="btnclose"></i>
+                <h1>Frango com legumes</h1>
+                <h3>Ingredientes:</h3>
+                <p>1 peito de frango</p>
+                <p>1 cenoura</p>
+                <p>1 pimentão</p>
+                <p>1 cebola</p>
+                <p>1 tomate</p>
+                <p>2 alhos</p>
+                <p>1 sachê de tempero especial para legumes</p>
+                <p>1 pitada de tempero em pó curry</p>
+                <p>salsinha (a gosto)</p>
+                <p>sal e vinagre(a gosto)</p>
+                <h3>Modo de Preparo</h3>
+                <p>1. Corte o peito de frango em pedaços pequenos e tempere com o tempero especial para legumes, curry, sal e vinagre a gosto.</p>
+                <p>2. Em uma panela, aqueça um pouco de óleo e adicione o frango. Cozinhe até dourar e reserve.</p>
+                <p>3. Na mesma panela, adicione a cebola e o alho picados e refogue até ficarem dourados.</p>
+                <p>4. Acrescente a cenoura e o pimentão cortados em pedaços.</p>
+                <p>5. Adicione o tomate e cozinhe até que os legumes fiquem macios.</p>
+                <p>6. Misture o frango reservado de volta à panela e cozinhe por mais alguns minutos.</p>
+                <p>7. Polvilhe com salsinha picada e ajuste o tempero com sal, se necessário.</p>
+                <p>8. Sirva o frango com legumes quente e aproveite!</p>
+
+            </section>
+        </div>
     </div>
 </body>
 </html>

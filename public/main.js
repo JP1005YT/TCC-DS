@@ -95,3 +95,22 @@ setInterval(() => {
 
 btnNext.addEventListener('click', nextSlider)
 btnPrev.addEventListener('click', prevSlider)
+
+function receita(e){
+    const quadros = document.querySelectorAll(".recipe")
+    console.log(quadros)
+    quadros[e].classList.toggle("on")
+    document.querySelector("body").style.overflow = "hidden"
+}
+function close(){
+    let quadros = document.querySelectorAll(".recipe")
+    quadros.forEach(quadro => {
+        quadro.classList.value = "recipe"
+    })
+    document.querySelector("body").style.overflow = "scroll"
+    document.querySelector("body").style.overflowX = "hidden"
+}
+
+document.querySelector(".btnactive1").addEventListener("click",function(){close()})
+document.querySelector(".btnactive2").addEventListener("click",function(){close()})
+document.querySelector(".btnactive3").addEventListener("click",function(){close()})
