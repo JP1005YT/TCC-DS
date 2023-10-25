@@ -140,9 +140,12 @@ body{
 
 .main{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
     width: 100%;
     height: 90vh;
+    background: #fff;
 }
 
 .imgmain{
@@ -150,15 +153,12 @@ body{
     height: 100%;
 }
 
-.mai{
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(90deg, rgba(255,0,0,0), var(--branco));
-    margin-left: -40%;
-    width: 100%;
-    height: 100%;
+body > h1{
+    text-align: center;
+    font-size: 85px;
+    margin: 20px;
+    background: var(--cor1);
+    border-radius: 25px;
 }
 
 .mai>h1{
@@ -171,7 +171,10 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
+    padding: 50px;
+    font-size: 45px;
+    text-align: justify;
 }
 
 .submain2{
@@ -188,12 +191,11 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    font-size: 4em;
+    /* text-align: center; */
+    /* font-size: 4em; */
     background-color: var(--base2);
     border-radius: 1em;
     width: 90%;
-    height: 90%;
     padding: 2rem;
 }
 
@@ -234,14 +236,20 @@ body{
     height: 100vh;
     width: 100%;
     background-color: var(--base2);
+    padding-bottom: 50px;
 }
 
 .gastrite>h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 10vh;
     text-align: center;
     font-size: 4em;
     background-color: var(--cor1);
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .texts{
@@ -251,6 +259,7 @@ body{
     font-size: 2.7em;
     background-color: var(--cor1);
     border-radius: 0 0 3em 3em;
+    padding: 20px;
 }
 
 .imggas{
@@ -271,6 +280,9 @@ body{
 }
 
 .diabetes>h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 10vh;
     text-align: center;
