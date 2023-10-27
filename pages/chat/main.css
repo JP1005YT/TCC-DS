@@ -97,9 +97,15 @@ i{
     border-bottom: 2px solid #ccc;
 }
 #message-form button{
+    background: linear-gradient(46deg,rgb(5, 155, 165),rgb(40, 170, 98));
+    color: #fff;
+    border: none;
+    border-radius: 25px;
     padding: 1%;
     font-size: 35px;
     width: 10%;
+    margin-left: 2%;
+    cursor: pointer;
 }
 #messages::-webkit-scrollbar {
     width: 10px;

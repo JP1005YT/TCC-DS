@@ -535,6 +535,7 @@ body{
     font-size: 50px;
 }
 .recipe.on{
+    top: 0;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -560,10 +561,13 @@ body{
     top: 0;
     background: #fff;
     font-size: 75px;
-    padding: 20px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50%;
 }
 .recipe i:hover{
-    background: red;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 hr{
     margin: 0.75% 0 0.75% 0;
@@ -830,4 +834,40 @@ footer .lista a:hover{
 }
 footer .lista i{
     font-size: 30px;
+}
+.socialpoint{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(121deg,var(--base2),var(--cor2))
+}
+.socialpoint .image{
+    padding: 20px;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    background: url("../resources/assets/socialhome.png");
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.socialpoint div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    /* background: blue; */
+}
+.socialpoint div section{
+    text-align: center;
+    width: 80%;
+    height: 90%;
+    padding: 20px;
+    border-radius: 25px;
+    font-size: 45px;
+    background: #fff;
 }
